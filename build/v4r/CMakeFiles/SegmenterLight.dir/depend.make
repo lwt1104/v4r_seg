@@ -325,6 +325,7 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/local/include/p
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/local/include/pcl-1.8/pcl/common/io.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/local/include/pcl-1.8/pcl/common/point_tests.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/local/include/pcl-1.8/pcl/common/time.h
+v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/local/include/pcl-1.8/pcl/console/parse.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/local/include/pcl-1.8/pcl/console/print.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/local/include/pcl-1.8/pcl/conversions.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/local/include/pcl-1.8/pcl/correspondence.h

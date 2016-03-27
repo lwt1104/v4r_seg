@@ -577,6 +577,8 @@ pcl/io/pcd_io.h
 -
 pcl/point_types.h
 -
+pcl/console/parse.h
+-
 opencv2/highgui/highgui.hpp
 -
 opencv2/core/core.hpp
@@ -2220,6 +2222,14 @@ queue
 string
 -
 boost/date_time/posix_time/posix_time.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/console/parse.h
+vector
+-
+sstream
+-
+pcl/pcl_macros.h
 -
 
 /usr/local/include/pcl-1.8/pcl/console/print.h

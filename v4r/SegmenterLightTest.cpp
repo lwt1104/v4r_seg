@@ -81,13 +81,15 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
 {
   int pcWidth = pcl_cloud->width;
   int pcHeight = pcl_cloud->height;
-  unsigned position = 0;
+  int position = 0;
 
-  unsigned max_label = 0;
-  for(unsigned i=0; i<pcl_cloud->points.size(); i++)
-    if(pcl_cloud->points[i].label > max_label)
+  int max_label = 0;
+  for(unsigned i=0; i<pcl_cloud->points.size(); i++) {
+    if(pcl_cloud->points[i].label > max_label) {
       max_label = pcl_cloud->points[i].label;
-    
+    }
+  }
+
   
   RGBValue color[max_label];
   for(unsigned i=0; i<max_label; i++)
@@ -158,7 +160,7 @@ void SegmenterLightTest::process()
   segment::SegmenterLight seg("");
   seg.setFast(true);
   seg.setDetail(2);
-  pcl_cloud_labeled = seg.processStages(pcl_cloud);
+  pcl_cloud_labeled = seg.processStages(pcl_cloud, user_stages);
   
   clock_gettime(CLOCK_THREAD_CPUTIME_ID, &current);
   double runtime = segment::timespec_diff(&current, &start);
@@ -307,6 +309,9 @@ int main(int argc, char *argv[])
   int endIdx = 65;
   bool live = false;
   
+  int user_stages = 1;
+  pcl::console::parse_argument (argc, argv, "-stage", user_stages);
+
   for(int i=1; i<argc; i++) {
     if(strcmp (argv[i], "-h") == 0) {
       printUsage(argv[0]);
@@ -328,7 +333,9 @@ int main(int argc, char *argv[])
   }
     
   segment::SegmenterLightTest seg;
+  seg.set_user_stages(user_stages);
   seg.run(rgbd_filename, startIdx, endIdx, live);
+
 }
 
 

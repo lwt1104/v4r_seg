@@ -399,11 +399,12 @@ namespace segment
 
 
   pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
-  SegmenterLight::processStages (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
+  SegmenterLight::processStages (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud, int user_stages)
   {
     surface::View view;
     view.width = pcl_cloud->width;
     view.height = pcl_cloud->height;
+    int stages = 0;
 
     pcl::PointCloud<pcl::PointXYZRGBL>::Ptr result (new pcl::PointCloud<pcl::PointXYZRGBL>);
     pcl::copyPointCloud (*pcl_cloud, *result);
@@ -411,22 +412,37 @@ namespace segment
     // calcuate normals
     computeNormals(pcl_cloud, view.normals);
 
-    // adaptive clustering
-    computePlanes (pcl_cloud, view.normals, view.surfaces);
-
-    // model abstraction
-    computeSurfaces(pcl_cloud, view);
-
-    // object level result
-    computeObjects(pcl_cloud, view);
- 
- 
-
-    for (unsigned i = 0; i < view.surfaces.size (); i++) {
-      for (unsigned j = 0; j < view.surfaces[i]->indices.size (); j++) {
-        result->points[view.surfaces[i]->indices[j]].label = view.surfaces[i]->label;
-      }
+    // adaptive clustering  1
+    if (stages < user_stages) {
+      computePlanes (pcl_cloud, view.normals, view.surfaces);
+      stages++;
     }
+    // model abstraction  2
+    if (stages < user_stages) {
+      computeSurfaces(pcl_cloud, view);
+      stages++;
+    }
+    // object level result  3
+    if (stages < user_stages) {
+      computeObjects(pcl_cloud, view);
+      stages++;
+      for (unsigned i = 0; i < view.surfaces.size (); i++) {
+        for (unsigned j = 0; j < view.surfaces[i]->indices.size (); j++) {
+          result->points[view.surfaces[i]->indices[j]].label = view.surfaces[i]->label;
+        }
+      }
+
+    } else {
+      for (unsigned i = 0; i < view.surfaces.size (); i++) {
+        for (unsigned j = 0; j < view.surfaces[i]->indices.size (); j++) {
+          result->points[view.surfaces[i]->indices[j]].label = i+1;
+        }
+      }
+//      std::cout << "\n";
+//      std::cout << view.surfaces.size () << std::endl;
+    }
+ 
+
 
     return result;
   }

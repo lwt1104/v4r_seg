@@ -119,7 +119,7 @@ public:
   /** Run the pre-segmenter **/
   void run(std::string _rgbd_filename, int _startIdx, int _endIdx, bool _live); 
 
-  void set_user_stages(int _s = 1) {user_stages = _s;}
+  void set_user_stages(int s = 1) {user_stages = s;}
 
 };
 

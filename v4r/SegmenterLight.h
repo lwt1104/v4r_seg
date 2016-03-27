@@ -87,7 +87,7 @@ namespace segment
 
     /** Process a point cloud and return labeled cloud **/
     pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
-    processStages(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud);
+    processStages(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud, int user_stages);
 
     /** Process a point cloud and return vector of segment indices **/
     std::vector<pcl::PointIndices>
