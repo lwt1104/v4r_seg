@@ -1,0 +1,4 @@
+/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/SegmenterLight.dir
+/home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles/uninstall.dir
+/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir
+/home/lwt1104/Downloads/SegmenterLight/build/v4r/TomGine/CMakeFiles/v4rTomGine.dir
