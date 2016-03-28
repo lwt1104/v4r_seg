@@ -42,7 +42,7 @@
 #include <pcl/visualization/cloud_viewer.h>
 #include <pcl/point_cloud.h>
 #include <pcl/console/parse.h>
-
+#include <pcl/io/openni2_grabber.h>
 
 
 #include <opencv2/highgui/highgui.hpp>
@@ -107,14 +107,14 @@ private:
                              std::vector<cv::Vec4f> &cvCloud/*, bool random_colors = false*/);
 
   void ConvertPCLCloud2ColorSeg(const pcl::PointCloud<pcl::PointXYZRGBL>::Ptr &in,
-                             pcl::PointCloud<pcl::PointXYZRGB>::Ptr &out
-);
+                             pcl::PointCloud<pcl::PointXYZRGB>::Ptr &out);
+
+  void cloud_cb_ (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud);
 
 
   int user_stages; // to which stages should the process goes to if call function processStages to segment. 1 plane 2 surface 3 object
 
- // pcl::visualization::CloudViewer viewer_cloud;
-
+  pcl::visualization::CloudViewer viewer2;
 
 public:
 

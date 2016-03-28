@@ -91,8 +91,6 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
  
   }
 
-  RGBValue color255;
-  color255.float_value =  0x00202020;
   label2color[255] = 	182672;
 
   // for (std::map<int, float>::const_iterator it = label2color.begin(); it != label2color.end(); it++) {
@@ -116,8 +114,6 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
                              pcl::PointCloud<pcl::PointXYZRGB>::Ptr &out) {
  
  	out.reset(new pcl::PointCloud<pcl::PointXYZRGB>);
- 	out->width = in->width;
-    out->height = in->height;
     out->points.resize(in->width*in->height);
     out->is_dense = false;
 
@@ -148,7 +144,7 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
 
 /* --------------- PreSegmenter --------------- */
 
-SegmenterLightTest::SegmenterLightTest()
+SegmenterLightTest::SegmenterLightTest() :viewer2("Simple")
 {
   z_min = 0.3;
   z_max = 4.5;
@@ -174,8 +170,10 @@ void SegmenterLightTest::init()
   // init kinect data reader
   kinect = new KinectData();
   kinect->setDatabasePath(database_path); 
-  if(data_live)
-    kinect->setReadDataLive();
+  if(data_live) {
+    // kinect->setReadDataLive();
+    std::cout << "Use openni2_grabber instead \n";
+  } 
   else
     kinect->setReadDataFromFile(rgbd_filename, rgbd_filename, startIdx, endIdx, data_depth);
   if(load_models)
@@ -209,6 +207,35 @@ void SegmenterLightTest::process()
 }
 
 
+
+ void SegmenterLightTest::cloud_cb_ (const  pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud)
+ {
+    static unsigned count = 0;
+    if (++count == 20)
+    {
+
+      pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_rgb (new pcl::PointCloud<pcl::PointXYZRGB>);
+      pcl::copyPointCloud (*cloud, *cloud_rgb);
+      segment::SegmenterLight seg("");
+      seg.setFast(true);
+      seg.setDetail(2);
+      pcl_cloud_labeled = seg.processStages(cloud_rgb, user_stages);
+
+      cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
+      ConvertPCLCloud2Image(cloud_rgb, kImage);
+      cv::imshow("Debug image", kImage);
+      cvWaitKey(15);
+
+      pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_colored(new pcl::PointCloud<pcl::PointXYZRGB>);
+      ConvertPCLCloud2ColorSeg(pcl_cloud_labeled, cloud_colored);
+      // viewer2.showCloud(cloud_rgb);
+
+      viewer2.showCloud(cloud_colored);
+     
+      count = 0;
+    }
+}
+
 void SegmenterLightTest::run(std::string _rgbd_filename,
                        int _startIdx, int _endIdx, 
                        bool _live)
@@ -220,9 +247,34 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   endIdx = _endIdx;
   data_live = _live;
   init();
-  pcl::visualization::CloudViewer viewer2 ("Simple Cloud Viewer");
+
   
-  
+  if (data_live) {
+  	// create a new grabber for OpenNI devices
+    pcl::Grabber* interface = new pcl::io::OpenNI2Grabber();
+
+    // make callback function from member function
+    boost::function<void (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr&)> f =
+      boost::bind (&SegmenterLightTest::cloud_cb_, this, _1);
+
+    // connect callback function for desired signal. In this case its a point cloud with color values
+    boost::signals2::connection c = interface->registerCallback (f);
+
+    // start receiving point clouds
+    interface->start ();
+
+    // wait until user quits program with Ctrl-C, but no busy-waiting -> sleep (1);
+    while (!viewer2.wasStopped()) {
+      boost::this_thread::sleep (boost::posix_time::seconds (1));
+    }
+
+    // stop the grabber
+    interface->stop ();
+
+  	return;
+  }
+   
+
   // ######################## Setup TomGine ########################
   int width = 640;
   int height = 480;
@@ -252,7 +304,7 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
 //   dbgWin.SetInputSpeeds(0.5, 0.5, 0.5);
 //   dbgWin.Update();
 #endif
-  
+
   cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
   cv::imshow("Debug image", kImage);
   
@@ -326,18 +378,18 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
         do_it = false;
     }
     
-    if((char) key == '5' || !win_done) {
-    	std::cout << "Press 5" << std::endl;
-#ifdef V4R_TOMGINE
-      // dbgWin.Clear();
-      // std::vector<cv::Vec4f> vec_cloud;
-      // ConvertPCLCloud2CvVec(pcl_cloud_labeled, vec_cloud);
+//     if((char) key == '5' || !win_done) {
+//     	std::cout << "Press 5" << std::endl;
+// #ifdef V4R_TOMGINE
+//       // dbgWin.Clear();
+//       // std::vector<cv::Vec4f> vec_cloud;
+//       // ConvertPCLCloud2CvVec(pcl_cloud_labeled, vec_cloud);
 
-      // dbgWin.AddPointCloud(vec_cloud);
-      // dbgWin.Update();
-#endif
-      win_done = true;
-    }
+//       // dbgWin.AddPointCloud(vec_cloud);
+//       // dbgWin.Update();
+// #endif
+//       win_done = true;
+//     }
   }
 }
 
