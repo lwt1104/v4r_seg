@@ -53,7 +53,7 @@
 #include "SegmenterLight.h"
 
 #ifdef V4R_TOMGINE
-#include "v4r/TomGine/tgTomGineThread.h"
+//#include "v4r/TomGine/tgTomGineThread.h"
 #endif
 
 namespace segment

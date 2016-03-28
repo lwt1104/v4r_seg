@@ -108,7 +108,7 @@ class SurfaceModel
     std::vector<ON_NurbsCurve> curves_param;            ///< B-spline curves in image space
 
 #ifdef V4R_TOMGINE
-    TomGine::tgRenderModel mesh;                        ///< mesh model for displaying @ tgTomGineThread
+   TomGine::tgRenderModel mesh;                        ///< mesh model for displaying @ tgTomGineThread
 #endif
 
     SurfaceModel(): idx(-1), label(-1), label_ass(-1), used(false), selected(true) {}
@@ -160,7 +160,7 @@ class SurfaceModel
       printf("  curves_image: %lu\n", curves_image.size());
       printf("  curves_param: %lu\n", curves_param.size());
 #ifdef V4R_TOMGINE
-      printf("  mesh: faces: %lu, vertices: %lu\n", mesh.m_faces.size(), mesh.m_vertices.size());
+     printf("  mesh: faces: %lu, vertices: %lu\n", mesh.m_faces.size(), mesh.m_vertices.size());
 #endif
       printf("\n");
     }

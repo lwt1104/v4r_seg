@@ -244,13 +244,13 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   intrinsic.at<double> (2, 2) = view.intrinsic(2, 2) = 1.;
 
 #ifdef V4R_TOMGINE
-  dbgWin.SetClearColor(0.0, 0.0, 0.0);
-//   dbgWin.SetCoordinateFrame();
-  dbgWin.SetCamera(intrinsic);
-  dbgWin.SetCamera(R, t);
-  dbgWin.SetRotationCenter(rotCenter);
-  dbgWin.SetInputSpeeds(0.5, 0.5, 0.5);
-  dbgWin.Update();
+//   dbgWin.SetClearColor(0.0, 0.0, 0.0);
+// //   dbgWin.SetCoordinateFrame();
+//   dbgWin.SetCamera(intrinsic);
+//   dbgWin.SetCamera(R, t);
+//   dbgWin.SetRotationCenter(rotCenter);
+//   dbgWin.SetInputSpeeds(0.5, 0.5, 0.5);
+//   dbgWin.Update();
 #endif
   
   cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
@@ -264,10 +264,14 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
       process();
       ConvertPCLCloud2Image(pcl_cloud, kImage);
       cv::imshow("Debug image", kImage); 
+      pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_colored(new pcl::PointCloud<pcl::PointXYZRGB>);
+      ConvertPCLCloud2ColorSeg(pcl_cloud_labeled, cloud_colored);
+      viewer2.showCloud(cloud_colored);
+
       cvWaitKey(10);
 #ifdef V4R_TOMGINE
-      dbgWin.SetImage(kImage);
-      dbgWin.Update();
+      // dbgWin.SetImage(kImage);
+      // dbgWin.Update();
 #endif
       win_done = false;
     }
@@ -303,11 +307,9 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
       ConvertPCLCloud2ColorSeg(pcl_cloud_labeled, cloud_colored);
       viewer2.showCloud(cloud_colored);
 
-      // if (viewer2.wasStopped (10000)){}    
-
 #ifdef V4R_TOMGINE
-     dbgWin.SetImage(kImage);
-     dbgWin.Update();
+     // dbgWin.SetImage(kImage);
+     // dbgWin.Update();
 #endif
       win_done = false;
       processed = true;
@@ -316,6 +318,7 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
       printf("[SegmenterLightTest] Process images countiniously.\n");
       single_image = false;
       processed = true;
+
     }
 
     if((char) key == 'q') {
@@ -326,12 +329,12 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
     if((char) key == '5' || !win_done) {
     	std::cout << "Press 5" << std::endl;
 #ifdef V4R_TOMGINE
-      dbgWin.Clear();
-      std::vector<cv::Vec4f> vec_cloud;
-      ConvertPCLCloud2CvVec(pcl_cloud_labeled, vec_cloud);
+      // dbgWin.Clear();
+      // std::vector<cv::Vec4f> vec_cloud;
+      // ConvertPCLCloud2CvVec(pcl_cloud_labeled, vec_cloud);
 
-      dbgWin.AddPointCloud(vec_cloud);
-      dbgWin.Update();
+      // dbgWin.AddPointCloud(vec_cloud);
+      // dbgWin.Update();
 #endif
       win_done = true;
     }

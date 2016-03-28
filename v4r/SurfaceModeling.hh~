@@ -154,7 +154,7 @@ public:
 
 #ifdef V4R_TOMGINE
   /** set debug windows **/
- void SetDebugWin(cv::Ptr<TomGine::tgTomGineThread> &win);
+//  void SetDebugWin(cv::Ptr<TomGine::tgTomGineThread> &win);
 #endif
 };
 
