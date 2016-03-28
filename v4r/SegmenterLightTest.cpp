@@ -83,18 +83,23 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
   int pcHeight = pcl_cloud->height;
   int position = 0;
 
-  int max_label = 0;
-  for(unsigned i=0; i<pcl_cloud->points.size(); i++) {
-    if(pcl_cloud->points[i].label > max_label) {
-      max_label = pcl_cloud->points[i].label;
-    }
+  std::map<int, float> label2color;
+  for(int i=0; i<pcl_cloud->points.size(); i++) {
+    if (label2color.find(pcl_cloud->points[i].label) == label2color.end()) {
+    	label2color[pcl_cloud->points[i].label] = GetRandomColor();
+    } 
+ 
+  }
+
+  RGBValue color255;
+  color255.float_value =  0x00202020;
+  label2color[255] = 	182672;
+
+  for (std::map<int, float>::const_iterator it = label2color.begin(); it != label2color.end(); it++) {
+  	std::cout << it->first << "\t" << it->second << "\n";
   }
 
   
-  RGBValue color[max_label];
-  for(unsigned i=0; i<max_label; i++)
-    color[i].float_value = GetRandomColor();
-
   for (int row = 0; row < pcHeight; row++) {
     for (int col = 0; col < pcWidth; col++) {
       cv::Vec4f p;
@@ -102,7 +107,7 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
       p[0] = pcl_cloud->points[position].x;
       p[1] = pcl_cloud->points[position].y;
       p[2] = pcl_cloud->points[position].z;
-      p[3] = color[pcl_cloud->points[position].label].float_value;
+      p[3] = label2color[pcl_cloud->points[position].label];
       cvCloud.push_back(p);
     }
   }
@@ -121,6 +126,7 @@ SegmenterLightTest::SegmenterLightTest()
   startIdx = 0;
   endIdx = 65;  
   overall_runtime = 0;
+  user_stages = 1;
 }
 
 SegmenterLightTest::~SegmenterLightTest()
