@@ -112,6 +112,39 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
   }
 }
 
+ void SegmenterLightTest::ConvertPCLCloud2ColorSeg(const pcl::PointCloud<pcl::PointXYZRGBL>::Ptr &in,
+                             pcl::PointCloud<pcl::PointXYZRGB>::Ptr &out) {
+ 
+ 	out.reset(new pcl::PointCloud<pcl::PointXYZRGB>);
+ 	out->width = in->width;
+    out->height = in->height;
+    out->points.resize(in->width*in->height);
+    out->is_dense = false;
+
+
+    std::map<int, float> label2color;
+    for(int i=0; i<in->points.size(); i++) {
+      if (label2color.find(in->points[i].label) == label2color.end()) {
+      	label2color[in->points[i].label] = GetRandomColor();
+      } 
+    }
+
+
+    for (unsigned row = 0; row < in->height; row++) {
+      for (unsigned col = 0; col < in->width; col++) {
+        int idx = row * in->width + col;
+        pcl::PointXYZRGBL &pt = in->points[idx];
+        pcl::PointXYZRGB &npt = out->points[idx];
+        npt.x = pt.x;
+        npt.y = pt.y;
+        npt.z = pt.z;
+        npt.rgb = label2color[pt.label];
+      }
+    }
+
+
+ }
+
 
 /* --------------- PreSegmenter --------------- */
 
@@ -165,6 +198,7 @@ void SegmenterLightTest::process()
   segment::SegmenterLight seg("");
   seg.setFast(true);
   seg.setDetail(2);
+  // seg.viewer_cloud,showCloud(pcl_cloud);
   pcl_cloud_labeled = seg.processStages(pcl_cloud, user_stages);
   
   clock_gettime(CLOCK_THREAD_CPUTIME_ID, &current);
@@ -186,6 +220,8 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   endIdx = _endIdx;
   data_live = _live;
   init();
+  pcl::visualization::CloudViewer viewer2 ("Simple Cloud Viewer");
+  
   
   // ######################## Setup TomGine ########################
   int width = 640;
@@ -258,8 +294,17 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
     if (key == 65478 || key == 1114054)  { // F9
       printf("[SegmenterLightTest] Process single image.\n");
       process();
+      // viewer2.showCloud(pcl_cloud);
+
       ConvertPCLCloud2Image(pcl_cloud, kImage);
       cv::imshow("Debug image", kImage);
+
+      pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_colored(new pcl::PointCloud<pcl::PointXYZRGB>);
+      ConvertPCLCloud2ColorSeg(pcl_cloud_labeled, cloud_colored);
+      viewer2.showCloud(cloud_colored);
+
+      // if (viewer2.wasStopped (10000)){}    
+
 #ifdef V4R_TOMGINE
      dbgWin.SetImage(kImage);
      dbgWin.Update();
@@ -284,6 +329,7 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
       dbgWin.Clear();
       std::vector<cv::Vec4f> vec_cloud;
       ConvertPCLCloud2CvVec(pcl_cloud_labeled, vec_cloud);
+
       dbgWin.AddPointCloud(vec_cloud);
       dbgWin.Update();
 #endif

@@ -109,6 +109,7 @@ v4r/preinstall: v4r/TomGine/preinstall
 # Target rules for target v4r/CMakeFiles/SegmenterLight.dir
 
 # All Build rule for target.
+v4r/CMakeFiles/SegmenterLight.dir/all: v4r/TomGine/CMakeFiles/v4rTomGine.dir/all
 v4r/CMakeFiles/SegmenterLight.dir/all: v4r/CMakeFiles/v4rSegmenterLight.dir/all
 	$(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/depend
 	$(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/build
@@ -122,7 +123,7 @@ all: v4r/CMakeFiles/SegmenterLight.dir/all
 
 # Build rule for subdir invocation for target.
 v4r/CMakeFiles/SegmenterLight.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 46
 	$(MAKE) -f CMakeFiles/Makefile2 v4r/CMakeFiles/SegmenterLight.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 0
 .PHONY : v4r/CMakeFiles/SegmenterLight.dir/rule
@@ -179,16 +180,51 @@ clean: v4r/CMakeFiles/v4rSegmenterLight.dir/clean
 # Directory level rules for directory v4r/TomGine
 
 # Convenience name for "all" pass in the directory.
-v4r/TomGine/all:
+v4r/TomGine/all: v4r/TomGine/CMakeFiles/v4rTomGine.dir/all
 .PHONY : v4r/TomGine/all
 
 # Convenience name for "clean" pass in the directory.
-v4r/TomGine/clean:
+v4r/TomGine/clean: v4r/TomGine/CMakeFiles/v4rTomGine.dir/clean
 .PHONY : v4r/TomGine/clean
 
 # Convenience name for "preinstall" pass in the directory.
 v4r/TomGine/preinstall:
 .PHONY : v4r/TomGine/preinstall
+
+#=============================================================================
+# Target rules for target v4r/TomGine/CMakeFiles/v4rTomGine.dir
+
+# All Build rule for target.
+v4r/TomGine/CMakeFiles/v4rTomGine.dir/all:
+	$(MAKE) -f v4r/TomGine/CMakeFiles/v4rTomGine.dir/build.make v4r/TomGine/CMakeFiles/v4rTomGine.dir/depend
+	$(MAKE) -f v4r/TomGine/CMakeFiles/v4rTomGine.dir/build.make v4r/TomGine/CMakeFiles/v4rTomGine.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles  22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+	@echo "Built target v4rTomGine"
+.PHONY : v4r/TomGine/CMakeFiles/v4rTomGine.dir/all
+
+# Include target in all.
+all: v4r/TomGine/CMakeFiles/v4rTomGine.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+v4r/TomGine/CMakeFiles/v4rTomGine.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 25
+	$(MAKE) -f CMakeFiles/Makefile2 v4r/TomGine/CMakeFiles/v4rTomGine.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 0
+.PHONY : v4r/TomGine/CMakeFiles/v4rTomGine.dir/rule
+
+# Convenience name for target.
+v4rTomGine: v4r/TomGine/CMakeFiles/v4rTomGine.dir/rule
+.PHONY : v4rTomGine
+
+# clean rule for target.
+v4r/TomGine/CMakeFiles/v4rTomGine.dir/clean:
+	$(MAKE) -f v4r/TomGine/CMakeFiles/v4rTomGine.dir/build.make v4r/TomGine/CMakeFiles/v4rTomGine.dir/clean
+.PHONY : v4r/TomGine/CMakeFiles/v4rTomGine.dir/clean
+
+# clean rule for target.
+clean: v4r/TomGine/CMakeFiles/v4rTomGine.dir/clean
+.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

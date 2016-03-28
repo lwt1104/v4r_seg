@@ -189,6 +189,7 @@ void KinectData::ConvertPCLCloud(pcl::PointCloud<pcl::PointXYZRGBL>::Ptr &in,
   out->width = in->width;
   out->height = in->height;
   out->points.resize(in->width*in->height);
+  out->is_dense = false;
   for (unsigned row = 0; row < in->height; row++) {
     for (unsigned col = 0; col < in->width; col++) {
       int idx = row * in->width + col;

@@ -175,6 +175,7 @@ SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
+SegmenterLight: ../lib/libv4rTomGine.so
 SegmenterLight: ../lib/libv4rSegmenterLight.so
 SegmenterLight: /usr/lib/libvtkGenericFiltering.so.5.8.0
 SegmenterLight: /usr/lib/libvtkGeovis.so.5.8.0

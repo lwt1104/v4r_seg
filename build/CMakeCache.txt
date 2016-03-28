@@ -189,10 +189,10 @@ CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //If set, runtime paths are not added when installing shared libraries,
 // but are added when building.
-CMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
+CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
 
 //If set, runtime paths are not added when using shared libraries.
-CMAKE_SKIP_RPATH:BOOL=OFF
+CMAKE_SKIP_RPATH:BOOL=NO
 
 //Flags used by the linker during the creation of static libraries.
 CMAKE_STATIC_LINKER_FLAGS:STRING=
@@ -219,7 +219,7 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
-CMAKE_VERBOSE_MAKEFILE:BOOL=OFF
+CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a file.
 DAVIDSDK_INCLUDE_DIR:PATH=DAVIDSDK_INCLUDE_DIR-NOTFOUND
@@ -243,7 +243,7 @@ DSSDK_LIBRARY_turbojpeg:FILEPATH=DSSDK_LIBRARY_turbojpeg-NOTFOUND
 EIGEN_INCLUDE_DIRS:PATH=/usr/include/eigen3
 
 //Enable ftgl fonts do draw OpenGL fonts?
-ENABLE_FTGL_FONTS:BOOL=OFF
+ENABLE_FTGL_FONTS:BOOL=0
 
 //Path to a file.
 ENSENSO_INCLUDE_DIR:PATH=ENSENSO_INCLUDE_DIR-NOTFOUND
@@ -503,10 +503,10 @@ RSSDK_LIBRARY:FILEPATH=RSSDK_LIBRARY-NOTFOUND
 RSSDK_LIBRARY_DEBUG:FILEPATH=RSSDK_LIBRARY_DEBUG-NOTFOUND
 
 //Surface segmenter framework
-V4R_SEGMENTER_LIGHT:BOOL=ON
+V4R_SEGMENTER_LIGHT:BOOL=1
 
 //OpenGL-GPU rendering, geometry and image processing library.
-V4R_TOMGINE:BOOL=OFF
+V4R_TOMGINE:BOOL=1
 
 //Value Computed by CMake
 v4rSegmenterLight_BINARY_DIR:STATIC=/home/lwt1104/Downloads/SegmenterLight/build/v4r
@@ -692,9 +692,6 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STRIP
 CMAKE_STRIP-ADVANCED:INTERNAL=1
-//Suppress Warnings that are meant for the author of the CMakeLists.txt
-// files.
-CMAKE_SUPPRESS_DEVELOPER_WARNINGS:INTERNAL=FALSE
 //uname command
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_USE_RELATIVE_PATHS
@@ -1096,9 +1093,9 @@ RSSDK_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: RSSDK_LIBRARY_DEBUG
 RSSDK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //v4r library names
-V4R_LIBRARIES:INTERNAL= v4rSegmenterLight
+V4R_LIBRARIES:INTERNAL= v4rTomGine v4rSegmenterLight
 //v4r library names
-V4R_LIBRARIES_PC:INTERNAL= -lv4rSegmenterLight
+V4R_LIBRARIES_PC:INTERNAL= -lv4rTomGine -lv4rSegmenterLight
 //Last used BOOST_INCLUDEDIR value.
 _BOOST_INCLUDEDIR_LAST:INTERNAL=/usr/include
 //Last used Boost_ADDITIONAL_VERSIONS value.
