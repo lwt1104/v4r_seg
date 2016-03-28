@@ -95,10 +95,9 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
   color255.float_value =  0x00202020;
   label2color[255] = 	182672;
 
-  for (std::map<int, float>::const_iterator it = label2color.begin(); it != label2color.end(); it++) {
-  	std::cout << it->first << "\t" << it->second << "\n";
-  }
-
+  // for (std::map<int, float>::const_iterator it = label2color.begin(); it != label2color.end(); it++) {
+  // 	std::cout << it->first << "\t" << it->second << "\n";
+  // }
   
   for (int row = 0; row < pcHeight; row++) {
     for (int col = 0; col < pcWidth; col++) {
@@ -262,8 +261,8 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
       ConvertPCLCloud2Image(pcl_cloud, kImage);
       cv::imshow("Debug image", kImage);
 #ifdef V4R_TOMGINE
-      dbgWin.SetImage(kImage);
-      dbgWin.Update();
+     dbgWin.SetImage(kImage);
+     dbgWin.Update();
 #endif
       win_done = false;
       processed = true;

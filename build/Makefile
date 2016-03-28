@@ -181,19 +181,6 @@ v4rSegmenterLight/fast:
 	$(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/build
 .PHONY : v4rSegmenterLight/fast
 
-#=============================================================================
-# Target rules for targets named v4rTomGine
-
-# Build rule for target.
-v4rTomGine: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 v4rTomGine
-.PHONY : v4rTomGine
-
-# fast build rule for target.
-v4rTomGine/fast:
-	$(MAKE) -f v4r/TomGine/CMakeFiles/v4rTomGine.dir/build.make v4r/TomGine/CMakeFiles/v4rTomGine.dir/build
-.PHONY : v4rTomGine/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -209,7 +196,6 @@ help:
 	@echo "... uninstall"
 	@echo "... SegmenterLight"
 	@echo "... v4rSegmenterLight"
-	@echo "... v4rTomGine"
 .PHONY : help
 
 
