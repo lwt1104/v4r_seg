@@ -109,7 +109,7 @@ private:
   void ConvertPCLCloud2ColorSeg(const pcl::PointCloud<pcl::PointXYZRGBL>::Ptr &in,
                              pcl::PointCloud<pcl::PointXYZRGB>::Ptr &out);
 
-  void cloud_cb_ (const pcl::PointCloud<pcl::PointXYZRGBA>::Ptr &cloud);
+  void cloud_cb_ (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud);
 
 
   int user_stages; // to which stages should the process goes to if call function processStages to segment. 1 plane 2 surface 3 object

@@ -211,7 +211,7 @@ void SegmenterLightTest::process()
  void SegmenterLightTest::cloud_cb_ (const  pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud)
  {
     static unsigned count = 0;
-    if (++count == 20)
+    if (++count == 25)
     {
 
       pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_rgb (new pcl::PointCloud<pcl::PointXYZRGB>);
@@ -248,7 +248,7 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   data_live = _live;
   init();
 
-  
+  // If choose to live
   if (data_live) {
   	// create a new grabber for OpenNI devices
     pcl::Grabber* interface = new pcl::io::OpenNI2Grabber();
@@ -274,7 +274,63 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   	return;
   }
    
+  // If set up a directory to read
+  if (boost::filesystem::exists (rgbd_filename) && boost::filesystem::is_directory (rgbd_filename)) {
+    std::cout << "directory mode." << std::endl;
+    bool single_image = true;
+    cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
+    cv::imshow("Debug image", kImage);
 
+    for (boost::filesystem::directory_iterator it(rgbd_filename); it != boost::filesystem::directory_iterator (); ++it)
+    {  
+
+      if (!boost::filesystem::is_regular_file (it->status ()) || boost::filesystem::extension (it->path ()) != ".pcd") {
+        continue;
+      }
+      int key = cvWaitKey(50);
+      while (key != 65478 && key != 1114054 && single_image) {
+        if (key == 65479 || key == 1114055) {
+      	  single_image = false;
+        }
+        if((char) key == 'q') {
+          printf("[SegmenterLightTest] Quit.\n");
+          return;
+        }
+
+        key = cvWaitKey(50);
+      }
+      std::cout << rgbd_filename << "/" << it->path ().filename().string() << std::endl;
+      std::stringstream ss;
+      ss << rgbd_filename << "/" << it->path ().filename().string();
+      pcl_cloud.reset(new pcl::PointCloud<pcl::PointXYZRGB>);
+      if (pcl::io::loadPCDFile(ss.str(), *pcl_cloud) == -1){
+        std::cout << "error " <<  ss.str() << "\n";
+      }
+
+      segment::SegmenterLight seg("");
+      seg.setFast(true);
+      seg.setDetail(2);
+      pcl_cloud_labeled = seg.processStages(pcl_cloud, user_stages);
+
+      cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
+      ConvertPCLCloud2Image(pcl_cloud, kImage);
+      cv::imshow("Debug image", kImage);
+      cvWaitKey(15);
+
+      pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_colored(new pcl::PointCloud<pcl::PointXYZRGB>);
+      ConvertPCLCloud2ColorSeg(pcl_cloud_labeled, cloud_colored);
+      // viewer2.showCloud(cloud_rgb);
+
+      viewer2.showCloud(cloud_colored);
+
+
+
+
+   }
+
+
+  	return ;
+  }
   // ######################## Setup TomGine ########################
   int width = 640;
   int height = 480;

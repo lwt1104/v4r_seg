@@ -43,6 +43,7 @@
 #include <pcl/point_cloud.h>
 #include <pcl/console/parse.h>
 #include <pcl/io/openni2_grabber.h>
+#include <boost/filesystem.hpp>
 
 
 #include <opencv2/highgui/highgui.hpp>
