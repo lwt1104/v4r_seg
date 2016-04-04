@@ -451,8 +451,10 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
  /usr/local/include/pcl-1.8/pcl/common/impl/copy_point.hpp
  /usr/local/include/pcl-1.8/pcl/common/impl/eigen.hpp
  /usr/local/include/pcl-1.8/pcl/common/impl/io.hpp
+ /usr/local/include/pcl-1.8/pcl/common/impl/projection_matrix.hpp
  /usr/local/include/pcl-1.8/pcl/common/io.h
  /usr/local/include/pcl-1.8/pcl/common/point_tests.h
+ /usr/local/include/pcl-1.8/pcl/common/projection_matrix.h
  /usr/local/include/pcl-1.8/pcl/common/synchronizer.h
  /usr/local/include/pcl-1.8/pcl/common/time.h
  /usr/local/include/pcl-1.8/pcl/console/parse.h
@@ -460,6 +462,10 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
  /usr/local/include/pcl-1.8/pcl/conversions.h
  /usr/local/include/pcl-1.8/pcl/correspondence.h
  /usr/local/include/pcl-1.8/pcl/exceptions.h
+ /usr/local/include/pcl-1.8/pcl/features/feature.h
+ /usr/local/include/pcl-1.8/pcl/features/impl/feature.hpp
+ /usr/local/include/pcl-1.8/pcl/features/impl/normal_3d.hpp
+ /usr/local/include/pcl-1.8/pcl/features/normal_3d.h
  /usr/local/include/pcl-1.8/pcl/filters/boost.h
  /usr/local/include/pcl-1.8/pcl/filters/extract_indices.h
  /usr/local/include/pcl-1.8/pcl/filters/filter.h
@@ -498,6 +504,15 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
  /usr/local/include/pcl-1.8/pcl/kdtree/impl/kdtree_flann.hpp
  /usr/local/include/pcl-1.8/pcl/kdtree/kdtree.h
  /usr/local/include/pcl-1.8/pcl/kdtree/kdtree_flann.h
+ /usr/local/include/pcl-1.8/pcl/octree/impl/octree_pointcloud.hpp
+ /usr/local/include/pcl-1.8/pcl/octree/impl/octree_search.hpp
+ /usr/local/include/pcl-1.8/pcl/octree/octree_base.h
+ /usr/local/include/pcl-1.8/pcl/octree/octree_container.h
+ /usr/local/include/pcl-1.8/pcl/octree/octree_iterator.h
+ /usr/local/include/pcl-1.8/pcl/octree/octree_key.h
+ /usr/local/include/pcl-1.8/pcl/octree/octree_nodes.h
+ /usr/local/include/pcl-1.8/pcl/octree/octree_pointcloud.h
+ /usr/local/include/pcl-1.8/pcl/octree/octree_search.h
  /usr/local/include/pcl-1.8/pcl/pcl_base.h
  /usr/local/include/pcl-1.8/pcl/pcl_config.h
  /usr/local/include/pcl-1.8/pcl/pcl_exports.h
@@ -536,8 +551,12 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
  /usr/local/include/pcl-1.8/pcl/sample_consensus/sac_model_plane.h
  /usr/local/include/pcl-1.8/pcl/sample_consensus/sac_model_sphere.h
  /usr/local/include/pcl-1.8/pcl/search/impl/kdtree.hpp
+ /usr/local/include/pcl-1.8/pcl/search/impl/organized.hpp
  /usr/local/include/pcl-1.8/pcl/search/impl/search.hpp
  /usr/local/include/pcl-1.8/pcl/search/kdtree.h
+ /usr/local/include/pcl-1.8/pcl/search/octree.h
+ /usr/local/include/pcl-1.8/pcl/search/organized.h
+ /usr/local/include/pcl-1.8/pcl/search/pcl_search.h
  /usr/local/include/pcl-1.8/pcl/search/search.h
  /usr/local/include/pcl-1.8/pcl/surface/3rdparty/opennurbs/opennurbs.h
  /usr/local/include/pcl-1.8/pcl/surface/3rdparty/opennurbs/opennurbs_3dm.h

@@ -61,6 +61,16 @@ namespace segment
     nor.setInputCloud (cloud_in);
     nor.compute ();
     nor.getNormals (normals_out);
+
+      // normals_out.reset (new pcl::PointCloud<pcl::Normal>);
+      // pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> ne;  
+      // pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB> ());
+
+      // // Estimate point normals
+      // ne.setSearchMethod (tree);
+      // ne.setInputCloud (cloud_in);
+      // ne.setKSearch (30);
+      // ne.compute (*normals_out);
   }
 
   void

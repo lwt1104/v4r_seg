@@ -33,6 +33,7 @@
 #define V4R_SEGMENT_SEGMENTERLIGHT_H
 
 #include <pcl/point_types.h>
+#include <pcl/features/normal_3d.h>
 
 #include "SurfaceModel.hpp"
 #include "ContourDetector.h"
