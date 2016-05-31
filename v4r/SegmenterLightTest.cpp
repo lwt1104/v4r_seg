@@ -252,10 +252,11 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   if (data_live) {
   	// create a new grabber for OpenNI devices
     pcl::Grabber* interface = new pcl::io::OpenNI2Grabber();
+    // pcl::Grabber* interface = new pcl::OpenNIGrabber();
 
     // make callback function from member function
     boost::function<void (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr&)> f =
-      boost::bind (&SegmenterLightTest::cloud_cb_, this, _1);
+      boost::bind (&SegmenterLightTest::cloud_cb_, this, _1);	
 
     // connect callback function for desired signal. In this case its a point cloud with color values
     boost::signals2::connection c = interface->registerCallback (f);
