@@ -82,6 +82,7 @@ namespace segment
     view.normals = normals_in;
     surface::ClusterNormalsToPlanes::Parameter param;
     param.adaptive = true;
+    detail = 1;
     if(detail == 1) {
       param.epsilon_c = 0.58;
       param.omega_c = -0.002;
@@ -449,9 +450,51 @@ namespace segment
         }
       }
 //      std::cout << "\n";
-//      std::cout << view.surfaces.size () << std::endl;
+     // std::cout << "stage surface number: "<< view.surfaces.size () << std::endl;
     }
  
+
+
+
+    return result;
+  }
+
+  pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
+  SegmenterLight::locateBox (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud){
+    pcl::PointCloud<pcl::PointXYZRGBL>::Ptr result (new pcl::PointCloud<pcl::PointXYZRGBL>);
+    pcl::copyPointCloud (*pcl_cloud, *result);
+
+    surface::View view;
+    view.width = pcl_cloud->width;
+    view.height = pcl_cloud->height;
+    computeNormals(pcl_cloud, view.normals);
+    computePlanes (pcl_cloud, view.normals, view.surfaces);
+
+    surface::CustomRelationsLight ctRel;
+    ctRel.setInputCloud(pcl_cloud);
+    ctRel.setView(&view);
+    // std::vector<unsigned> activeSurface = ctRel.computeFineRelations();
+    // for (unsigned i = 0; i < activeSurface.size(); i++) {
+    //   std::cout << activeSurface[i] << "\t" ;
+    // }
+    // std::cout << std::endl;
+
+    // for (unsigned i = 0; i < activeSurface.size (); i++) {
+    //   for (unsigned j = 0; j < view.surfaces[activeSurface[i]]->indices.size (); j++) {
+    //     result->points[view.surfaces[activeSurface[i]]->indices[j]].label = activeSurface[i]+1;
+    //   }
+    // }
+
+    std::vector<unsigned> surfaceState = ctRel.computeFineRelations();
+    for (unsigned i = 0; i < view.surfaces.size (); i++) {
+      if (surfaceState[i]) {
+        // std::cout << surfaceState[i] << std::endl;
+        for (unsigned j = 0; j < view.surfaces[i]->indices.size(); j++) {
+          result->points[view.surfaces[i]->indices[j]].label = surfaceState[i];
+        }
+      }
+      
+    }
 
 
     return result;

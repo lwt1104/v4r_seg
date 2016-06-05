@@ -44,6 +44,8 @@
 #include "SVMPredictorSingle.h"
 #include "GraphCut.h"
 
+#include "CustomRelationsLight.h"
+
 namespace segment
 {
 
@@ -89,6 +91,9 @@ namespace segment
     /** Process a point cloud and return labeled cloud **/
     pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
     processStages(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud, int user_stages);
+
+    pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
+    locateBox(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud);
 
     /** Process a point cloud and return vector of segment indices **/
     std::vector<pcl::PointIndices>

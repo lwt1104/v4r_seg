@@ -70,6 +70,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/lwt1104/Downloads/SegmenterLight/v4r/BoundaryRelations.h"
     "/home/lwt1104/Downloads/SegmenterLight/v4r/ColorHistogram3D.h"
     "/home/lwt1104/Downloads/SegmenterLight/v4r/StructuralRelationsLight.h"
+    "/home/lwt1104/Downloads/SegmenterLight/v4r/CustomRelationsLight.h"
     "/home/lwt1104/Downloads/SegmenterLight/v4r/Texture.h"
     "/home/lwt1104/Downloads/SegmenterLight/v4r/SegmenterLight.h"
     "/home/lwt1104/Downloads/SegmenterLight/v4r/ContourDetector.h"

@@ -259,9 +259,32 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o.provides: v4
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o.provides.build: v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o
 
+v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
+v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o: ../v4r/CustomRelationsLight.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/CustomRelationsLight.cpp
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.i"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lwt1104/Downloads/SegmenterLight/v4r/CustomRelationsLight.cpp > CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.i
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.s"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lwt1104/Downloads/SegmenterLight/v4r/CustomRelationsLight.cpp -o CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.s
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o.requires:
+.PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o.requires
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o.provides: v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o.requires
+	$(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o.provides.build
+.PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o.provides
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o.provides.build: v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o
+
 v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o: ../v4r/Texture.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/Texture.cpp
 
@@ -284,7 +307,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o.provides.build: v4r/CMakeFile
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o: ../v4r/SegmenterLight.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/SegmenterLight.cpp
 
@@ -307,7 +330,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o.provides.build: v4r/CM
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o: ../v4r/ContourDetector.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/ContourDetector.cpp
 
@@ -330,7 +353,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o.provides.build: v4r/C
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.o: ../v4r/svm.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/svm.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/svm.cpp
 
@@ -353,7 +376,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.o.provides.build: v4r/CMakeFiles/v4
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.o: ../v4r/SVMPredictorSingle.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/SVMPredictorSingle.cpp
 
@@ -376,7 +399,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.o.provides.build: v4
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.o: ../v4r/Capture.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/Capture.cpp
 
@@ -399,7 +422,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.o.provides.build: v4r/CMakeFile
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.o: ../v4r/Device.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/Device.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/Device.cpp
 
@@ -422,7 +445,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.o.provides.build: v4r/CMakeFiles
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.o: ../v4r/Kinect.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/Kinect.cpp
 
@@ -445,7 +468,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.o.provides.build: v4r/CMakeFiles
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o: ../v4r/KinectData.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/KinectData.cpp
 
@@ -468,7 +491,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o.provides.build: v4r/CMakeF
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o: ../v4r/FileSystem.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/FileSystem.cc
 
@@ -491,7 +514,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o.provides.build: v4r/CMakeFi
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
 v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o: ../v4r/Utils.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o"
 	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/Utils.cc
 
@@ -523,6 +546,7 @@ v4rSegmenterLight_OBJECTS = \
 "CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.o" \
 "CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.o" \
 "CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o" \
+"CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o" \
 "CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o" \
 "CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o" \
 "CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o" \
@@ -547,6 +571,7 @@ v4rSegmenterLight_EXTERNAL_OBJECTS =
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o
+../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o
@@ -710,6 +735,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o.requires
+v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o.requires

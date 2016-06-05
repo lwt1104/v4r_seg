@@ -8,6 +8,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.o"
   "CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.o"
   "CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o"
+  "CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o"
   "CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o"
   "CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o"
   "CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o"

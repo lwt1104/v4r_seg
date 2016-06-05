@@ -9,6 +9,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/lwt1104/Downloads/SegmenterLight/v4r/ClusterNormalsToPlanes.cc" "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir/ClusterNormalsToPlanes.cc.o"
   "/home/lwt1104/Downloads/SegmenterLight/v4r/ColorHistogram3D.cpp" "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.o"
   "/home/lwt1104/Downloads/SegmenterLight/v4r/ContourDetector.cpp" "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o"
+  "/home/lwt1104/Downloads/SegmenterLight/v4r/CustomRelationsLight.cpp" "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o"
   "/home/lwt1104/Downloads/SegmenterLight/v4r/Device.cpp" "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.o"
   "/home/lwt1104/Downloads/SegmenterLight/v4r/FileSystem.cc" "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o"
   "/home/lwt1104/Downloads/SegmenterLight/v4r/Graph.cpp" "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir/Graph.cpp.o"

@@ -33,6 +33,7 @@
 #define V4R_SEGMENT_SEGMENTERLIGHT_H
 
 #include <pcl/point_types.h>
+#include <pcl/features/normal_3d.h>
 
 #include "SurfaceModel.hpp"
 #include "ContourDetector.h"
@@ -42,6 +43,8 @@
 #include "SurfaceModeling.hh"
 #include "SVMPredictorSingle.h"
 #include "GraphCut.h"
+
+#include "CustomRelationsLight.h"
 
 namespace segment
 {
@@ -88,6 +91,9 @@ namespace segment
     /** Process a point cloud and return labeled cloud **/
     pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
     processStages(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud, int user_stages);
+
+    void
+    locateBox(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud);
 
     /** Process a point cloud and return vector of segment indices **/
     std::vector<pcl::PointIndices>

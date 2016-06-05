@@ -53,7 +53,6 @@ SET(SOURCE_H
   BoundaryRelations.h
   ColorHistogram3D.h
   StructuralRelationsLight.h
-  CustomRelationsLight.h
   Texture.h
   SegmenterLight.h
   ContourDetector.h

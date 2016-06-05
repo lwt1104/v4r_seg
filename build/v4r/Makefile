@@ -290,6 +290,30 @@ ContourDetector.cpp.s:
 	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.s
 .PHONY : ContourDetector.cpp.s
 
+CustomRelationsLight.o: CustomRelationsLight.cpp.o
+.PHONY : CustomRelationsLight.o
+
+# target to build an object file
+CustomRelationsLight.cpp.o:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o
+.PHONY : CustomRelationsLight.cpp.o
+
+CustomRelationsLight.i: CustomRelationsLight.cpp.i
+.PHONY : CustomRelationsLight.i
+
+# target to preprocess a source file
+CustomRelationsLight.cpp.i:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.i
+.PHONY : CustomRelationsLight.cpp.i
+
+CustomRelationsLight.s: CustomRelationsLight.cpp.s
+.PHONY : CustomRelationsLight.s
+
+# target to generate assembly for a file
+CustomRelationsLight.cpp.s:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.s
+.PHONY : CustomRelationsLight.cpp.s
+
 Device.o: Device.cpp.o
 .PHONY : Device.o
 
@@ -703,6 +727,9 @@ help:
 	@echo "... ContourDetector.o"
 	@echo "... ContourDetector.i"
 	@echo "... ContourDetector.s"
+	@echo "... CustomRelationsLight.o"
+	@echo "... CustomRelationsLight.i"
+	@echo "... CustomRelationsLight.s"
 	@echo "... Device.o"
 	@echo "... Device.i"
 	@echo "... Device.s"

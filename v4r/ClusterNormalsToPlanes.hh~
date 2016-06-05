@@ -45,6 +45,7 @@
 #include "SurfaceModel.hpp"
 
 #include "PPlane.h"
+#include <queue> 
 
 namespace surface
 {

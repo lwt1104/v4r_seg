@@ -416,6 +416,28 @@ opencv2/core/core.hpp
 SurfaceModel.hpp
 /home/lwt1104/Downloads/SegmenterLight/v4r/SurfaceModel.hpp
 
+/home/lwt1104/Downloads/SegmenterLight/v4r/CustomRelationsLight.h
+omp.h
+-
+vector
+-
+cstdio
+-
+opencv2/highgui/highgui.hpp
+-
+ColorHistogram3D.h
+/home/lwt1104/Downloads/SegmenterLight/v4r/ColorHistogram3D.h
+Texture.h
+/home/lwt1104/Downloads/SegmenterLight/v4r/Texture.h
+BoundaryRelations.h
+/home/lwt1104/Downloads/SegmenterLight/v4r/BoundaryRelations.h
+SurfaceModel.hpp
+/home/lwt1104/Downloads/SegmenterLight/v4r/SurfaceModel.hpp
+pcl/impl/point_types.hpp
+-
+queue
+-
+
 /home/lwt1104/Downloads/SegmenterLight/v4r/Device.h
 XnCppWrapper.h
 /home/lwt1104/Downloads/SegmenterLight/v4r/XnCppWrapper.h
@@ -565,6 +587,8 @@ SVMPredictorSingle.h
 /home/lwt1104/Downloads/SegmenterLight/v4r/SVMPredictorSingle.h
 GraphCut.h
 /home/lwt1104/Downloads/SegmenterLight/v4r/GraphCut.h
+CustomRelationsLight.h
+/home/lwt1104/Downloads/SegmenterLight/v4r/CustomRelationsLight.h
 
 /home/lwt1104/Downloads/SegmenterLight/v4r/SegmenterLightTest.cpp
 SegmenterLightTest.h

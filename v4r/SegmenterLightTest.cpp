@@ -124,6 +124,11 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
       	label2color[in->points[i].label] = GetRandomColor();
       } 
     }
+    label2color[255]=1.2f;
+
+	// for(std::map<int,float>::iterator it = label2color.begin(); it != label2color.end(); ++it) {
+	//   std::cout << it->first << "\n";
+	// }
 
 
     for (unsigned row = 0; row < in->height; row++) {
@@ -219,8 +224,12 @@ void SegmenterLightTest::process()
       segment::SegmenterLight seg("");
       seg.setFast(true);
       seg.setDetail(2);
-      pcl_cloud_labeled = seg.processStages(cloud_rgb, user_stages);
-
+      if (user_stages < 5) {
+        pcl_cloud_labeled = seg.processStages(cloud_rgb, user_stages);
+      } else {
+        pcl_cloud_labeled = seg.locateBox(cloud_rgb);
+      }
+      
       cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
       ConvertPCLCloud2Image(cloud_rgb, kImage);
       cv::imshow("Debug image", kImage);
