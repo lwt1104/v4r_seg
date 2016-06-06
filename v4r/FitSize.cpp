@@ -85,7 +85,7 @@ void FitSize::compute(std::map<unsigned, int>& sizeFit) {
       zmax = std::max(zmax, p.z);
     }
  //   std::cout << xmax - xmin << "\t" << ymax - ymin << "\t"  << zmax - zmin << "\n"; 
-    if(xmax - xmin > 2 || ymax - ymin > 2 || zmax - zmin > 2) {
+    if(xmax - xmin > 1.4 || ymax - ymin > 1.4 || zmax - zmin > 1.4) {
       sizeFit.insert(std::pair<unsigned, int>(i, 0));
     } else {
       sizeFit.insert(std::pair<unsigned, int>(i, 1));
