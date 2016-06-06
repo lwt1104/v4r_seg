@@ -73,8 +73,8 @@ void FitSize::compute(std::map<unsigned, int>& sizeFit) {
       sizeFit.insert(std::pair<unsigned, int>(i, 0));
       continue;
     }
-//    float xmin = 100, xmax = -100, ymin = 100, ymax = -100, zmin = 100, zmax = -100;
-    std::cout << view.surfaces[i]->indices.size() << "\t";
+    float xmin = 100, xmax = -100, ymin = 100, ymax = -100, zmin = 100, zmax = -100;
+//    std::cout << view.surfaces[i]->indices.size() << "\t";
     for (unsigned j = 0; j < view.surfaces[i]->indices.size(); j++) {
       pcl::PointXYZRGB& p = pcl_cloud->points[view.surfaces[i]->indices[j]];
       xmin = std::min(xmin, p.x);

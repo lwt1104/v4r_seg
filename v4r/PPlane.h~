@@ -107,7 +107,7 @@ inline T1 Plane::NormalPointDist2(const T1 p[3], const T2 n[3], T3 pd[3])
   t[1] = pd[1] - p[1];
   t[2] = pd[2] - p[2];
 
-  return t[0]*t[0] + t[1]*t[1] + t[2]*t[2];
+  return sqrt(t[0]*t[0] + t[1]*t[1] + t[2]*t[2]);
 }
 
 template<typename T1,typename T2, typename T3>

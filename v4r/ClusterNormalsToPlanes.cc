@@ -364,14 +364,14 @@ void ClusterNormalsToPlanes::ClusterNormals(unsigned idx,
   EIGEN_ALIGN16 Eigen::Vector3f pt = cloud.points[idx].getVector3fMap();
 
   while ((int)queue.size() > queue_idx) {
-    idx = queue[queue_idx];
+    int iddx = queue[queue_idx];
     queue_idx++;
 
     std::vector<int> n4ind;
-    n4ind.push_back(idx-1);
-    n4ind.push_back(idx+1);
-    n4ind.push_back(idx+width);
-    n4ind.push_back(idx-width);
+    n4ind.push_back(iddx-1);
+    n4ind.push_back(iddx+1);
+    n4ind.push_back(iddx+width);
+    n4ind.push_back(iddx-width);
     for(unsigned i=0; i<n4ind.size(); i++) {
       int u = n4ind[i] % width;
       int v = n4ind[i] / width;
@@ -393,6 +393,8 @@ void ClusterNormalsToPlanes::ClusterNormals(unsigned idx,
           
           if (Dot3(&normal.normal[0], n) > newCosThrAngleNC && 
               fabs(Plane::NormalPointDist(&pt[0], &normal.normal[0], &cloud.points[idx].x)) < newInlDist)
+          // if (Dot3(&normal.normal[0], n) > newCosThrAngleNC && 
+          //     Plane::NormalPointDist2(&cloud.points[iddx].x, &normal.normal[0], &cloud.points[idx].x) < 0.003 )  
           {
             mask[idx] = 1;
             
@@ -413,40 +415,40 @@ void ClusterNormalsToPlanes::ClusterNormals(unsigned idx,
     }
   }
 
-  // check if all points are on the plane 
-  unsigned ptsSize = pts.size();
-  if( (int) pts.size() >= param.minPoints) {
-    for(unsigned i=0; i<ptsSize; i++) {
-      const float *n = &normals.points[pts[i]].normal[0];
+  // // check if all points are on the plane 
+  // unsigned ptsSize = pts.size();
+  // if( (int) pts.size() >= param.minPoints) {
+  //   for(unsigned i=0; i<ptsSize; i++) {
+  //     const float *n = &normals.points[pts[i]].normal[0];
 
-      float newCosThrAngleNC = cosThrAngleNC;
-      float newInlDist = param.inlDist;
-      if(param.adaptive) {
-        newCosThrAngleNC = p_adaptive_cosThrAngleNC[idx];
-        newInlDist = p_adaptive_inlDist[idx];
-      }          
+  //     float newCosThrAngleNC = cosThrAngleNC;
+  //     float newInlDist = param.inlDist;
+  //     if(param.adaptive) {
+  //       newCosThrAngleNC = p_adaptive_cosThrAngleNC[idx];
+  //       newInlDist = p_adaptive_inlDist[idx];
+  //     }          
             
-      if (Dot3(&normal.normal[0], n) < newCosThrAngleNC && 
-          fabs(Plane::NormalPointDist(&pt[0], &normal.normal[0], &cloud.points[pts[i]].x)) > newInlDist)
-      {
-        mask[pts[i]]=0;
-        pts.erase(pts.begin()+i);
-        ptsSize--;
-        i--;
-      }
-    }
+  //     if (Dot3(&normal.normal[0], n) < newCosThrAngleNC && 
+  //         fabs(Plane::NormalPointDist(&pt[0], &normal.normal[0], &cloud.points[pts[i]].x)) > newInlDist)
+  //     {
+  //       mask[pts[i]]=0;
+  //       pts.erase(pts.begin()+i);
+  //       ptsSize--;
+  //       i--;
+  //     }
+  //   }
 
-    // recalculate plane normal
-    if(pts.size() > 0) {
-      EIGEN_ALIGN16 Eigen::Vector3f new_n = normals.points[pts[0]].getNormalVector3fMap();
-      for(unsigned i=1; i<pts.size(); i++)
-        new_n += normals.points[pts[i]].getNormalVector3fMap();
-      new_n.normalize();
-      normal.normal[0] = new_n[0];
-      normal.normal[1] = new_n[1];
-      normal.normal[2] = new_n[2];
-    }
-  }
+  //   // recalculate plane normal
+  //   if(pts.size() > 0) {
+  //     EIGEN_ALIGN16 Eigen::Vector3f new_n = normals.points[pts[0]].getNormalVector3fMap();
+  //     for(unsigned i=1; i<pts.size(); i++)
+  //       new_n += normals.points[pts[i]].getNormalVector3fMap();
+  //     new_n.normalize();
+  //     normal.normal[0] = new_n[0];
+  //     normal.normal[1] = new_n[1];
+  //     normal.normal[2] = new_n[2];
+  //   }
+  // }
 }
 
 
