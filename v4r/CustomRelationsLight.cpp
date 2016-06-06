@@ -56,8 +56,9 @@ CustomRelationsLight::~CustomRelationsLight()
  */
 void CustomRelationsLight::computeNeighbors()
 {
+  // double z_max = 0.03*0.03;
   double z_max = 0.01;
-  
+
   cv::Mat_<int> patches;
   if(view->havePatchImage) {
     patches = cv::Mat_<int>(pcl_cloud->height, pcl_cloud->width);
@@ -90,6 +91,10 @@ void CustomRelationsLight::computeNeighbors()
             int pos_0 = row*pcl_cloud->width+col;
             int pos_1 = (row-1)*pcl_cloud->width+col;
             double dis = fabs(pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z);
+            // double dis = (pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z)*(pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z)
+            //   + (pcl_cloud->points[pos_0].x - pcl_cloud->points[pos_1].x)* (pcl_cloud->points[pos_0].x - pcl_cloud->points[pos_1].x)
+            //   + (pcl_cloud->points[pos_0].y - pcl_cloud->points[pos_1].y)*(pcl_cloud->points[pos_0].y - pcl_cloud->points[pos_1].y);
+
             if( dis < z_max) {
               nbgh_matrix3D[patches.at<int>(row-1, col)][patches.at<int>(row, col)] = true;
               nbgh_matrix3D[patches.at<int>(row, col)][patches.at<int>(row-1, col)] = true;
@@ -103,6 +108,10 @@ void CustomRelationsLight::computeNeighbors()
             int pos_0 = row*pcl_cloud->width+col;
             int pos_1 = row*pcl_cloud->width+col-1;
             double dis = fabs(pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z);
+            // double dis = (pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z)*(pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z)
+            //   + (pcl_cloud->points[pos_0].x - pcl_cloud->points[pos_1].x)* (pcl_cloud->points[pos_0].x - pcl_cloud->points[pos_1].x)
+            //   + (pcl_cloud->points[pos_0].y - pcl_cloud->points[pos_1].y)*(pcl_cloud->points[pos_0].y - pcl_cloud->points[pos_1].y);
+
             if( dis < z_max) {
               nbgh_matrix3D[patches.at<int>(row, col-1)][patches.at<int>(row, col)] = true;
               nbgh_matrix3D[patches.at<int>(row, col)][patches.at<int>(row, col-1)] = true;
@@ -116,6 +125,10 @@ void CustomRelationsLight::computeNeighbors()
             int pos_0 = row*pcl_cloud->width+col;
             int pos_1 = (row-1)*pcl_cloud->width+col-1;
             double dis = fabs(pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z);
+            // double dis = (pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z)*(pcl_cloud->points[pos_0].z - pcl_cloud->points[pos_1].z)
+            //   + (pcl_cloud->points[pos_0].x - pcl_cloud->points[pos_1].x)* (pcl_cloud->points[pos_0].x - pcl_cloud->points[pos_1].x)
+            //   + (pcl_cloud->points[pos_0].y - pcl_cloud->points[pos_1].y)*(pcl_cloud->points[pos_0].y - pcl_cloud->points[pos_1].y);
+
             if( dis < z_max) {
               nbgh_matrix3D[patches.at<int>(row-1, col-1)][patches.at<int>(row, col)] = true;
               nbgh_matrix3D[patches.at<int>(row, col)][patches.at<int>(row-1, col-1)] = true;
@@ -169,6 +182,26 @@ void CustomRelationsLight::ConvertPCLCloud2Image(const pcl::PointCloud<pcl::Poin
   }
 }
 
+void CustomRelationsLight::computePatchNorm(std::map<unsigned, pcl::Normal>& PatchMeanN) {
+  for (unsigned i=0; i < view->surfaces.size(); i++) {
+    // float n_x = 0, n_y = 0, n_z = 0;
+    // for (unsigned j = 0; j < view->surfaces[i]->indices.size(); j++) {
+    //   pcl::Normal n = view->normals->at(view->surfaces[i]->indices[j] % pcl_cloud->width, view->surfaces[i]->indices[j] / pcl_cloud->width);
+    //   n_x += n.normal_x;
+    //   n_y += n.normal_y;
+    //   n_z += n.normal_z;
+    // }
+    // float normalizeF = sqrt(n_x*n_x + n_y*n_y + n_z*n_z);
+    // n_x /= normalizeF;
+    // n_y /= normalizeF;
+    // n_z /= normalizeF;
+    // PatchMeanN.insert(std::pair<unsigned, pcl::Normal>(i, pcl::Normal(n_x, n_y, n_z)));
+
+    PatchMeanN.insert(std::pair<unsigned, pcl::Normal>(i, pcl::Normal(view->surfaces[i]->coeffs[0], view->surfaces[i]->coeffs[1], view->surfaces[i]->coeffs[2])));
+  }
+}
+
+
 // ================================= Public functions ================================= //
 
 void CustomRelationsLight::setInputCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr & _pcl_cloud)
@@ -207,8 +240,6 @@ std::vector<unsigned> activeSurface;
   std::cout<< view->surfaces.size() << "\n";
   // std::cout<< view->normals->size() << "\n";
   std::map<unsigned, pcl::Normal> PatchMeanN;
-  std::vector<int> surfaceState(view->surfaces.size(), 0);
-
   for (unsigned i=0; i < view->surfaces.size(); i++) {
     float n_x = 0, n_y = 0, n_z = 0;
     for (unsigned j = 0; j < view->surfaces[i]->indices.size(); j++) {
@@ -224,6 +255,8 @@ std::vector<unsigned> activeSurface;
 
     PatchMeanN.insert(std::pair<unsigned, pcl::Normal>(i, pcl::Normal(n_x, n_y, n_z)));
   }
+  std::vector<int> surfaceState(view->surfaces.size(), 0);
+
 
   std::map<unsigned, pcl::PointXYZ> centroid;
   for (unsigned i=0; i < view->surfaces.size(); i++) {
@@ -397,10 +430,10 @@ std::vector<unsigned> activeSurface;
 }
 
 
-std::vector<unsigned>  CustomRelationsLight::computeFineRelations()
+std::vector<int>  CustomRelationsLight::computeFineRelations()
 {
 printf("StructuralRelationsLight::computeRelations start!\n");
-std::vector<unsigned> activeSurface;
+std::vector<int> activeSurface;
 
   if(!have_input_cloud || !have_patches || view->surfaces.size() > 800) {
     printf("[StructuralRelationsLight::computeRelations] Error: No input cloud and patches available.\n");
@@ -412,73 +445,23 @@ std::vector<unsigned> activeSurface;
   cv::Mat_<cv::Vec3b> matImage;
   ConvertPCLCloud2Image(pcl_cloud, matImage);
 
-  std::vector<ColorHistogram3D> hist3D;
-  surface::Texture texture;
+ 
+  surface::FitSize fs;
+  surface::Centroid ct;
 
   relations.resize(view->surfaces.size());
   
   std::cout<< view->surfaces.size() << "\n";
   // std::cout<< view->normals->size() << "\n";
   std::map<unsigned, pcl::Normal> PatchMeanN;
-  std::vector<unsigned> surfaceState(view->surfaces.size(), 0);
+  std::vector<int> surfaceState(view->surfaces.size(), 0);
 
-  for (unsigned i=0; i < view->surfaces.size(); i++) {
-    float n_x = 0, n_y = 0, n_z = 0;
-    for (unsigned j = 0; j < view->surfaces[i]->indices.size(); j++) {
-      pcl::Normal n = view->normals->at(view->surfaces[i]->indices[j] % pcl_cloud->width, view->surfaces[i]->indices[j] / pcl_cloud->width);
-      n_x += n.normal_x;
-      n_y += n.normal_y;
-      n_z += n.normal_z;
-    }
-    float normalizeF = sqrt(n_x*n_x + n_y*n_y + n_z*n_z);
-    n_x /= normalizeF;
-    n_y /= normalizeF;
-    n_z /= normalizeF;
 
-    PatchMeanN.insert(std::pair<unsigned, pcl::Normal>(i, pcl::Normal(n_x, n_y, n_z)));
-  }
 
   std::map<unsigned, pcl::PointXYZ> centroid;
-  for (unsigned i=0; i < view->surfaces.size(); i++) {
-    float x = 0, y = 0, z = 0;
-    for (unsigned j = 0; j < view->surfaces[i]->indices.size(); j++) {
-      pcl::PointXYZRGB& p = pcl_cloud->points[view->surfaces[i]->indices[j]];
-      x += p.x;
-      y += p.y;
-      z += p.z;
-    }
-    x /= view->surfaces[i]->indices.size();
-    y /= view->surfaces[i]->indices.size();
-    z /= view->surfaces[i]->indices.size();
-    pcl::PointXYZ tt(x,y,z);
-    centroid.insert(std::pair<unsigned, pcl::PointXYZ>(i, tt));
-  }  
 
   std::map<unsigned, int> sizeFit;
-  for (unsigned i=0; i < view->surfaces.size(); i++) {
-    if (view->surfaces[i]->indices.size() < 200) {
-      sizeFit.insert(std::pair<unsigned, int>(i, 0));
-      continue;
-    }
-    float xmin = 100, xmax = -100, ymin = 100, ymax = -100, zmin = 100, zmax = -100;
-    // std::cout << view->surfaces[i]->indices.size() << "\t";
-    for (unsigned j = 0; j < view->surfaces[i]->indices.size(); j++) {
-      pcl::PointXYZRGB& p = pcl_cloud->points[view->surfaces[i]->indices[j]];
-      xmin = std::min(xmin, p.x);
-      xmax = std::max(xmax, p.x);
-      ymin = std::min(ymin, p.y);
-      ymax = std::max(ymax, p.y);
-      zmin = std::min(zmin, p.z);
-      zmax = std::max(zmax, p.z);
-    }
-    // std::cout << xmax - xmin << "\t" << ymax - ymin << "\t"  << zmax - zmin << "\n"; 
-    if(xmax - xmin > 1 || ymax - ymin > 1 || zmax - zmin > 1) {
-      sizeFit.insert(std::pair<unsigned, int>(i, 0));
-    } else {
-      sizeFit.insert(std::pair<unsigned, int>(i, 1));
-    }
-    
-  }  
+
 
 
 #pragma omp parallel sections
@@ -488,8 +471,26 @@ std::vector<unsigned> activeSurface;
     {
       computeNeighbors();
     }
-
+   
+    #pragma omp section 
+    {
+      fs.setInputCloud(pcl_cloud);
+      fs.setSurfaceModels(*view);
+      fs.compute(sizeFit);
+    }      
+      
+    #pragma omp section 
+    {
+      ct.setInputCloud(pcl_cloud);
+      ct.setSurfaceModels(*view);
+      ct.compute(centroid);
+    }      
     
+    #pragma omp section 
+    {
+     computePatchNorm(PatchMeanN);
+    }
+      
   } // end parallel sections
   
   
@@ -497,7 +498,7 @@ std::vector<unsigned> activeSurface;
   
   
   for(unsigned i=0; i<view->surfaces.size(); i++) {
-    for(unsigned j=i+1; j<view->surfaces.size(); j++) {
+    for(unsigned j=0; j<view->surfaces.size(); j++) {
       relations[i][j] = false;
     }
   }
@@ -521,7 +522,7 @@ std::vector<unsigned> activeSurface;
       // double angle = acos(n0.normal_x * n1.normal_x + n0.normal_y * n1.normal_y + n0.normal_z * n1.normal_z);
       // std::cout << angle << "  ";
       double innpro = fabs(n0.normal_x * n1.normal_x + n0.normal_y * n1.normal_y + n0.normal_z * n1.normal_z);
-      if (innpro >= 0.1) { continue; }
+      if (innpro >= 0.18) { continue; }
       
       pcl::PointXYZ c0 = centroid[p0];
       pcl::PointXYZ c1 = centroid[p1];
@@ -535,6 +536,8 @@ std::vector<unsigned> activeSurface;
 
       // std::cout << db << "\t" << da << std::endl;
 
+      // surfaceState[p0] = p0+1;
+      // surfaceState[p1] = p1+1;
       surfaceState[p0] = 1;
       surfaceState[p1] = 1;
       
@@ -544,18 +547,20 @@ std::vector<unsigned> activeSurface;
   }
 
   //BFS to find all the connected componnet
-  std::vector<std::vector<unsigned> > component;
+  std::vector<std::vector<int> > component;
   // unsigned cid = 0;
   for  (unsigned i = 0; i < surfaceState.size(); i++) {
+
     if (surfaceState[i] != 1) {  // 0 means background; 1 denotes foreground but unknown componet; 2 means determined component
       continue;
     }
-    std::vector<unsigned> v;
-    std::queue<unsigned> que;
+    std::vector<int> v;
+    v.clear();
+    std::queue<int> que;
     que.push(i);
     surfaceState[i] = 2;
     while (!que.empty()) {
-      unsigned ele = que.front();
+      int ele = que.front();
       que.pop();
       v.push_back(ele);
       // find ele's neighbor's
@@ -572,13 +577,31 @@ std::vector<unsigned> activeSurface;
     component.push_back(v); 
 
   }
-
+ 
   for (unsigned i = 0; i < component.size(); i++) {
     for (unsigned j= 0; j < component[i].size(); j++) {
       surfaceState[ component[i][j] ] = i + 1;
+
     }
+
   }
+
+  // for(unsigned i=0; i<view->surfaces.size(); i++)
+  //   for(unsigned j=i+1; j<view->surfaces.size(); j++) {
+  //     if(relations[i][j]) {
+  //       printf("r_st_l: [%u][%u]: ", i, j);
+  //       printf("\n");
+  //     }
+  //   }
+
   return  surfaceState;
+}
+
+// template <size_t rows, size_t cols>
+std::vector<std::vector<unsigned> > findConnectedComponets(bool** relations, int rows, int cols) {
+  std::vector<std::vector<unsigned> > component;
+
+  return component;
 }
 
 } // end surface models

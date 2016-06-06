@@ -94,6 +94,7 @@ namespace segment
     clusterNormals.setInputCloud (cloud_in);
     clusterNormals.setView (&view);
     clusterNormals.setPixelCheck (true, 5);
+    // clusterNormals.setPixelCheck (false, 5);
     clusterNormals.compute ();
     surfaces_out = view.surfaces;
   }
@@ -485,7 +486,7 @@ namespace segment
     //   }
     // }
 
-    std::vector<unsigned> surfaceState = ctRel.computeFineRelations();
+    std::vector<int> surfaceState = ctRel.computeFineRelations();
     for (unsigned i = 0; i < view.surfaces.size (); i++) {
       if (surfaceState[i]) {
         // std::cout << surfaceState[i] << std::endl;

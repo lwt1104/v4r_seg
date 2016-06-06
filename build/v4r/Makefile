@@ -218,6 +218,30 @@ Capture.cpp.s:
 	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.s
 .PHONY : Capture.cpp.s
 
+Centroid.o: Centroid.cpp.o
+.PHONY : Centroid.o
+
+# target to build an object file
+Centroid.cpp.o:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o
+.PHONY : Centroid.cpp.o
+
+Centroid.i: Centroid.cpp.i
+.PHONY : Centroid.i
+
+# target to preprocess a source file
+Centroid.cpp.i:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.i
+.PHONY : Centroid.cpp.i
+
+Centroid.s: Centroid.cpp.s
+.PHONY : Centroid.s
+
+# target to generate assembly for a file
+Centroid.cpp.s:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.s
+.PHONY : Centroid.cpp.s
+
 ClusterNormalsToPlanes.o: ClusterNormalsToPlanes.cc.o
 .PHONY : ClusterNormalsToPlanes.o
 
@@ -361,6 +385,30 @@ FileSystem.s: FileSystem.cc.s
 FileSystem.cc.s:
 	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.s
 .PHONY : FileSystem.cc.s
+
+FitSize.o: FitSize.cpp.o
+.PHONY : FitSize.o
+
+# target to build an object file
+FitSize.cpp.o:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o
+.PHONY : FitSize.cpp.o
+
+FitSize.i: FitSize.cpp.i
+.PHONY : FitSize.i
+
+# target to preprocess a source file
+FitSize.cpp.i:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.i
+.PHONY : FitSize.cpp.i
+
+FitSize.s: FitSize.cpp.s
+.PHONY : FitSize.s
+
+# target to generate assembly for a file
+FitSize.cpp.s:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.s
+.PHONY : FitSize.cpp.s
 
 Graph.o: Graph.cpp.o
 .PHONY : Graph.o
@@ -718,6 +766,9 @@ help:
 	@echo "... Capture.o"
 	@echo "... Capture.i"
 	@echo "... Capture.s"
+	@echo "... Centroid.o"
+	@echo "... Centroid.i"
+	@echo "... Centroid.s"
 	@echo "... ClusterNormalsToPlanes.o"
 	@echo "... ClusterNormalsToPlanes.i"
 	@echo "... ClusterNormalsToPlanes.s"
@@ -736,6 +787,9 @@ help:
 	@echo "... FileSystem.o"
 	@echo "... FileSystem.i"
 	@echo "... FileSystem.s"
+	@echo "... FitSize.o"
+	@echo "... FitSize.i"
+	@echo "... FitSize.s"
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"

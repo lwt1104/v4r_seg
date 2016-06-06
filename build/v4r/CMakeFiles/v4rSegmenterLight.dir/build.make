@@ -535,6 +535,52 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o.provides: v4r/CMakeFiles/v4rSegm
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o.provides.build: v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o
 
+v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
+v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o: ../v4r/FitSize.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_22)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/FitSize.cpp
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.i"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lwt1104/Downloads/SegmenterLight/v4r/FitSize.cpp > CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.i
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.s"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lwt1104/Downloads/SegmenterLight/v4r/FitSize.cpp -o CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.s
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.requires:
+.PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.requires
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.provides: v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.requires
+	$(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.provides.build
+.PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.provides
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.provides.build: v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
+v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o: ../v4r/Centroid.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_23)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/Centroid.cpp
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.i"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lwt1104/Downloads/SegmenterLight/v4r/Centroid.cpp > CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.i
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.s"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lwt1104/Downloads/SegmenterLight/v4r/Centroid.cpp -o CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.s
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.requires:
+.PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.requires
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.provides: v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.requires
+	$(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.provides.build
+.PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.provides
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.provides.build: v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o
+
 # Object files for target v4rSegmenterLight
 v4rSegmenterLight_OBJECTS = \
 "CMakeFiles/v4rSegmenterLight.dir/disjoint-set.cpp.o" \
@@ -557,7 +603,9 @@ v4rSegmenterLight_OBJECTS = \
 "CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.o" \
 "CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o" \
 "CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o" \
-"CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o"
+"CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o" \
+"CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o" \
+"CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o"
 
 # External object files for target v4rSegmenterLight
 v4rSegmenterLight_EXTERNAL_OBJECTS =
@@ -583,6 +631,8 @@ v4rSegmenterLight_EXTERNAL_OBJECTS =
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o
+../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o
+../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/build.make
 ../lib/libv4rSegmenterLight.so: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
 ../lib/libv4rSegmenterLight.so: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
@@ -747,6 +797,8 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o.requires
+v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.requires
+v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.requires
 .PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/requires
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/clean:

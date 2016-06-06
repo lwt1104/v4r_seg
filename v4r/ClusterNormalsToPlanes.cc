@@ -525,23 +525,24 @@ void ClusterNormalsToPlanes::ClusterNormals(pcl::PointCloud<pcl::PointXYZRGB> &c
   }
   
   // cluster rest of unclustered point cloud in 2D
-  for (unsigned v=0; v<cloud.height; v++) {
-    for (unsigned u=0; u<cloud.width; u++) {
-      unsigned idx = GetIdx(u,v);
-      if (mask[idx] == 0) {
-        plane.reset(new SurfaceModel());
-        plane->type = -1; // No model
-        plane->coeffs.resize(3);
-        float *n = &plane->coeffs[0];
-        n[0]=normal.normal[0];
-        n[1]=normal.normal[1];
-        n[2]=normal.normal[2];
-        ClusterRest(idx, cloud, normals, plane->indices, normal);
-        if (((int)plane->indices.size()) > 0)
-          planes.push_back(plane);
-      }
-    }
-  }
+  // for (unsigned v=0; v<cloud.height; v++) {
+  //   for (unsigned u=0; u<cloud.width; u++) {
+  //     unsigned idx = GetIdx(u,v);
+  //     if (mask[idx] == 0) {
+  //       plane.reset(new SurfaceModel());
+  //       plane->type = -1; // No model
+  //       plane->coeffs.resize(3);
+  //       float *n = &plane->coeffs[0];
+  //       n[0]=normal.normal[0];
+  //       n[1]=normal.normal[1];
+  //       n[2]=normal.normal[2];
+  //       ClusterRest(idx, cloud, normals, plane->indices, normal);
+  //       if (((int)plane->indices.size()) > 0)
+  //         planes.push_back(plane);
+  //     }
+  //   }
+  // }
+  
 }
 
 /**

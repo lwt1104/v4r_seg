@@ -45,7 +45,6 @@
 #include "SurfaceModel.hpp"
 
 #include "PPlane.h"
-#include <queue> 
 
 namespace surface
 {
@@ -84,7 +83,7 @@ public:
     
     float ra_dist;              // maximum distance for reasigning points to other patches
     
-    Parameter(float thrAngleNC=0.6, float _inlDist=0.02, int _minPoints=200, bool _adaptive=false, float _d_c = 0.0, 
+    Parameter(float thrAngleNC=0.6, float _inlDist=0.02, int _minPoints=400, bool _adaptive=false, float _d_c = 0.0, 
               float _epsilon_c=0.54, float _epsilon_g=0.1, float _omega_c=-0.004, float _omega_g=0.015, float _ra_dist = 0.01) : 
               thrAngle(thrAngleNC), inlDist(_inlDist), minPoints(_minPoints), adaptive(_adaptive), d_c(_d_c),
               epsilon_c(_epsilon_c), epsilon_g(_epsilon_g), omega_c(_omega_c), omega_g(_omega_g), ra_dist(_ra_dist) {} 

@@ -34,6 +34,7 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
  .././v4r/TomGine/tgTomGineThread.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/BoundaryRelations.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/Capture.h
+ /home/lwt1104/Downloads/SegmenterLight/v4r/Centroid.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/ClusterNormalsToPlanes.hh
  /home/lwt1104/Downloads/SegmenterLight/v4r/ColorHistogram3D.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/ContourDetector.h
@@ -41,6 +42,7 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
  /home/lwt1104/Downloads/SegmenterLight/v4r/Device.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/Edge.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/FileSystem.hh
+ /home/lwt1104/Downloads/SegmenterLight/v4r/FitSize.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/Graph.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/GraphCut.h
  /home/lwt1104/Downloads/SegmenterLight/v4r/Kinect.h

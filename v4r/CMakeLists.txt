@@ -39,6 +39,8 @@ SET(SOURCE_CPP
   KinectData.cpp
   FileSystem.cc
   Utils.cc
+  FitSize.cpp
+  Centroid.cpp
 )
 
 SET(SOURCE_H
@@ -67,6 +69,8 @@ SET(SOURCE_H
   KinectData.h
   FileSystem.hh
   Utils.hh
+  FitSize.h
+  Centroid.h
 )
 
 SET(SOURCE_MODEL

@@ -43,7 +43,11 @@
 
 #include "SurfaceModel.hpp"
 #include <pcl/impl/point_types.hpp>
+#include <queue> 
+#include "FitSize.h"
+#include "Centroid.h"
 
+//#include <stdio.h>
 
 namespace surface
 {
@@ -67,8 +71,10 @@ private:
   std::vector< std::vector< surface::Relation > > relations;
 
   void computeNeighbors();
+  void computePatchNorm(std::map<unsigned, pcl::Normal>& PatchMeanN);
   void ConvertPCLCloud2Image(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud, 
                              cv::Mat_<cv::Vec3b> &image);
+  //template <size_t rows, size_t cols>
   
 public:
   CustomRelationsLight();
@@ -82,7 +88,8 @@ public:
 
   /** Compute relations for the segmenter **/
   std::vector<unsigned> computeRelations();
-  std::vector<unsigned> computeFineRelations();
+  std::vector<int> computeFineRelations();
+  std::vector<std::vector<unsigned> > findConnectedComponets(bool** relations, int rows, int cols);
   
 };
 

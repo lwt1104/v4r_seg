@@ -84,6 +84,8 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/lwt1104/Downloads/SegmenterLight/v4r/KinectData.h"
     "/home/lwt1104/Downloads/SegmenterLight/v4r/FileSystem.hh"
     "/home/lwt1104/Downloads/SegmenterLight/v4r/Utils.hh"
+    "/home/lwt1104/Downloads/SegmenterLight/v4r/FitSize.h"
+    "/home/lwt1104/Downloads/SegmenterLight/v4r/Centroid.h"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
