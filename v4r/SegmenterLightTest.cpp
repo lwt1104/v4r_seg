@@ -84,7 +84,7 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
   int position = 0;
 
   std::map<int, float> label2color;
-  for(int i=0; i<pcl_cloud->points.size(); i++) {
+  for(unsigned i=0; i<pcl_cloud->points.size(); i++) {
     if (label2color.find(pcl_cloud->points[i].label) == label2color.end()) {
     	label2color[pcl_cloud->points[i].label] = GetRandomColor();
     } 
@@ -119,7 +119,7 @@ void SegmenterLightTest::ConvertPCLCloud2CvVec(const pcl::PointCloud<pcl::PointX
 
 
     std::map<int, float> label2color;
-    for(int i=0; i<in->points.size(); i++) {
+    for(unsigned i=0; i<in->points.size(); i++) {
       if (label2color.find(in->points[i].label) == label2color.end()) {
       	label2color[in->points[i].label] = GetRandomColor();
       } 
