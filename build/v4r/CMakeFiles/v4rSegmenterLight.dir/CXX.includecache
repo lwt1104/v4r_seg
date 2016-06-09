@@ -22,6 +22,18 @@ pcl/io/pcd_io.h
 SurfaceModel.hpp
 /home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
 
+/home/arc/Documents/v4r_seg/v4r/Capture.cpp
+Capture.h
+/home/arc/Documents/v4r_seg/v4r/Capture.h
+Device.h
+/home/arc/Documents/v4r_seg/v4r/Device.h
+XnCppWrapper.h
+-
+XnCodecIDs.h
+-
+Commdlg.h
+-
+
 /home/arc/Documents/v4r_seg/v4r/Capture.h
 Device.h
 /home/arc/Documents/v4r_seg/v4r/Device.h
@@ -77,6 +89,10 @@ SurfaceModel.hpp
 /home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
 PPlane.h
 /home/arc/Documents/v4r_seg/v4r/PPlane.h
+
+/home/arc/Documents/v4r_seg/v4r/ColorHistogram3D.cpp
+ColorHistogram3D.h
+/home/arc/Documents/v4r_seg/v4r/ColorHistogram3D.h
 
 /home/arc/Documents/v4r_seg/v4r/ColorHistogram3D.h
 vector
@@ -137,6 +153,12 @@ FitSize.h
 /home/arc/Documents/v4r_seg/v4r/FitSize.h
 Centroid.h
 /home/arc/Documents/v4r_seg/v4r/Centroid.h
+
+/home/arc/Documents/v4r_seg/v4r/Device.cpp
+Device.h
+/home/arc/Documents/v4r_seg/v4r/Device.h
+math.h
+-
 
 /home/arc/Documents/v4r_seg/v4r/Device.h
 XnCppWrapper.h
@@ -212,6 +234,10 @@ stdio.h
 SurfaceModel.hpp
 /home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
 
+/home/arc/Documents/v4r_seg/v4r/Graph.cpp
+Graph.h
+/home/arc/Documents/v4r_seg/v4r/Graph.h
+
 /home/arc/Documents/v4r_seg/v4r/Graph.h
 vector
 -
@@ -257,6 +283,12 @@ Relation.h
 /home/arc/Documents/v4r_seg/v4r/Relation.h
 SurfaceModel.hpp
 /home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+
+/home/arc/Documents/v4r_seg/v4r/Kinect.cpp
+Kinect.h
+/home/arc/Documents/v4r_seg/v4r/Kinect.h
+XnCodecIDs.h
+-
 
 /home/arc/Documents/v4r_seg/v4r/Kinect.h
 cstdio
@@ -478,6 +510,12 @@ pcl/filters/extract_indices.h
 SurfaceModel.hpp
 /home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
 
+/home/arc/Documents/v4r_seg/v4r/ZAdaptiveNormals.cc
+ZAdaptiveNormals.hh
+/home/arc/Documents/v4r_seg/v4r/ZAdaptiveNormals.hh
+pcl/common/eigen.h
+-
+
 /home/arc/Documents/v4r_seg/v4r/ZAdaptiveNormals.hh
 iostream
 -
@@ -498,9 +536,17 @@ pcl/search/kdtree.h
 boost/shared_ptr.hpp
 -
 
+/home/arc/Documents/v4r_seg/v4r/disjoint-set.cpp
+disjoint-set.h
+/home/arc/Documents/v4r_seg/v4r/disjoint-set.h
+
 /home/arc/Documents/v4r_seg/v4r/disjoint-set.h
 cstdio
 -
+
+/home/arc/Documents/v4r_seg/v4r/svm.cpp
+svm.h
+/home/arc/Documents/v4r_seg/v4r/svm.h
 
 /home/arc/Documents/v4r_seg/v4r/svm.h
 math.h
