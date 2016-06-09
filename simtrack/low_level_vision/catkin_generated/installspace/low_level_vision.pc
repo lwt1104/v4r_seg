@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: low_level_vision
+Description: Description of low_level_vision
+Version: 0.1.0
+Cflags: -I/usr/local/include -I/usr/local/cuda/include
+Libs: -L/usr/local/lib -llow_level_vision
+Requires: utilities

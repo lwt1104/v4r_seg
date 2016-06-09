@@ -262,8 +262,8 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   // If choose to live
   if (data_live) {
   	// create a new grabber for OpenNI devices
-    pcl::Grabber* interface = new pcl::io::OpenNI2Grabber();
-    // pcl::Grabber* interface = new pcl::OpenNIGrabber();
+    // pcl::Grabber* interface = new pcl::io::OpenNI2Grabber();
+    pcl::Grabber* interface = new pcl::OpenNIGrabber();
 
     // make callback function from member function
     boost::function<void (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr&)> f =
@@ -348,9 +348,9 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   int height = 480;
   surface::View view;
   
-#ifdef V4R_TOMGINE
-  TomGine::tgTomGineThread dbgWin(width, height, "TomGine Render Engine");
-#endif
+// #ifdef V4R_TOMGINE
+//   TomGine::tgTomGineThread dbgWin(width, height, "TomGine Render Engine");
+// #endif
   cv::Mat R = (cv::Mat_<double>(3, 3) << 1, 0, 0, 0, 1, 0, 0, 0, 1);
   cv::Mat t = (cv::Mat_<double>(3, 1) << 0, 0, 0);
   cv::Vec3d rotCenter(0, 0, 1.0);
@@ -363,7 +363,7 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   intrinsic.at<double> (1, 2) = view.intrinsic(1, 2) = 240;
   intrinsic.at<double> (2, 2) = view.intrinsic(2, 2) = 1.;
 
-#ifdef V4R_TOMGINE
+// #ifdef V4R_TOMGINE
 //   dbgWin.SetClearColor(0.0, 0.0, 0.0);
 // //   dbgWin.SetCoordinateFrame();
 //   dbgWin.SetCamera(intrinsic);
@@ -371,7 +371,7 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
 //   dbgWin.SetRotationCenter(rotCenter);
 //   dbgWin.SetInputSpeeds(0.5, 0.5, 0.5);
 //   dbgWin.Update();
-#endif
+// #endif
 
   cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
   cv::imshow("Debug image", kImage);
@@ -389,10 +389,10 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
       viewer2.showCloud(cloud_colored);
 
       cvWaitKey(10);
-#ifdef V4R_TOMGINE
+// #ifdef V4R_TOMGINE
       // dbgWin.SetImage(kImage);
       // dbgWin.Update();
-#endif
+// #endif
       win_done = false;
     }
 
@@ -427,10 +427,10 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
       ConvertPCLCloud2ColorSeg(pcl_cloud_labeled, cloud_colored);
       viewer2.showCloud(cloud_colored);
 
-#ifdef V4R_TOMGINE
+// #ifdef V4R_TOMGINE
      // dbgWin.SetImage(kImage);
      // dbgWin.Update();
-#endif
+// #endif
       win_done = false;
       processed = true;
     }

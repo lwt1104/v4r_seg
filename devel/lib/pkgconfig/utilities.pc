@@ -1,0 +1,8 @@
+prefix=/home/arc/ros_ws/src/v4r_seg/devel
+
+Name: utilities
+Description: Description of utilities
+Version: 0.1.0
+Cflags: -I/home/arc/ros_ws/src/simtrack/utilities/include -I/usr/local/cuda/include
+Libs: -L/home/arc/ros_ws/src/v4r_seg/devel/lib -lutilities
+Requires: 

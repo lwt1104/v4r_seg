@@ -6,7 +6,6 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS
   "LINUX"
-  "V4R_TOMGINE"
   )
 
 # Targets to which this target links.

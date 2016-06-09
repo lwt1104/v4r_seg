@@ -16,7 +16,6 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "../opencv.cmake"
   "../v4r.pc.in"
   "../v4r/CMakeLists.txt"
-  "../v4r/TomGine/CMakeLists.txt"
   "../v4rutils.cmake"
   "/usr/lib/vtk-5.8/CMake/vtkMakeInstantiator.cmake"
   "/usr/lib/vtk-5.8/UseVTK.cmake"
@@ -69,7 +68,6 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "cmake_uninstall.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "v4r/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "v4r/TomGine/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -77,5 +75,4 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "v4r/CMakeFiles/SegmenterLight.dir/DependInfo.cmake"
   "v4r/CMakeFiles/v4rSegmenterLight.dir/DependInfo.cmake"
-  "v4r/TomGine/CMakeFiles/v4rTomGine.dir/DependInfo.cmake"
   )

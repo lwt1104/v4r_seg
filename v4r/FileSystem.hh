@@ -29,7 +29,7 @@
 
 #include "SurfaceModel.hpp"
 
-#include "v4r/TomGine/tgModel.h"
+//#include "v4r/TomGine/tgModel.h"
 
 namespace surface {
 
@@ -48,7 +48,7 @@ private:
   static void write_nurbs_curve_vector (const std::vector<ON_NurbsCurve> &vec, FILE* pFile);
   static void write_nurbs_surface(const ON_NurbsSurface &surf, FILE* pFile);
   static void write_nurbs_curve(const ON_NurbsCurve &curve, FILE* pFile);
-  static void write_tgModel(const TomGine::tgModel &model, FILE* pFile);
+//  static void write_tgModel(const TomGine::tgModel &model, FILE* pFile);
   static void write_surface_model(const SurfaceModel &model, FILE *pFile);
   static void write_view(const View &view, FILE *pFile);
 
@@ -63,7 +63,7 @@ private:
   static size_t read_nurbs_curve_vector (std::vector<ON_NurbsCurve> &vec, FILE* pFile);
   static size_t read_nurbs_surface(ON_NurbsSurface &surf, FILE* pFile);
   static size_t read_nurbs_curve(ON_NurbsCurve &curve, FILE* pFile);
-  static size_t read_tgModel(TomGine::tgModel &model, FILE* pFile);
+//  static size_t read_tgModel(TomGine::tgModel &model, FILE* pFile);
   static size_t read_surface_model(SurfaceModel &model, FILE *pFile);
   static size_t read_view(View &view, FILE* pFile);
 

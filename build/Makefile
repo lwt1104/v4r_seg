@@ -39,13 +39,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lwt1104/Downloads/SegmenterLight
+CMAKE_SOURCE_DIR = /home/arc/Documents/v4r_seg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lwt1104/Downloads/SegmenterLight/build
+CMAKE_BINARY_DIR = /home/arc/Documents/v4r_seg/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/lwt1104/Downloads/SegmenterLight/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -113,9 +113,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles /home/arc/Documents/v4r_seg/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -181,19 +181,6 @@ v4rSegmenterLight/fast:
 	$(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/build
 .PHONY : v4rSegmenterLight/fast
 
-#=============================================================================
-# Target rules for targets named v4rTomGine
-
-# Build rule for target.
-v4rTomGine: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 v4rTomGine
-.PHONY : v4rTomGine
-
-# fast build rule for target.
-v4rTomGine/fast:
-	$(MAKE) -f v4r/TomGine/CMakeFiles/v4rTomGine.dir/build.make v4r/TomGine/CMakeFiles/v4rTomGine.dir/build
-.PHONY : v4rTomGine/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -209,7 +196,6 @@ help:
 	@echo "... uninstall"
 	@echo "... SegmenterLight"
 	@echo "... v4rSegmenterLight"
-	@echo "... v4rTomGine"
 .PHONY : help
 
 

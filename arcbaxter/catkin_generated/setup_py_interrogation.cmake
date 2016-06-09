@@ -1,0 +1,6 @@
+set(arcbaxter_SETUP_PY_VERSION "0.0.0")
+set(arcbaxter_SETUP_PY_SCRIPTS "")
+set(arcbaxter_SETUP_PY_PACKAGES "vision")
+set(arcbaxter_SETUP_PY_PACKAGE_DIRS "src/vision")
+set(arcbaxter_SETUP_PY_MODULES "")
+set(arcbaxter_SETUP_PY_MODULE_DIRS "")

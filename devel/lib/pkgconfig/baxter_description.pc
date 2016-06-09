@@ -1,0 +1,8 @@
+prefix=/home/arc/ros_ws/src/v4r_seg/devel
+
+Name: baxter_description
+Description: Description of baxter_description
+Version: 1.2.0
+Cflags: 
+Libs: -L/home/arc/ros_ws/src/v4r_seg/devel/lib 
+Requires: 

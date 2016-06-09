@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>julia_project</name>
+  <version>1.0.0</version>
+  <description>
+    julia_project metapackage containing all of the project-related packages
+    for the Julia Project from UMD ARC lab.
+  </description>
+
+  <maintainer email="umdarclab@gmail.com">
+    UMD ARC Lab
+  </maintainer>
+  <license>BSD</license>
+  <author>UMD ARC Lab</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>baxter</run_depend>
+  
+  <export>
+    <metapackage/>
+  </export>
+
+</package>

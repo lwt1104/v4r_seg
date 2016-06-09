@@ -54,9 +54,9 @@
 #include "KinectData.h"
 #include "SegmenterLight.h"
 
-#ifdef V4R_TOMGINE
+//#ifdef V4R_TOMGINE
 //#include "v4r/TomGine/tgTomGineThread.h"
-#endif
+//#endif
 
 namespace segment
 {

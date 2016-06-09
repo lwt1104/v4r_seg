@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lwt1104/Downloads/SegmenterLight/v4r/SegmenterLightTest.cpp" "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o"
+  "/home/arc/Documents/v4r_seg/v4r/SegmenterLightTest.cpp" "/home/arc/Documents/v4r_seg/build/v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -23,14 +23,12 @@ SET(CMAKE_TARGET_DEFINITIONS
   "KINECT_CONFIG=\"/usr/local/include/v4r/SegmenterLight/config/KinectConfig.xml\""
   "LINUX"
   "SVM_MODEL=\"/usr/local/include/v4r/SegmenterLight/model/\""
-  "V4R_TOMGINE"
   "qh_QHpointer"
   )
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/lwt1104/Downloads/SegmenterLight/build/v4r/TomGine/CMakeFiles/v4rTomGine.dir/DependInfo.cmake"
-  "/home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/v4rSegmenterLight.dir/DependInfo.cmake"
+  "/home/arc/Documents/v4r_seg/build/v4r/CMakeFiles/v4rSegmenterLight.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

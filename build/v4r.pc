@@ -7,5 +7,5 @@ Name: v4r
 Description: Vision 4 Robotics Software Repository
 Version: 1.0.0
 Requires: 
-Libs: -L${libdir}  -lv4rTomGine -lv4rSegmenterLight
+Libs: -L${libdir}  -lv4rSegmenterLight
 Cflags: -I${includedir} 

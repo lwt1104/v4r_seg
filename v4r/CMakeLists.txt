@@ -1,4 +1,4 @@
-add_subdirectory(TomGine)
+#add_subdirectory(TomGine)
 
 cmake_minimum_required (VERSION 2.6)
 SET(V4R_SEGMENTER_LIGHT 1 CACHE BOOL "Surface segmenter framework" )
@@ -7,7 +7,7 @@ IF(V4R_SEGMENTER_LIGHT)
 include_directories(.)
 include_directories(${OPENCV_INCLUDE_DIRS})
 
-find_package(PCL REQUIRED)
+find_package(PCL 1.8 REQUIRED)
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
@@ -111,7 +111,9 @@ v4r_add_library(${PROJECT_NAME} "${SOURCE_H}")
 SET(BINARY_NAME SegmenterLight)
 add_executable(${BINARY_NAME} SegmenterLightTest.cpp)
 target_link_libraries (${BINARY_NAME} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES})
-target_link_libraries (${BINARY_NAME} v4rTomGine v4rSegmenterLight)
+#target_link_libraries (${BINARY_NAME} v4rTomGine v4rSegmenterLight)
+target_link_libraries (${BINARY_NAME} v4rSegmenterLight)
+
 v4r_add_binary(${BINARY_NAME})
 
 ENDIF(V4R_SEGMENTER_LIGHT)

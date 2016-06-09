@@ -1,0 +1,2 @@
+set(arcbaxter_MESSAGE_FILES "/home/arc/ros_ws/src/arcbaxter/msg/point2d.msg")
+set(arcbaxter_SERVICE_FILES "/home/arc/ros_ws/src/arcbaxter/srv/Vision.srv;/home/arc/ros_ws/src/arcbaxter/srv/VisionVertical.srv;/home/arc/ros_ws/src/arcbaxter/srv/Kinect.srv")

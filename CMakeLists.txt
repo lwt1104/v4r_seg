@@ -13,7 +13,7 @@ SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/build")
 set(V4R_BUILD 1)
 #set(V4R_TOMGINE 0)
 
-add_definitions(-DV4R_TOMGINE) # TomGine is available
+#add_definitions(-DV4R_TOMGINE) # TomGine is available
 #add_definitions(-DDEBUG)
 add_definitions(-DLINUX)
 add_definitions("-Wall -Wl,--no-undefined -fno-strict-aliasing -pthread")

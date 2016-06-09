@@ -1,0 +1,8 @@
+prefix=/home/arc/ros_ws/src/v4r_seg/devel
+
+Name: rethink_ee_description
+Description: Description of rethink_ee_description
+Version: 1.2.0
+Cflags: 
+Libs: -L/home/arc/ros_ws/src/v4r_seg/devel/lib 
+Requires: 

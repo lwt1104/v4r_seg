@@ -113,17 +113,17 @@ FileSystem::write_nurbs_curve (const ON_NurbsCurve &curve, FILE* pFile)
     fwrite (&curve.m_cv[i], sizeof(double), 1, pFile);
 }
 
-void
-FileSystem::write_tgModel (const TomGine::tgModel &model, FILE* pFile)
-{
-  write_vector (model.m_vertices, pFile);
+// void
+// FileSystem::write_tgModel (const TomGine::tgModel &model, FILE* pFile)
+// {
+//   write_vector (model.m_vertices, pFile);
 
-  unsigned s = model.m_faces.size ();
-  fwrite (&s, sizeof(unsigned), 1, pFile);
+//   unsigned s = model.m_faces.size ();
+//   fwrite (&s, sizeof(unsigned), 1, pFile);
 
-  for (unsigned i = 0; i < s; i++)
-    write_vector (model.m_faces[i].v, pFile);
-}
+//   for (unsigned i = 0; i < s; i++)
+//     write_vector (model.m_faces[i].v, pFile);
+// }
 
 void
 FileSystem::write_surface_model (const SurfaceModel &model, FILE *pFile)
@@ -155,7 +155,7 @@ FileSystem::write_surface_model (const SurfaceModel &model, FILE *pFile)
   write_nurbs_curve_vector (model.curves_param, pFile);
 
   // save mesh
-  write_tgModel (model.mesh, pFile);
+  // write_tgModel (model.mesh, pFile);
 
 }
 
@@ -309,21 +309,21 @@ FileSystem::read_nurbs_curve (ON_NurbsCurve &curve, FILE* pFile)
   return result;
 }
 
-size_t
-FileSystem::read_tgModel (TomGine::tgModel &model, FILE* pFile)
-{
-  size_t result (0);
-  result += read_vector (model.m_vertices, pFile);
+// size_t
+// FileSystem::read_tgModel (TomGine::tgModel &model, FILE* pFile)
+// {
+//   size_t result (0);
+//   result += read_vector (model.m_vertices, pFile);
 
-  unsigned s;
-  result += fread (&s, sizeof(unsigned), 1, pFile) * sizeof(unsigned);
-  model.m_faces.assign (s, TomGine::tgFace ());
+//   unsigned s;
+//   result += fread (&s, sizeof(unsigned), 1, pFile) * sizeof(unsigned);
+//   model.m_faces.assign (s, TomGine::tgFace ());
 
-  for (unsigned i = 0; i < s; i++)
-    result += read_vector (model.m_faces[i].v, pFile);
+//   for (unsigned i = 0; i < s; i++)
+//     result += read_vector (model.m_faces[i].v, pFile);
 
-  return result;
-}
+//   return result;
+// }
 
 size_t
 FileSystem::read_surface_model (SurfaceModel &model, FILE *pFile)
@@ -357,7 +357,7 @@ FileSystem::read_surface_model (SurfaceModel &model, FILE *pFile)
   result += read_nurbs_curve_vector (model.curves_param, pFile);
 
   // read mesh
-  result += read_tgModel (model.mesh, pFile);
+  // result += read_tgModel (model.mesh, pFile);
 
   return result;
 }
