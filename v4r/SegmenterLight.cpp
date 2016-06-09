@@ -99,6 +99,34 @@ namespace segment
     surfaces_out = view.surfaces;
   }
 
+
+  void
+  SegmenterLight::computeCustomPlanes (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud_in,
+                            pcl::PointCloud<pcl::Normal>::Ptr &normals_in,
+                            std::vector<surface::SurfaceModel::Ptr> &surfaces_out)
+  {
+    surface::View view;
+    view.normals = normals_in;
+    surface::FindPlanes::Parameter param;
+    param.adaptive = true;
+    detail = 1;
+    if(detail == 1) {
+      param.epsilon_c = 0.58;
+      param.omega_c = -0.002;
+    } else if (detail == 2) {
+      param.epsilon_c = 0.62;
+      param.omega_c = 0.0;
+    } 
+    surface::FindPlanes fp (param);
+    fp.setInputCloud (cloud_in);
+    fp.setView (&view);
+    fp.setPixelCheck (true, 5);
+    // clusterNormals.setPixelCheck (false, 5);
+    fp.compute ();
+    surfaces_out = view.surfaces;
+  }
+
+  
   void
   SegmenterLight::computeSurfaces (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud_in,
                    surface::View & view_in_out)
@@ -426,7 +454,7 @@ namespace segment
 
     // adaptive clustering  1
     if (stages < user_stages) {
-      computePlanes (pcl_cloud, view.normals, view.surfaces);
+      computeCustomPlanes (pcl_cloud, view.normals, view.surfaces);
       stages++;
     }
     // model abstraction  2
@@ -469,7 +497,7 @@ namespace segment
     view.width = pcl_cloud->width;
     view.height = pcl_cloud->height;
     computeNormals(pcl_cloud, view.normals);
-    computePlanes (pcl_cloud, view.normals, view.surfaces);
+    computeCustomPlanes (pcl_cloud, view.normals, view.surfaces);
 
     surface::CustomRelationsLight ctRel;
     ctRel.setInputCloud(pcl_cloud);
@@ -500,5 +528,48 @@ namespace segment
 
     return result;
   }
+
+
+  pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
+  SegmenterLight::locateCandidate (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud){
+    pcl::PointCloud<pcl::PointXYZRGBL>::Ptr result (new pcl::PointCloud<pcl::PointXYZRGBL>);
+    pcl::copyPointCloud (*pcl_cloud, *result);
+
+    surface::View view;
+    view.width = pcl_cloud->width;
+    view.height = pcl_cloud->height;
+    computeNormals(pcl_cloud, view.normals);
+    computeCustomPlanes (pcl_cloud, view.normals, view.surfaces);
+
+    surface::CustomRelationsLight ctRel;
+    ctRel.setInputCloud(pcl_cloud);
+    ctRel.setView(&view);
+    // std::vector<unsigned> activeSurface = ctRel.computeFineRelations();
+    // for (unsigned i = 0; i < activeSurface.size(); i++) {
+    //   std::cout << activeSurface[i] << "\t" ;
+    // }
+    // std::cout << std::endl;
+
+    // for (unsigned i = 0; i < activeSurface.size (); i++) {
+    //   for (unsigned j = 0; j < view.surfaces[activeSurface[i]]->indices.size (); j++) {
+    //     result->points[view.surfaces[activeSurface[i]]->indices[j]].label = activeSurface[i]+1;
+    //   }
+    // }
+
+    std::vector<int> surfaceState = ctRel.findTableTopObjects();
+    for (unsigned i = 0; i < view.surfaces.size (); i++) {
+      if (surfaceState[i]) {
+        // std::cout << surfaceState[i] << std::endl;
+        for (unsigned j = 0; j < view.surfaces[i]->indices.size(); j++) {
+          result->points[view.surfaces[i]->indices[j]].label = surfaceState[i];
+        }
+      }
+      
+    }
+
+
+    return result;
+  }
+
 
 } // end segment

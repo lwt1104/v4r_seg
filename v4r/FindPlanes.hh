@@ -21,8 +21,8 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/
  */
 
-#ifndef SURFACE_CLUSTER_NORMALS_TO_PLANES_HH
-#define SURFACE_CLUSTER_NORMALS_TO_PLANES_HH
+#ifndef SURFACE_FIND_PLANES_HH
+#define SURFACE_FINDPLANES_HH
 
 #include <iostream>
 #include <vector>
@@ -61,9 +61,9 @@ extern void Add3(const T1 v1[3], const T2 v2[3], T3 r[3]);
 
 
 /**
- * ClusterNormalsToPlanes
+ * FindPlanes
  */
-class ClusterNormalsToPlanes
+class FindPlanes
 {
 public:
   class Parameter
@@ -83,7 +83,7 @@ public:
     
     float ra_dist;              // maximum distance for reasigning points to other patches
     
-    Parameter(float thrAngleNC=0.6, float _inlDist=0.02, int _minPoints=70, bool _adaptive=false, float _d_c = 0.0, 
+    Parameter(float thrAngleNC=0.6, float _inlDist=0.02, int _minPoints=200, bool _adaptive=false, float _d_c = 0.0, 
               float _epsilon_c=0.54, float _epsilon_g=0.1, float _omega_c=-0.004, float _omega_g=0.015, float _ra_dist = 0.01) : 
               thrAngle(thrAngleNC), inlDist(_inlDist), minPoints(_minPoints), adaptive(_adaptive), d_c(_d_c),
               epsilon_c(_epsilon_c), epsilon_g(_epsilon_g), omega_c(_omega_c), omega_g(_omega_g), ra_dist(_ra_dist) {} 
@@ -148,8 +148,8 @@ public:
   cv::Ptr<TomGine::tgTomGineThread> dbgWin;
 #endif
   
-  ClusterNormalsToPlanes(Parameter p=Parameter());
-  ~ClusterNormalsToPlanes();
+  FindPlanes(Parameter p=Parameter());
+  ~FindPlanes();
 
   /** Set parameters for plane estimation **/
   void setParameter(Parameter p);
@@ -176,17 +176,17 @@ public:
 /*********************** INLINE METHODES **************************/
 
 
-inline int ClusterNormalsToPlanes::GetIdx(short x, short y)
+inline int FindPlanes::GetIdx(short x, short y)
 {
   return y*width+x; 
 }
 
-inline short ClusterNormalsToPlanes::X(int idx)
+inline short FindPlanes::X(int idx)
 {
   return idx%width;
 }
 
-inline short ClusterNormalsToPlanes::Y(int idx)
+inline short FindPlanes::Y(int idx)
 {
   return idx/width;
 }

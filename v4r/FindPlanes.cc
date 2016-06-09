@@ -22,7 +22,7 @@
  */
 
 
-#include "ClusterNormalsToPlanes.hh"
+#include "FindPlanes.hh"
 
 namespace surface 
 {
@@ -49,10 +49,10 @@ inline void Add3(const T1 v1[3], const T2 v2[3], T3 r[3])
   r[2] = v1[2]+v2[2];
 }
 
-/********************** ClusterNormalsToPlanes ************************
+/********************** FindPlanes ************************
  * Constructor/Destructor
  */
-ClusterNormalsToPlanes::ClusterNormalsToPlanes(Parameter p)
+FindPlanes::FindPlanes(Parameter p)
 {
   setParameter(p);
   pixel_check = false;
@@ -62,13 +62,13 @@ ClusterNormalsToPlanes::ClusterNormalsToPlanes(Parameter p)
   srt_curvature.resize(20);
 }
 
-ClusterNormalsToPlanes::~ClusterNormalsToPlanes()
+FindPlanes::~FindPlanes()
 {
 }
 
 /************************** PRIVATE ************************/
 
-void ClusterNormalsToPlanes::CreatePatchImage()
+void FindPlanes::CreatePatchImage()
 {
   patches = cv::Mat_<int>(cloud->height, cloud->width);
   patches.setTo(0);
@@ -87,7 +87,7 @@ void ClusterNormalsToPlanes::CreatePatchImage()
  * @param nnb Maximum neighbouring pixels with neighbouring neighbors
  * @param nnb_inc Increment value for neighbouring neighbors
  */
-void ClusterNormalsToPlanes::CountNeighbours(std::vector< std::vector<int> > &reassign_idxs,
+void FindPlanes::CountNeighbours(std::vector< std::vector<int> > &reassign_idxs,
                                              int nb, int nnb, int nnb_inc)
 {
   reassign_idxs.clear();
@@ -133,7 +133,7 @@ void ClusterNormalsToPlanes::CountNeighbours(std::vector< std::vector<int> > &re
  * Reasign points to neighbouring patches
  * We allow the inlier distance to assign points to other patches
  */
-bool ClusterNormalsToPlanes::ReasignPoints(std::vector< std::vector<int> > &reassign_idxs)
+bool FindPlanes::ReasignPoints(std::vector< std::vector<int> > &reassign_idxs)
 {
   bool ready = false;
   bool assigned = false;
@@ -205,7 +205,7 @@ bool ClusterNormalsToPlanes::ReasignPoints(std::vector< std::vector<int> > &reas
 }
 
 
-void ClusterNormalsToPlanes::DeleteEmptyPlanes()
+void FindPlanes::DeleteEmptyPlanes()
 { 
   std::vector<surface::SurfaceModel::Ptr> planes_copy;
   for(int su=0; su<(int)view->surfaces.size(); su++) {
@@ -222,7 +222,7 @@ void ClusterNormalsToPlanes::DeleteEmptyPlanes()
 }
 
 /* Reasign single pixels (line-ends) */
-void ClusterNormalsToPlanes::SinglePixelCheck()
+void FindPlanes::SinglePixelCheck()
 {
   int max_nb = 2;
   int max_nnb = 1;
@@ -236,10 +236,10 @@ void ClusterNormalsToPlanes::SinglePixelCheck()
 }
 
 
-void ClusterNormalsToPlanes::PixelCheck()
+void FindPlanes::PixelCheck()
 { 
   #ifdef DEBUG
-    printf("[ClusterNormalsToPlanes::PixelCheck] Surfaces before deletion: %lu\n", view->surfaces.size());
+    printf("[FindPlanes::PixelCheck] Surfaces before deletion: %lu\n", view->surfaces.size());
   #endif
 
   std::vector< std::vector<int> > reassign_idxs;
@@ -265,7 +265,7 @@ void ClusterNormalsToPlanes::PixelCheck()
   DeleteEmptyPlanes();
   
   #ifdef DEBUG
-    printf("[ClusterNormalsToPlanes::PixelCheck] Surfaces after deletion: %lu\n", view->surfaces.size());
+    printf("[FindPlanes::PixelCheck] Surfaces after deletion: %lu\n", view->surfaces.size());
   #endif   
 }
 
@@ -273,7 +273,7 @@ void ClusterNormalsToPlanes::PixelCheck()
 /**
  * Cluster rest of the points
  */
-void ClusterNormalsToPlanes::ClusterRest(unsigned idx, 
+void FindPlanes::ClusterRest(unsigned idx, 
                                          pcl::PointCloud<pcl::PointXYZRGB> &cloud, 
                                          pcl::PointCloud<pcl::Normal> &normals, 
                                          std::vector<int> &pts,
@@ -284,7 +284,7 @@ void ClusterNormalsToPlanes::ClusterRest(unsigned idx,
   pts.clear();
 
   if (isnan(cloud.points[idx].x))
-    printf("[ClusterNormalsToPlanes::ClusterRest] Error: NAN found.\n");
+    printf("[FindPlanes::ClusterRest] Error: NAN found.\n");
 
   mask[idx] = 1;
   pts.push_back(idx);
@@ -322,7 +322,7 @@ void ClusterNormalsToPlanes::ClusterRest(unsigned idx,
   }
 }
 
-void ClusterNormalsToPlanes::CalcAdaptive()
+void FindPlanes::CalcAdaptive()
 {
   p_adaptive_cosThrAngleNC.resize(cloud->width*cloud->height);
   p_adaptive_inlDist.resize(cloud->width*cloud->height);
@@ -341,7 +341,7 @@ void ClusterNormalsToPlanes::CalcAdaptive()
 /**
  * ClusterNormals
  */
-void ClusterNormalsToPlanes::ClusterNormals(unsigned idx, 
+void FindPlanes::ClusterNormals(unsigned idx, 
                                             pcl::PointCloud<pcl::PointXYZRGB> &cloud, 
                                             pcl::PointCloud<pcl::Normal> &normals, 
                                             std::vector<int> &pts,
@@ -415,47 +415,47 @@ void ClusterNormalsToPlanes::ClusterNormals(unsigned idx,
     }
   }
 
-  // check if all points are on the plane 
-  unsigned ptsSize = pts.size();
-  if( (int) pts.size() >= param.minPoints) {
-    for(unsigned i=0; i<ptsSize; i++) {
-      const float *n = &normals.points[pts[i]].normal[0];
+  // // check if all points are on the plane 
+  // unsigned ptsSize = pts.size();
+  // if( (int) pts.size() >= param.minPoints) {
+  //   for(unsigned i=0; i<ptsSize; i++) {
+  //     const float *n = &normals.points[pts[i]].normal[0];
 
-      float newCosThrAngleNC = cosThrAngleNC;
-      float newInlDist = param.inlDist;
-      if(param.adaptive) {
-        newCosThrAngleNC = p_adaptive_cosThrAngleNC[idx];
-        newInlDist = p_adaptive_inlDist[idx];
-      }          
+  //     float newCosThrAngleNC = cosThrAngleNC;
+  //     float newInlDist = param.inlDist;
+  //     if(param.adaptive) {
+  //       newCosThrAngleNC = p_adaptive_cosThrAngleNC[idx];
+  //       newInlDist = p_adaptive_inlDist[idx];
+  //     }          
             
-      if (Dot3(&normal.normal[0], n) < newCosThrAngleNC && 
-          fabs(Plane::NormalPointDist(&pt[0], &normal.normal[0], &cloud.points[pts[i]].x)) > newInlDist)
-      {
-        mask[pts[i]]=0;
-        pts.erase(pts.begin()+i);
-        ptsSize--;
-        i--;
-      }
-    }
+  //     if (Dot3(&normal.normal[0], n) < newCosThrAngleNC && 
+  //         fabs(Plane::NormalPointDist(&pt[0], &normal.normal[0], &cloud.points[pts[i]].x)) > newInlDist)
+  //     {
+  //       mask[pts[i]]=0;
+  //       pts.erase(pts.begin()+i);
+  //       ptsSize--;
+  //       i--;
+  //     }
+  //   }
 
-    // recalculate plane normal
-    if(pts.size() > 0) {
-      EIGEN_ALIGN16 Eigen::Vector3f new_n = normals.points[pts[0]].getNormalVector3fMap();
-      for(unsigned i=1; i<pts.size(); i++)
-        new_n += normals.points[pts[i]].getNormalVector3fMap();
-      new_n.normalize();
-      normal.normal[0] = new_n[0];
-      normal.normal[1] = new_n[1];
-      normal.normal[2] = new_n[2];
-    }
-  }
+  //   // recalculate plane normal
+  //   if(pts.size() > 0) {
+  //     EIGEN_ALIGN16 Eigen::Vector3f new_n = normals.points[pts[0]].getNormalVector3fMap();
+  //     for(unsigned i=1; i<pts.size(); i++)
+  //       new_n += normals.points[pts[i]].getNormalVector3fMap();
+  //     new_n.normalize();
+  //     normal.normal[0] = new_n[0];
+  //     normal.normal[1] = new_n[1];
+  //     normal.normal[2] = new_n[2];
+  //   }
+  // }
 }
 
 
 /**
  * ClusterNormals
  */
-void ClusterNormalsToPlanes::ClusterNormals(pcl::PointCloud<pcl::PointXYZRGB> &cloud, 
+void FindPlanes::ClusterNormals(pcl::PointCloud<pcl::PointXYZRGB> &cloud, 
                                             pcl::PointCloud<pcl::Normal> &normals, 
                                             const std::vector<int> &indices, 
                                             std::vector<SurfaceModel::Ptr> &planes)
@@ -527,30 +527,30 @@ void ClusterNormalsToPlanes::ClusterNormals(pcl::PointCloud<pcl::PointXYZRGB> &c
   }
   
   // cluster rest of unclustered point cloud in 2D
-  for (unsigned v=0; v<cloud.height; v++) {
-    for (unsigned u=0; u<cloud.width; u++) {
-      unsigned idx = GetIdx(u,v);
-      if (mask[idx] == 0) {
-        plane.reset(new SurfaceModel());
-        plane->type = -1; // No model
-        plane->coeffs.resize(3);
-        float *n = &plane->coeffs[0];
-        n[0]=normal.normal[0];
-        n[1]=normal.normal[1];
-        n[2]=normal.normal[2];
-        ClusterRest(idx, cloud, normals, plane->indices, normal);
-        if (((int)plane->indices.size()) > 0)
-          planes.push_back(plane);
-      }
-    }
-  }
+  // for (unsigned v=0; v<cloud.height; v++) {
+  //   for (unsigned u=0; u<cloud.width; u++) {
+  //     unsigned idx = GetIdx(u,v);
+  //     if (mask[idx] == 0) {
+  //       plane.reset(new SurfaceModel());
+  //       plane->type = -1; // No model
+  //       plane->coeffs.resize(3);
+  //       float *n = &plane->coeffs[0];
+  //       n[0]=normal.normal[0];
+  //       n[1]=normal.normal[1];
+  //       n[2]=normal.normal[2];
+  //       ClusterRest(idx, cloud, normals, plane->indices, normal);
+  //       if (((int)plane->indices.size()) > 0)
+  //         planes.push_back(plane);
+  //     }
+  //   }
+  // }
   
 }
 
 /**
  * ComputeLSPlanes to check plane models
  */
-void ClusterNormalsToPlanes::ComputeLSPlanes(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud, 
+void FindPlanes::ComputeLSPlanes(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud, 
                                              std::vector<SurfaceModel::Ptr> &planes)
 {
   pcl::SampleConsensusModelPlane<pcl::PointXYZRGB> lsPlane(cloud);
@@ -573,7 +573,7 @@ void ClusterNormalsToPlanes::ComputeLSPlanes(pcl::PointCloud<pcl::PointXYZRGB>::
       else {
         planes[i]->type = -1;
 #ifdef DEBUG
-        printf("[ClusterNormalsToPlanes::ComputeLSPlanes] Warning: Problematic plane found: %u\n", i);
+        printf("[FindPlanes::ComputeLSPlanes] Warning: Problematic plane found: %u\n", i);
 #endif
       }
     }
@@ -583,7 +583,7 @@ void ClusterNormalsToPlanes::ComputeLSPlanes(pcl::PointCloud<pcl::PointXYZRGB>::
 /**
  * Add normals to surface patches. Add directed plane normals (to camera view).
  */
-void ClusterNormalsToPlanes::AddNormals()
+void FindPlanes::AddNormals()
 {
   for(unsigned i=0; i<view->surfaces.size(); i++) {
     view->surfaces[i]->normals.resize(view->surfaces[i]->indices.size());
@@ -620,17 +620,17 @@ void ClusterNormalsToPlanes::AddNormals()
 /**
  * set the input cloud for detecting planes
  */
-void ClusterNormalsToPlanes::setInputCloud(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &_cloud)
+void FindPlanes::setInputCloud(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &_cloud)
 {
   if (_cloud->height<=1 || _cloud->width<=1 || !_cloud->isOrganized())
-    throw std::runtime_error("[ClusterNormalsToPlanes::setInputCloud] Invalid point cloud (height must be > 1)");
+    throw std::runtime_error("[FindPlanes::setInputCloud] Invalid point cloud (height must be > 1)");
 
   cloud = _cloud;
   width = cloud->width;
   height = cloud->height;
 }
 
-void ClusterNormalsToPlanes::setView(surface::View *_view)
+void FindPlanes::setView(surface::View *_view)
 {
   view = _view; 
 }
@@ -638,7 +638,7 @@ void ClusterNormalsToPlanes::setView(surface::View *_view)
 /**
  * setParameter
  */
-void ClusterNormalsToPlanes::setParameter(Parameter p)
+void FindPlanes::setParameter(Parameter p)
 {
   param = p;
   cosThrAngleNC = cos(param.thrAngle);
@@ -649,7 +649,7 @@ void ClusterNormalsToPlanes::setParameter(Parameter p)
  * @param check True to check
  * @param neighbors Threshold for line_check neighbors
  */
-void ClusterNormalsToPlanes::setPixelCheck(bool check, int neighbors)
+void FindPlanes::setPixelCheck(bool check, int neighbors)
 {
   pixel_check = check;
   max_neighbours = neighbors;
@@ -660,14 +660,14 @@ void ClusterNormalsToPlanes::setPixelCheck(bool check, int neighbors)
 /**
  * Compute
  */
-void ClusterNormalsToPlanes::compute(const std::vector<int> &indices)
+void FindPlanes::compute(const std::vector<int> &indices)
 {
   #ifdef DEBUG
   std::cout << "********************** start detecting planes **********************" << std::endl;
   #endif
 
   if (cloud.get()==0 || view->normals.get()==0)
-    throw std::runtime_error("[ClusterNormalsToPlanes::compute] Point cloud or view not set!"); 
+    throw std::runtime_error("[FindPlanes::compute] Point cloud or view not set!"); 
 
   if(param.adaptive)
     CalcAdaptive();
@@ -685,7 +685,7 @@ void ClusterNormalsToPlanes::compute(const std::vector<int> &indices)
 /**
  * Compute
  */
-void ClusterNormalsToPlanes::compute()
+void FindPlanes::compute()
 {
   std::vector<int> indices;
   compute(indices);

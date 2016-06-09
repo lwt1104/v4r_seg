@@ -226,8 +226,10 @@ void SegmenterLightTest::process()
       seg.setDetail(2);
       if (user_stages < 5) {
         pcl_cloud_labeled = seg.processStages(cloud_rgb, user_stages);
-      } else {
+      } else if (user_stages == 6){
         pcl_cloud_labeled = seg.locateBox(cloud_rgb);
+      } else {
+        pcl_cloud_labeled = seg.locateCandidate(cloud_rgb);      	
       }
       
       cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);

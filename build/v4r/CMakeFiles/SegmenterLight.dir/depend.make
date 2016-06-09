@@ -41,6 +41,7 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/CustomRelatio
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/Device.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/Edge.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/FileSystem.hh
+v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/FindPlanes.hh
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/FitSize.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/Graph.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/GraphCut.h

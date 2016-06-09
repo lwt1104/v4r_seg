@@ -45,6 +45,7 @@
 #include "GraphCut.h"
 
 #include "CustomRelationsLight.h"
+#include "FindPlanes.hh"
 
 namespace segment
 {
@@ -75,6 +76,9 @@ namespace segment
     void
     computePlanes (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud_in, pcl::PointCloud<pcl::Normal>::Ptr &normals_in,
                    std::vector<surface::SurfaceModel::Ptr> &surfaces_out);
+    void
+    computeCustomPlanes (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud_in, pcl::PointCloud<pcl::Normal>::Ptr &normals_in,
+                   std::vector<surface::SurfaceModel::Ptr> &surfaces_out);
 
     void
     computeSurfaces (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud_in,
@@ -94,6 +98,9 @@ namespace segment
 
     pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
     locateBox(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud);
+
+    pcl::PointCloud<pcl::PointXYZRGBL>::Ptr
+    locateCandidate(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud);
 
     /** Process a point cloud and return vector of segment indices **/
     std::vector<pcl::PointIndices>

@@ -69,6 +69,7 @@ private:
 
   surface::BoundaryRelations boundary;
   std::vector< std::vector< surface::Relation > > relations;
+  std::vector<std::vector<unsigned>> symNeighbors3D;
 
   void computeNeighbors();
   void computePatchNorm(std::map<unsigned, pcl::Normal>& PatchMeanN);
@@ -89,6 +90,7 @@ public:
   /** Compute relations for the segmenter **/
   std::vector<unsigned> computeRelations();
   std::vector<int> computeFineRelations();
+  std::vector<int> findTableTopObjects();
   std::vector<std::vector<unsigned> > findConnectedComponets(bool** relations, int rows, int cols);
   
 };

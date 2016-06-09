@@ -386,6 +386,30 @@ FileSystem.cc.s:
 	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.s
 .PHONY : FileSystem.cc.s
 
+FindPlanes.o: FindPlanes.cc.o
+.PHONY : FindPlanes.o
+
+# target to build an object file
+FindPlanes.cc.o:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o
+.PHONY : FindPlanes.cc.o
+
+FindPlanes.i: FindPlanes.cc.i
+.PHONY : FindPlanes.i
+
+# target to preprocess a source file
+FindPlanes.cc.i:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.i
+.PHONY : FindPlanes.cc.i
+
+FindPlanes.s: FindPlanes.cc.s
+.PHONY : FindPlanes.s
+
+# target to generate assembly for a file
+FindPlanes.cc.s:
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.s
+.PHONY : FindPlanes.cc.s
+
 FitSize.o: FitSize.cpp.o
 .PHONY : FitSize.o
 
@@ -787,6 +811,9 @@ help:
 	@echo "... FileSystem.o"
 	@echo "... FileSystem.i"
 	@echo "... FileSystem.s"
+	@echo "... FindPlanes.o"
+	@echo "... FindPlanes.i"
+	@echo "... FindPlanes.s"
 	@echo "... FitSize.o"
 	@echo "... FitSize.i"
 	@echo "... FitSize.s"

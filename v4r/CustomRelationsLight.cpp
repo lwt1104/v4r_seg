@@ -144,7 +144,8 @@ void CustomRelationsLight::computeNeighbors()
   for(unsigned i=0; i<nr_patches; i++){
     view->surfaces[i]->neighbors2D.clear();
     view->surfaces[i]->neighbors2DNrPixel.clear();
-    for(unsigned j=i+1; j<nr_patches; j++)
+    // for(unsigned j=i+1; j<nr_patches; j++)
+    for(unsigned j=0; j<nr_patches; j++)
       if(nbgh_matrix2D[i][j]) {
         view->surfaces[i]->neighbors2D.push_back(j);
         view->surfaces[i]->neighbors2DNrPixel.push_back(0);
@@ -153,9 +154,13 @@ void CustomRelationsLight::computeNeighbors()
   
   for(unsigned i=0; i<nr_patches; i++){
     view->surfaces[i]->neighbors3D.clear();
-    for(unsigned j=i+1; j<nr_patches; j++)
-      if(nbgh_matrix3D[i][j])
+    // for(unsigned j=i+1; j<nr_patches; j++) {
+    for(unsigned j=0; j<nr_patches; j++) {  
+      if(nbgh_matrix3D[i][j]) {
         view->surfaces[i]->neighbors3D.push_back(j);
+      }
+    }
+
   }
 
 
@@ -338,7 +343,7 @@ std::vector<unsigned> activeSurface;
       int p0 = i;
       int p1 = view->surfaces[i]->neighbors3D[j];
             
-      if(p0 > p1)
+      if(p0 >= p1)
         continue;
       pcl::Normal n0 = PatchMeanN[p0];
       pcl::Normal n1 = PatchMeanN[p1];
@@ -603,6 +608,105 @@ std::vector<std::vector<unsigned> > findConnectedComponets(bool** relations, int
 
   return component;
 }
+
+
+std::vector<int> CustomRelationsLight::findTableTopObjects() {
+
+
+  printf("table topc objects start!\n");
+  std::vector<int> activeSurface;
+
+  if(!have_input_cloud || !have_patches || view->surfaces.size() > 800) {
+    printf("[StructuralRelationsLight::computeRelations] Error: No input cloud and patches available.\n");
+    return activeSurface;
+  }
+
+  view->relations.clear();
+  
+  cv::Mat_<cv::Vec3b> matImage;
+  ConvertPCLCloud2Image(pcl_cloud, matImage);
+
+  std::vector<int> surfaceState(view->surfaces.size(), 0);
+
+
+  relations.resize(view->surfaces.size());
+  
+  std::cout<< view->surfaces.size() << "\n";
+  // std::cout<< view->normals->size() << "\n";
+ #pragma omp parallel sections
+  {
+
+    #pragma omp section
+    {
+      computeNeighbors();
+    }
+  
+  } // end parallel sections
+  
+  
+  bool relations[view->surfaces.size()][view->surfaces.size()];
+  
+  std::cout << "locate table top " << std::endl;
+
+  int max_size = 0;
+  int max_index = -1;
+  for(unsigned i=0; i<view->surfaces.size(); i++) {
+    // std::cout << view->surfaces[i]->indices.size() << std::endl;
+    if (view->surfaces[i]->indices.size() > max_size) {
+       max_size = view->surfaces[i]->indices.size();
+       max_index = i;
+    }
+  }
+  
+  // surfaceState[max_index] = 1;
+  int table_index = max_index;
+  std::vector<unsigned> touch_surfaces(view->surfaces[table_index]->neighbors2D.size(), 0);
+
+  std::cout << view->surfaces[table_index]->neighbors2D.size() << std::endl;
+  // //BFS to find all the connected componnet
+  for  (unsigned i = 0; i < touch_surfaces.size(); i++) {
+
+    if (touch_surfaces[i] != 0) {  // 0 means unassigned; 
+      continue;
+    }
+    std::queue<int> que;
+    que.push(view->surfaces[table_index]->neighbors2D[i]);
+    touch_surfaces[i] = 1;
+    while (!que.empty()) {
+      int ele = que.front();
+      que.pop();
+      surfaceState[ele] = i+1;
+      std::cout << ele <<std::endl;
+
+      // find ele's neighbor's
+      for (unsigned j = 0; j < view->surfaces[ele]->neighbors2D.size(); j++) {
+        unsigned nb = view->surfaces[ele]->neighbors2D[j];
+        int pos = find(view->surfaces[table_index]->neighbors2D.begin(), view->surfaces[table_index]->neighbors2D.end(), nb)-view->surfaces[table_index]->neighbors2D.begin();
+        if (pos >= view->surfaces[table_index]->neighbors2D.size() || touch_surfaces[pos]) {
+          continue;
+        }
+
+        que.push(nb);
+        touch_surfaces[pos] = 1;
+      }
+    }
+
+  }
+ 
+  // for (unsigned i = 0; i < component.size(); i++) {
+  //   for (unsigned j= 0; j < component[i].size(); j++) {
+  //     surfaceState[ component[i][j] ] = i + 1;
+
+  //   }
+
+  // }
+
+
+  return  surfaceState;
+
+
+}
+
 
 } // end surface models
 

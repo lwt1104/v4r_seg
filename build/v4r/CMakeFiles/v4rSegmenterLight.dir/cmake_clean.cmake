@@ -22,6 +22,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o"
   "CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o"
   "CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o"
+  "CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o"
   "../../lib/libv4rSegmenterLight.pdb"
   "../../lib/libv4rSegmenterLight.so"
 )

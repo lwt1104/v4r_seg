@@ -89,6 +89,7 @@ public:
   /** Compute relations for the segmenter **/
   std::vector<unsigned> computeRelations();
   std::vector<int> computeFineRelations();
+  std::vector<int> findTableTopObjects();
   std::vector<std::vector<unsigned> > findConnectedComponets(bool** relations, int rows, int cols);
   
 };

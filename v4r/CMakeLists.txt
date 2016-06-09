@@ -41,6 +41,7 @@ SET(SOURCE_CPP
   Utils.cc
   FitSize.cpp
   Centroid.cpp
+  FindPlanes.cc
 )
 
 SET(SOURCE_H
@@ -71,6 +72,7 @@ SET(SOURCE_H
   Utils.hh
   FitSize.h
   Centroid.h
+  FindPlanes.hh
 )
 
 SET(SOURCE_MODEL

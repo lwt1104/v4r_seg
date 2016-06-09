@@ -581,6 +581,29 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.provides: v4r/CMakeFiles/v4r
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.provides.build: v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o
 
+v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o: v4r/CMakeFiles/v4rSegmenterLight.dir/flags.make
+v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o: ../v4r/FindPlanes.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_24)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/FindPlanes.cc
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.i"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lwt1104/Downloads/SegmenterLight/v4r/FindPlanes.cc > CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.i
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.s"
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lwt1104/Downloads/SegmenterLight/v4r/FindPlanes.cc -o CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.s
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o.requires:
+.PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o.requires
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o.provides: v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o.requires
+	$(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o.provides.build
+.PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o.provides
+
+v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o.provides.build: v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o
+
 # Object files for target v4rSegmenterLight
 v4rSegmenterLight_OBJECTS = \
 "CMakeFiles/v4rSegmenterLight.dir/disjoint-set.cpp.o" \
@@ -605,7 +628,8 @@ v4rSegmenterLight_OBJECTS = \
 "CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o" \
 "CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o" \
 "CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o" \
-"CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o"
+"CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o" \
+"CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o"
 
 # External object files for target v4rSegmenterLight
 v4rSegmenterLight_EXTERNAL_OBJECTS =
@@ -633,6 +657,7 @@ v4rSegmenterLight_EXTERNAL_OBJECTS =
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o
+../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o
 ../lib/libv4rSegmenterLight.so: v4r/CMakeFiles/v4rSegmenterLight.dir/build.make
 ../lib/libv4rSegmenterLight.so: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
 ../lib/libv4rSegmenterLight.so: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
@@ -799,6 +824,7 @@ v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o.requires
 v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o.requires
+v4r/CMakeFiles/v4rSegmenterLight.dir/requires: v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o.requires
 .PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/requires
 
 v4r/CMakeFiles/v4rSegmenterLight.dir/clean:
