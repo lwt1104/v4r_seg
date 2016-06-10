@@ -582,13 +582,25 @@ std::vector<int> activeSurface;
     component.push_back(v); 
 
   }
+
+  fs.setInputCloud(pcl_cloud);
+  fs.setSurfaceModels(*view);
+
  
+  // std::cout << "Detect " << component.size() << " objects" << std::endl;
   for (unsigned i = 0; i < component.size(); i++) {
-    for (unsigned j= 0; j < component[i].size(); j++) {
-      surfaceState[ component[i][j] ] = i + 1;
-
+    if (fs.fitCubeSize(component[i])) {
+      std::cout << "get it" << std::endl;
+      for (unsigned j= 0; j < component[i].size(); j++) {
+        surfaceState[ component[i][j] ] = i + 1;
+        // surfaceState[ component[i][j] ] = (i + 1)*20+j;
+      }
+    } else {
+      for (unsigned j= 0; j < component[i].size(); j++) {
+        surfaceState[ component[i][j] ] = 0;
+        // surfaceState[ component[i][j] ] = (i + 1)*20+j;
+      }      
     }
-
   }
 
   // for(unsigned i=0; i<view->surfaces.size(); i++)

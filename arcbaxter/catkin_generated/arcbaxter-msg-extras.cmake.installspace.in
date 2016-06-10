@@ -1,2 +1,0 @@
-set(arcbaxter_MESSAGE_FILES "msg/point2d.msg")
-set(arcbaxter_SERVICE_FILES "srv/Vision.srv;srv/VisionVertical.srv;srv/Kinect.srv")

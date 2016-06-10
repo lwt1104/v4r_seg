@@ -513,6 +513,7 @@ namespace segment
     //     result->points[view.surfaces[activeSurface[i]]->indices[j]].label = activeSurface[i]+1;
     //   }
     // }
+    
 
     std::vector<int> surfaceState = ctRel.computeFineRelations();
     for (unsigned i = 0; i < view.surfaces.size (); i++) {

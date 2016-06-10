@@ -66,6 +66,13 @@ void FitSize::setSurfaceModels(surface::View & _view)
   have_surfaces = true;
 }
 
+void FitSize::sortLength(float x, float y, float z, float& l1, float& l2, float& l3) {
+  l1 = std::max( std::max (x, y), z);
+  l3 = std::min( std::min (x, y), z);
+  l2 = x + y + z - l1 - l3; 
+
+}
+
 void FitSize::compute(std::map<unsigned, int>& sizeFit) {
 //  std::map<unsigned, int> sizeFit;
   for (unsigned i=0; i < view.surfaces.size(); i++) {
@@ -74,6 +81,7 @@ void FitSize::compute(std::map<unsigned, int>& sizeFit) {
       continue;
     }
     float xmin = 100, xmax = -100, ymin = 100, ymax = -100, zmin = 100, zmax = -100;
+    float l1, l2, l3;
 //    std::cout << view.surfaces[i]->indices.size() << "\t";
     for (unsigned j = 0; j < view.surfaces[i]->indices.size(); j++) {
       pcl::PointXYZRGB& p = pcl_cloud->points[view.surfaces[i]->indices[j]];
@@ -84,14 +92,42 @@ void FitSize::compute(std::map<unsigned, int>& sizeFit) {
       zmin = std::min(zmin, p.z);
       zmax = std::max(zmax, p.z);
     }
- //   std::cout << xmax - xmin << "\t" << ymax - ymin << "\t"  << zmax - zmin << "\n"; 
-    if(xmax - xmin > 1.4 || ymax - ymin > 1.4 || zmax - zmin > 1.4) {
+ //   std::cout << xmax - xmin << "\t" << ymax - ymin << "\t"  << zmax - zmin << "\n";
+    sortLength(xmax - xmin, ymax - ymin, zmax - zmin, l1, l2, l3);
+
+    if(l1 > 0.6 || l1 < 0.2) {
+      sizeFit.insert(std::pair<unsigned, int>(i, 0));
+    } else if (l1 / l2 > 2.5) {
       sizeFit.insert(std::pair<unsigned, int>(i, 0));
     } else {
       sizeFit.insert(std::pair<unsigned, int>(i, 1));
     }
     
   }  
+}
+
+int FitSize::fitCubeSize(std::vector<int> ind) {
+  float xmin = 100, xmax = -100, ymin = 100, ymax = -100, zmin = 100, zmax = -100;
+  float l1, l2, l3;	
+  for (unsigned i = 0; i < ind.size(); i++) {
+    for (unsigned j = 0; j < view.surfaces[ind[i]]->indices.size(); j++) {
+      pcl::PointXYZRGB& p = pcl_cloud->points[view.surfaces[ind[i]]->indices[j]];
+      xmin = std::min(xmin, p.x);
+      xmax = std::max(xmax, p.x);
+      ymin = std::min(ymin, p.y);
+      ymax = std::max(ymax, p.y);
+      zmin = std::min(zmin, p.z);
+      zmax = std::max(zmax, p.z);
+    }
+
+  }
+  sortLength(xmax - xmin, ymax - ymin, zmax - zmin, l1, l2, l3);
+  std::cout << l1 << "  " << l2 << " " << " " << l3 << " " << l1*l2*l3 << std::endl;
+  if (l1 < 0.45 || l2 < 0.3 || l3 < 0.2) {
+  	return 1;
+  } else {
+  	return 1;
+  }
 }
 
 

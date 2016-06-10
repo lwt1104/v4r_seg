@@ -1,3 +1,0 @@
-/home/arc/Documents/v4r_seg/build/v4r/CMakeFiles/SegmenterLight.dir
-/home/arc/Documents/v4r_seg/build/CMakeFiles/uninstall.dir
-/home/arc/Documents/v4r_seg/build/v4r/CMakeFiles/v4rSegmenterLight.dir

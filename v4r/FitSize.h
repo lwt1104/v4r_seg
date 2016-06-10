@@ -53,7 +53,7 @@ private:
   
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr pcl_cloud;                     ///< Input cloud
   surface::View view;                                                   ///< Surface models
-  
+  void sortLength(float x, float y, float z, float& l1, float& l2, float& l3);
 
 public:
   FitSize();
@@ -68,6 +68,8 @@ public:
 
   /** Compute if size fit **/
   void compute(std::map<unsigned, int>& sizeFit);
+  
+  int fitCubeSize(std::vector<int> ind);
   
 };
 
