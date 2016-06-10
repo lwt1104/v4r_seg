@@ -262,8 +262,8 @@ void SegmenterLightTest::run(std::string _rgbd_filename,
   // If choose to live
   if (data_live) {
   	// create a new grabber for OpenNI devices
-    // pcl::Grabber* interface = new pcl::io::OpenNI2Grabber();
-    pcl::Grabber* interface = new pcl::OpenNIGrabber();
+    pcl::Grabber* interface = new pcl::io::OpenNI2Grabber();
+    // pcl::Grabber* interface = new pcl::OpenNIGrabber();
 
     // make callback function from member function
     boost::function<void (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr&)> f =

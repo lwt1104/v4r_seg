@@ -345,7 +345,6 @@ v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/include/vtk-5.8
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/include/vtk-5.8/vtkLODActor.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/include/vtk-5.8/vtkLeaderActor2D.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/include/vtk-5.8/vtkLineSource.h
-v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/include/vtk-5.8/vtkLookupTable.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/include/vtk-5.8/vtkMapper.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/include/vtk-5.8/vtkMath.h
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: /usr/include/vtk-5.8/vtkMatrix4x4.h

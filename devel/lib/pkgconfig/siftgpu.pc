@@ -1,8 +1,0 @@
-prefix=/home/arc/ros_ws/src/v4r_seg/devel
-
-Name: siftgpu
-Description: Description of siftgpu
-Version: 0.1.0
-Cflags: -I/home/arc/ros_ws/src/simtrack/siftgpu/include
-Libs: -L/home/arc/ros_ws/src/v4r_seg/devel/lib -lsiftgpu
-Requires: 

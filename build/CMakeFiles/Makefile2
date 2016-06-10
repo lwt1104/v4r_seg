@@ -47,13 +47,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arc/Documents/v4r_seg
+CMAKE_SOURCE_DIR = /home/lwt1104/Downloads/SegmenterLight
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arc/Documents/v4r_seg/build
+CMAKE_BINARY_DIR = /home/lwt1104/Downloads/SegmenterLight/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/uninstall.dir
@@ -62,15 +62,15 @@ CMAKE_BINARY_DIR = /home/arc/Documents/v4r_seg/build
 CMakeFiles/uninstall.dir/all:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arc/Documents/v4r_seg/build/CMakeFiles 
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 
 	@echo "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -110,7 +110,7 @@ v4r/preinstall:
 v4r/CMakeFiles/SegmenterLight.dir/all: v4r/CMakeFiles/v4rSegmenterLight.dir/all
 	$(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/depend
 	$(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arc/Documents/v4r_seg/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles  1
 	@echo "Built target SegmenterLight"
 .PHONY : v4r/CMakeFiles/SegmenterLight.dir/all
 
@@ -120,9 +120,9 @@ all: v4r/CMakeFiles/SegmenterLight.dir/all
 
 # Build rule for subdir invocation for target.
 v4r/CMakeFiles/SegmenterLight.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 25
 	$(MAKE) -f CMakeFiles/Makefile2 v4r/CMakeFiles/SegmenterLight.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 0
 .PHONY : v4r/CMakeFiles/SegmenterLight.dir/rule
 
 # Convenience name for target.
@@ -145,7 +145,7 @@ clean: v4r/CMakeFiles/SegmenterLight.dir/clean
 v4r/CMakeFiles/v4rSegmenterLight.dir/all:
 	$(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/depend
 	$(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arc/Documents/v4r_seg/build/CMakeFiles  2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles  2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
 	@echo "Built target v4rSegmenterLight"
 .PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/all
 
@@ -155,9 +155,9 @@ all: v4r/CMakeFiles/v4rSegmenterLight.dir/all
 
 # Build rule for subdir invocation for target.
 v4r/CMakeFiles/v4rSegmenterLight.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 24
 	$(MAKE) -f CMakeFiles/Makefile2 v4r/CMakeFiles/v4rSegmenterLight.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles 0
 .PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/rule
 
 # Convenience name for target.

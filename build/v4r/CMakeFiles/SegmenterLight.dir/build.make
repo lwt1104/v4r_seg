@@ -35,13 +35,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arc/Documents/v4r_seg
+CMAKE_SOURCE_DIR = /home/lwt1104/Downloads/SegmenterLight
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arc/Documents/v4r_seg/build
+CMAKE_BINARY_DIR = /home/lwt1104/Downloads/SegmenterLight/build
 
 # Include any dependencies generated for this target.
 include v4r/CMakeFiles/SegmenterLight.dir/depend.make
@@ -54,17 +54,17 @@ include v4r/CMakeFiles/SegmenterLight.dir/flags.make
 
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: v4r/CMakeFiles/SegmenterLight.dir/flags.make
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o: ../v4r/SegmenterLightTest.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arc/Documents/v4r_seg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o"
-	cd /home/arc/Documents/v4r_seg/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o -c /home/arc/Documents/v4r_seg/v4r/SegmenterLightTest.cpp
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o -c /home/lwt1104/Downloads/SegmenterLight/v4r/SegmenterLightTest.cpp
 
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.i"
-	cd /home/arc/Documents/v4r_seg/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/arc/Documents/v4r_seg/v4r/SegmenterLightTest.cpp > CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.i
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lwt1104/Downloads/SegmenterLight/v4r/SegmenterLightTest.cpp > CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.i
 
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.s"
-	cd /home/arc/Documents/v4r_seg/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/arc/Documents/v4r_seg/v4r/SegmenterLightTest.cpp -o CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.s
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lwt1104/Downloads/SegmenterLight/v4r/SegmenterLightTest.cpp -o CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.s
 
 v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o.requires:
 .PHONY : v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o.requires
@@ -84,9 +84,6 @@ SegmenterLight_EXTERNAL_OBJECTS =
 
 SegmenterLight: v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
 SegmenterLight: v4r/CMakeFiles/SegmenterLight.dir/build.make
-SegmenterLight: /usr/local/lib/libpcl_cuda_sample_consensus.so
-SegmenterLight: /usr/local/lib/libpcl_cuda_features.so
-SegmenterLight: /usr/local/lib/libpcl_cuda_segmentation.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_system.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_thread.so
@@ -102,13 +99,6 @@ SegmenterLight: /usr/local/lib/libpcl_octree.so
 SegmenterLight: /usr/local/lib/libpcl_search.so
 SegmenterLight: /usr/local/lib/libpcl_sample_consensus.so
 SegmenterLight: /usr/local/lib/libpcl_filters.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_containers.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_utils.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_octree.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_features.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_kinfu_large_scale.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_kinfu.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_segmentation.so
 SegmenterLight: /usr/lib/libOpenNI.so
 SegmenterLight: /usr/lib/libOpenNI2.so
 SegmenterLight: /usr/lib/libvtkCommon.so.5.8.0
@@ -127,20 +117,19 @@ SegmenterLight: /usr/lib/libvtkGeovis.so.5.8.0
 SegmenterLight: /usr/lib/libvtkViews.so.5.8.0
 SegmenterLight: /usr/lib/libvtkCharts.so.5.8.0
 SegmenterLight: /usr/local/lib/libpcl_io.so
-SegmenterLight: /usr/local/lib/libpcl_visualization.so
-SegmenterLight: /usr/local/lib/libpcl_outofcore.so
 SegmenterLight: /usr/local/lib/libpcl_features.so
-SegmenterLight: /usr/local/lib/libpcl_keypoints.so
+SegmenterLight: /usr/local/lib/libpcl_visualization.so
+SegmenterLight: /usr/local/lib/libpcl_ml.so
+SegmenterLight: /usr/local/lib/libpcl_segmentation.so
+SegmenterLight: /usr/local/lib/libpcl_people.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libqhull.so
 SegmenterLight: /usr/local/lib/libpcl_surface.so
 SegmenterLight: /usr/local/lib/libpcl_registration.so
-SegmenterLight: /usr/local/lib/libpcl_ml.so
-SegmenterLight: /usr/local/lib/libpcl_segmentation.so
-SegmenterLight: /usr/local/lib/libpcl_recognition.so
-SegmenterLight: /usr/local/lib/libpcl_people.so
-SegmenterLight: /usr/local/lib/libpcl_stereo.so
+SegmenterLight: /usr/local/lib/libpcl_keypoints.so
 SegmenterLight: /usr/local/lib/libpcl_tracking.so
-SegmenterLight: /usr/local/lib/libpcl_apps.so
+SegmenterLight: /usr/local/lib/libpcl_recognition.so
+SegmenterLight: /usr/local/lib/libpcl_stereo.so
+SegmenterLight: /usr/local/lib/libpcl_outofcore.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_system.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_thread.so
@@ -176,7 +165,6 @@ SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
-SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
@@ -188,9 +176,6 @@ SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
 SegmenterLight: ../lib/libv4rSegmenterLight.so
-SegmenterLight: /usr/local/lib/libpcl_cuda_sample_consensus.so
-SegmenterLight: /usr/local/lib/libpcl_cuda_features.so
-SegmenterLight: /usr/local/lib/libpcl_cuda_segmentation.so
 SegmenterLight: /usr/lib/libvtkGenericFiltering.so.5.8.0
 SegmenterLight: /usr/lib/libvtkGeovis.so.5.8.0
 SegmenterLight: /usr/lib/libvtkCharts.so.5.8.0
@@ -222,30 +207,22 @@ SegmenterLight: /usr/local/lib/libpcl_octree.so
 SegmenterLight: /usr/local/lib/libpcl_search.so
 SegmenterLight: /usr/local/lib/libpcl_sample_consensus.so
 SegmenterLight: /usr/local/lib/libpcl_filters.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_containers.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_utils.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_octree.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_features.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_kinfu_large_scale.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_kinfu.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_segmentation.so
 SegmenterLight: /usr/lib/libOpenNI.so
 SegmenterLight: /usr/lib/libOpenNI2.so
 SegmenterLight: /usr/local/lib/libpcl_io.so
-SegmenterLight: /usr/local/lib/libpcl_visualization.so
-SegmenterLight: /usr/local/lib/libpcl_outofcore.so
 SegmenterLight: /usr/local/lib/libpcl_features.so
-SegmenterLight: /usr/local/lib/libpcl_keypoints.so
+SegmenterLight: /usr/local/lib/libpcl_visualization.so
+SegmenterLight: /usr/local/lib/libpcl_ml.so
+SegmenterLight: /usr/local/lib/libpcl_segmentation.so
+SegmenterLight: /usr/local/lib/libpcl_people.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libqhull.so
 SegmenterLight: /usr/local/lib/libpcl_surface.so
 SegmenterLight: /usr/local/lib/libpcl_registration.so
-SegmenterLight: /usr/local/lib/libpcl_ml.so
-SegmenterLight: /usr/local/lib/libpcl_segmentation.so
-SegmenterLight: /usr/local/lib/libpcl_recognition.so
-SegmenterLight: /usr/local/lib/libpcl_people.so
-SegmenterLight: /usr/local/lib/libpcl_stereo.so
+SegmenterLight: /usr/local/lib/libpcl_keypoints.so
 SegmenterLight: /usr/local/lib/libpcl_tracking.so
-SegmenterLight: /usr/local/lib/libpcl_apps.so
+SegmenterLight: /usr/local/lib/libpcl_recognition.so
+SegmenterLight: /usr/local/lib/libpcl_stereo.so
+SegmenterLight: /usr/local/lib/libpcl_outofcore.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_system.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libboost_thread.so
@@ -261,42 +238,33 @@ SegmenterLight: /usr/local/lib/libpcl_octree.so
 SegmenterLight: /usr/local/lib/libpcl_search.so
 SegmenterLight: /usr/local/lib/libpcl_sample_consensus.so
 SegmenterLight: /usr/local/lib/libpcl_filters.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_containers.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_utils.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_octree.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_features.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_kinfu_large_scale.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_kinfu.so
-SegmenterLight: /usr/local/lib/libpcl_gpu_segmentation.so
 SegmenterLight: /usr/lib/libOpenNI.so
 SegmenterLight: /usr/lib/libOpenNI2.so
 SegmenterLight: /usr/local/lib/libpcl_io.so
-SegmenterLight: /usr/local/lib/libpcl_visualization.so
-SegmenterLight: /usr/local/lib/libpcl_outofcore.so
 SegmenterLight: /usr/local/lib/libpcl_features.so
-SegmenterLight: /usr/local/lib/libpcl_keypoints.so
+SegmenterLight: /usr/local/lib/libpcl_visualization.so
+SegmenterLight: /usr/local/lib/libpcl_ml.so
+SegmenterLight: /usr/local/lib/libpcl_segmentation.so
+SegmenterLight: /usr/local/lib/libpcl_people.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libqhull.so
 SegmenterLight: /usr/local/lib/libpcl_surface.so
 SegmenterLight: /usr/local/lib/libpcl_registration.so
-SegmenterLight: /usr/local/lib/libpcl_ml.so
-SegmenterLight: /usr/local/lib/libpcl_segmentation.so
-SegmenterLight: /usr/local/lib/libpcl_recognition.so
-SegmenterLight: /usr/local/lib/libpcl_people.so
-SegmenterLight: /usr/local/lib/libpcl_stereo.so
+SegmenterLight: /usr/local/lib/libpcl_keypoints.so
 SegmenterLight: /usr/local/lib/libpcl_tracking.so
-SegmenterLight: /usr/local/lib/libpcl_apps.so
+SegmenterLight: /usr/local/lib/libpcl_recognition.so
+SegmenterLight: /usr/local/lib/libpcl_stereo.so
+SegmenterLight: /usr/local/lib/libpcl_outofcore.so
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_ts.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
-SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
-SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
-SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
@@ -306,7 +274,7 @@ SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
 SegmenterLight: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
 SegmenterLight: v4r/CMakeFiles/SegmenterLight.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../SegmenterLight"
-	cd /home/arc/Documents/v4r_seg/build/v4r && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SegmenterLight.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SegmenterLight.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 v4r/CMakeFiles/SegmenterLight.dir/build: SegmenterLight
@@ -316,10 +284,10 @@ v4r/CMakeFiles/SegmenterLight.dir/requires: v4r/CMakeFiles/SegmenterLight.dir/Se
 .PHONY : v4r/CMakeFiles/SegmenterLight.dir/requires
 
 v4r/CMakeFiles/SegmenterLight.dir/clean:
-	cd /home/arc/Documents/v4r_seg/build/v4r && $(CMAKE_COMMAND) -P CMakeFiles/SegmenterLight.dir/cmake_clean.cmake
+	cd /home/lwt1104/Downloads/SegmenterLight/build/v4r && $(CMAKE_COMMAND) -P CMakeFiles/SegmenterLight.dir/cmake_clean.cmake
 .PHONY : v4r/CMakeFiles/SegmenterLight.dir/clean
 
 v4r/CMakeFiles/SegmenterLight.dir/depend:
-	cd /home/arc/Documents/v4r_seg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arc/Documents/v4r_seg /home/arc/Documents/v4r_seg/v4r /home/arc/Documents/v4r_seg/build /home/arc/Documents/v4r_seg/build/v4r /home/arc/Documents/v4r_seg/build/v4r/CMakeFiles/SegmenterLight.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lwt1104/Downloads/SegmenterLight /home/lwt1104/Downloads/SegmenterLight/v4r /home/lwt1104/Downloads/SegmenterLight/build /home/lwt1104/Downloads/SegmenterLight/build/v4r /home/lwt1104/Downloads/SegmenterLight/build/v4r/CMakeFiles/SegmenterLight.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : v4r/CMakeFiles/SegmenterLight.dir/depend
 

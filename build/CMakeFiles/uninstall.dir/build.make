@@ -35,13 +35,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arc/Documents/v4r_seg
+CMAKE_SOURCE_DIR = /home/lwt1104/Downloads/SegmenterLight
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arc/Documents/v4r_seg/build
+CMAKE_BINARY_DIR = /home/lwt1104/Downloads/SegmenterLight/build
 
 # Utility rule file for uninstall.
 
@@ -49,7 +49,7 @@ CMAKE_BINARY_DIR = /home/arc/Documents/v4r_seg/build
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	/usr/bin/cmake -P /home/arc/Documents/v4r_seg/build/cmake_uninstall.cmake
+	/usr/bin/cmake -P /home/lwt1104/Downloads/SegmenterLight/build/cmake_uninstall.cmake
 
 uninstall: CMakeFiles/uninstall
 uninstall: CMakeFiles/uninstall.dir/build.make
@@ -64,6 +64,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/arc/Documents/v4r_seg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arc/Documents/v4r_seg /home/arc/Documents/v4r_seg /home/arc/Documents/v4r_seg/build /home/arc/Documents/v4r_seg/build /home/arc/Documents/v4r_seg/build/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lwt1104/Downloads/SegmenterLight/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lwt1104/Downloads/SegmenterLight /home/lwt1104/Downloads/SegmenterLight /home/lwt1104/Downloads/SegmenterLight/build /home/lwt1104/Downloads/SegmenterLight/build /home/lwt1104/Downloads/SegmenterLight/build/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 
