@@ -1,6 +1,9 @@
 cmake_minimum_required ( VERSION 2.6 )
-PROJECT(v4r)
+project(v4r_seg)
 
+
+#find_package(catkin REQUIRED
+#)
 ##########################################
 ## Do not waste the top level cmake !!! ##
 ##########################################
@@ -11,7 +14,15 @@ SET(LIBRARY_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/build")
 
 set(V4R_BUILD 1)
-#set(V4R_TOMGINE 0)
+
+#catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES g1_vision_table_candidates
+#  CATKIN_DEPENDS roscpp rospy std_msgs
+#  DEPENDS system_lib
+#)
+
+include_directories(include ${catkin_INCLUDE_DIRS})
 
 #add_definitions(-DV4R_TOMGINE) # TomGine is available
 #add_definitions(-DDEBUG)
@@ -32,3 +43,5 @@ configure_file(
     "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
     IMMEDIATE @ONLY)
 add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+
+

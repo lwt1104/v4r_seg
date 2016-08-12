@@ -216,7 +216,7 @@ void SegmenterLightTest::process()
  void SegmenterLightTest::cloud_cb_ (const  pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud)
  {
     static unsigned count = 0;
-    if (++count == 25)
+    if (++count == 1)
     {
 
       pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_rgb (new pcl::PointCloud<pcl::PointXYZRGB>);
@@ -483,6 +483,8 @@ int main(int argc, char *argv[])
   int endIdx = 65;
   bool live = false;
   
+
+
   int user_stages = 1;
   pcl::console::parse_argument (argc, argv, "-stage", user_stages);
 

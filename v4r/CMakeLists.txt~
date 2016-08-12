@@ -1,4 +1,4 @@
-add_subdirectory(TomGine)
+#add_subdirectory(TomGine)
 
 cmake_minimum_required (VERSION 2.6)
 SET(V4R_SEGMENTER_LIGHT 1 CACHE BOOL "Surface segmenter framework" )

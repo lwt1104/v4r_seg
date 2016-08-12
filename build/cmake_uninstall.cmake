@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/home/arc/Documents/v4r_seg/build/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/home/arc/Documents/v4r_seg/build/install_manifest.txt\"")
-endif(NOT EXISTS "/home/arc/Documents/v4r_seg/build/install_manifest.txt")
+if (NOT EXISTS "/home/arclab/Downloads/v4r_seg/build/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"/home/arclab/Downloads/v4r_seg/build/install_manifest.txt\"")
+endif(NOT EXISTS "/home/arclab/Downloads/v4r_seg/build/install_manifest.txt")
 
-file(READ "/home/arc/Documents/v4r_seg/build/install_manifest.txt" files)
+file(READ "/home/arclab/Downloads/v4r_seg/build/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 list(REVERSE files)
 foreach (file ${files})

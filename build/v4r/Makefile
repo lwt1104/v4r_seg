@@ -39,13 +39,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arc/Documents/v4r_seg
+CMAKE_SOURCE_DIR = /home/arclab/Downloads/v4r_seg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arc/Documents/v4r_seg/build
+CMAKE_BINARY_DIR = /home/arclab/Downloads/v4r_seg/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/arc/Documents/v4r_seg/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -113,14 +113,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/arc/Documents/v4r_seg/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles /home/arc/Documents/v4r_seg/build/v4r/CMakeFiles/progress.marks
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arc/Documents/v4r_seg/build/CMakeFiles 0
+	cd /home/arclab/Downloads/v4r_seg/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/arclab/Downloads/v4r_seg/build/CMakeFiles /home/arclab/Downloads/v4r_seg/build/v4r/CMakeFiles/progress.marks
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arclab/Downloads/v4r_seg/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/clean
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/clean
 .PHONY : clean
 
 # The main clean target
@@ -129,22 +129,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/preinstall
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/preinstall
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/arc/Documents/v4r_seg/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/arclab/Downloads/v4r_seg/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 v4r/CMakeFiles/SegmenterLight.dir/rule:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/CMakeFiles/SegmenterLight.dir/rule
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/CMakeFiles/SegmenterLight.dir/rule
 .PHONY : v4r/CMakeFiles/SegmenterLight.dir/rule
 
 # Convenience name for target.
@@ -153,12 +153,12 @@ SegmenterLight: v4r/CMakeFiles/SegmenterLight.dir/rule
 
 # fast build rule for target.
 SegmenterLight/fast:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/build
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/build
 .PHONY : SegmenterLight/fast
 
 # Convenience name for target.
 v4r/CMakeFiles/v4rSegmenterLight.dir/rule:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/CMakeFiles/v4rSegmenterLight.dir/rule
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f CMakeFiles/Makefile2 v4r/CMakeFiles/v4rSegmenterLight.dir/rule
 .PHONY : v4r/CMakeFiles/v4rSegmenterLight.dir/rule
 
 # Convenience name for target.
@@ -167,7 +167,7 @@ v4rSegmenterLight: v4r/CMakeFiles/v4rSegmenterLight.dir/rule
 
 # fast build rule for target.
 v4rSegmenterLight/fast:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/build
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/build
 .PHONY : v4rSegmenterLight/fast
 
 BoundaryRelations.o: BoundaryRelations.cpp.o
@@ -175,7 +175,7 @@ BoundaryRelations.o: BoundaryRelations.cpp.o
 
 # target to build an object file
 BoundaryRelations.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.o
 .PHONY : BoundaryRelations.cpp.o
 
 BoundaryRelations.i: BoundaryRelations.cpp.i
@@ -183,7 +183,7 @@ BoundaryRelations.i: BoundaryRelations.cpp.i
 
 # target to preprocess a source file
 BoundaryRelations.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.i
 .PHONY : BoundaryRelations.cpp.i
 
 BoundaryRelations.s: BoundaryRelations.cpp.s
@@ -191,7 +191,7 @@ BoundaryRelations.s: BoundaryRelations.cpp.s
 
 # target to generate assembly for a file
 BoundaryRelations.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/BoundaryRelations.cpp.s
 .PHONY : BoundaryRelations.cpp.s
 
 Capture.o: Capture.cpp.o
@@ -199,7 +199,7 @@ Capture.o: Capture.cpp.o
 
 # target to build an object file
 Capture.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.o
 .PHONY : Capture.cpp.o
 
 Capture.i: Capture.cpp.i
@@ -207,7 +207,7 @@ Capture.i: Capture.cpp.i
 
 # target to preprocess a source file
 Capture.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.i
 .PHONY : Capture.cpp.i
 
 Capture.s: Capture.cpp.s
@@ -215,7 +215,7 @@ Capture.s: Capture.cpp.s
 
 # target to generate assembly for a file
 Capture.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Capture.cpp.s
 .PHONY : Capture.cpp.s
 
 Centroid.o: Centroid.cpp.o
@@ -223,7 +223,7 @@ Centroid.o: Centroid.cpp.o
 
 # target to build an object file
 Centroid.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.o
 .PHONY : Centroid.cpp.o
 
 Centroid.i: Centroid.cpp.i
@@ -231,7 +231,7 @@ Centroid.i: Centroid.cpp.i
 
 # target to preprocess a source file
 Centroid.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.i
 .PHONY : Centroid.cpp.i
 
 Centroid.s: Centroid.cpp.s
@@ -239,7 +239,7 @@ Centroid.s: Centroid.cpp.s
 
 # target to generate assembly for a file
 Centroid.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Centroid.cpp.s
 .PHONY : Centroid.cpp.s
 
 ClusterNormalsToPlanes.o: ClusterNormalsToPlanes.cc.o
@@ -247,7 +247,7 @@ ClusterNormalsToPlanes.o: ClusterNormalsToPlanes.cc.o
 
 # target to build an object file
 ClusterNormalsToPlanes.cc.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ClusterNormalsToPlanes.cc.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ClusterNormalsToPlanes.cc.o
 .PHONY : ClusterNormalsToPlanes.cc.o
 
 ClusterNormalsToPlanes.i: ClusterNormalsToPlanes.cc.i
@@ -255,7 +255,7 @@ ClusterNormalsToPlanes.i: ClusterNormalsToPlanes.cc.i
 
 # target to preprocess a source file
 ClusterNormalsToPlanes.cc.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ClusterNormalsToPlanes.cc.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ClusterNormalsToPlanes.cc.i
 .PHONY : ClusterNormalsToPlanes.cc.i
 
 ClusterNormalsToPlanes.s: ClusterNormalsToPlanes.cc.s
@@ -263,7 +263,7 @@ ClusterNormalsToPlanes.s: ClusterNormalsToPlanes.cc.s
 
 # target to generate assembly for a file
 ClusterNormalsToPlanes.cc.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ClusterNormalsToPlanes.cc.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ClusterNormalsToPlanes.cc.s
 .PHONY : ClusterNormalsToPlanes.cc.s
 
 ColorHistogram3D.o: ColorHistogram3D.cpp.o
@@ -271,7 +271,7 @@ ColorHistogram3D.o: ColorHistogram3D.cpp.o
 
 # target to build an object file
 ColorHistogram3D.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.o
 .PHONY : ColorHistogram3D.cpp.o
 
 ColorHistogram3D.i: ColorHistogram3D.cpp.i
@@ -279,7 +279,7 @@ ColorHistogram3D.i: ColorHistogram3D.cpp.i
 
 # target to preprocess a source file
 ColorHistogram3D.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.i
 .PHONY : ColorHistogram3D.cpp.i
 
 ColorHistogram3D.s: ColorHistogram3D.cpp.s
@@ -287,7 +287,7 @@ ColorHistogram3D.s: ColorHistogram3D.cpp.s
 
 # target to generate assembly for a file
 ColorHistogram3D.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ColorHistogram3D.cpp.s
 .PHONY : ColorHistogram3D.cpp.s
 
 ContourDetector.o: ContourDetector.cpp.o
@@ -295,7 +295,7 @@ ContourDetector.o: ContourDetector.cpp.o
 
 # target to build an object file
 ContourDetector.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.o
 .PHONY : ContourDetector.cpp.o
 
 ContourDetector.i: ContourDetector.cpp.i
@@ -303,7 +303,7 @@ ContourDetector.i: ContourDetector.cpp.i
 
 # target to preprocess a source file
 ContourDetector.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.i
 .PHONY : ContourDetector.cpp.i
 
 ContourDetector.s: ContourDetector.cpp.s
@@ -311,7 +311,7 @@ ContourDetector.s: ContourDetector.cpp.s
 
 # target to generate assembly for a file
 ContourDetector.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ContourDetector.cpp.s
 .PHONY : ContourDetector.cpp.s
 
 CustomRelationsLight.o: CustomRelationsLight.cpp.o
@@ -319,7 +319,7 @@ CustomRelationsLight.o: CustomRelationsLight.cpp.o
 
 # target to build an object file
 CustomRelationsLight.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.o
 .PHONY : CustomRelationsLight.cpp.o
 
 CustomRelationsLight.i: CustomRelationsLight.cpp.i
@@ -327,7 +327,7 @@ CustomRelationsLight.i: CustomRelationsLight.cpp.i
 
 # target to preprocess a source file
 CustomRelationsLight.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.i
 .PHONY : CustomRelationsLight.cpp.i
 
 CustomRelationsLight.s: CustomRelationsLight.cpp.s
@@ -335,7 +335,7 @@ CustomRelationsLight.s: CustomRelationsLight.cpp.s
 
 # target to generate assembly for a file
 CustomRelationsLight.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/CustomRelationsLight.cpp.s
 .PHONY : CustomRelationsLight.cpp.s
 
 Device.o: Device.cpp.o
@@ -343,7 +343,7 @@ Device.o: Device.cpp.o
 
 # target to build an object file
 Device.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.o
 .PHONY : Device.cpp.o
 
 Device.i: Device.cpp.i
@@ -351,7 +351,7 @@ Device.i: Device.cpp.i
 
 # target to preprocess a source file
 Device.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.i
 .PHONY : Device.cpp.i
 
 Device.s: Device.cpp.s
@@ -359,7 +359,7 @@ Device.s: Device.cpp.s
 
 # target to generate assembly for a file
 Device.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Device.cpp.s
 .PHONY : Device.cpp.s
 
 FileSystem.o: FileSystem.cc.o
@@ -367,7 +367,7 @@ FileSystem.o: FileSystem.cc.o
 
 # target to build an object file
 FileSystem.cc.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.o
 .PHONY : FileSystem.cc.o
 
 FileSystem.i: FileSystem.cc.i
@@ -375,7 +375,7 @@ FileSystem.i: FileSystem.cc.i
 
 # target to preprocess a source file
 FileSystem.cc.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.i
 .PHONY : FileSystem.cc.i
 
 FileSystem.s: FileSystem.cc.s
@@ -383,7 +383,7 @@ FileSystem.s: FileSystem.cc.s
 
 # target to generate assembly for a file
 FileSystem.cc.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FileSystem.cc.s
 .PHONY : FileSystem.cc.s
 
 FindPlanes.o: FindPlanes.cc.o
@@ -391,7 +391,7 @@ FindPlanes.o: FindPlanes.cc.o
 
 # target to build an object file
 FindPlanes.cc.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.o
 .PHONY : FindPlanes.cc.o
 
 FindPlanes.i: FindPlanes.cc.i
@@ -399,7 +399,7 @@ FindPlanes.i: FindPlanes.cc.i
 
 # target to preprocess a source file
 FindPlanes.cc.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.i
 .PHONY : FindPlanes.cc.i
 
 FindPlanes.s: FindPlanes.cc.s
@@ -407,7 +407,7 @@ FindPlanes.s: FindPlanes.cc.s
 
 # target to generate assembly for a file
 FindPlanes.cc.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FindPlanes.cc.s
 .PHONY : FindPlanes.cc.s
 
 FitSize.o: FitSize.cpp.o
@@ -415,7 +415,7 @@ FitSize.o: FitSize.cpp.o
 
 # target to build an object file
 FitSize.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.o
 .PHONY : FitSize.cpp.o
 
 FitSize.i: FitSize.cpp.i
@@ -423,7 +423,7 @@ FitSize.i: FitSize.cpp.i
 
 # target to preprocess a source file
 FitSize.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.i
 .PHONY : FitSize.cpp.i
 
 FitSize.s: FitSize.cpp.s
@@ -431,7 +431,7 @@ FitSize.s: FitSize.cpp.s
 
 # target to generate assembly for a file
 FitSize.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/FitSize.cpp.s
 .PHONY : FitSize.cpp.s
 
 Graph.o: Graph.cpp.o
@@ -439,7 +439,7 @@ Graph.o: Graph.cpp.o
 
 # target to build an object file
 Graph.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Graph.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Graph.cpp.o
 .PHONY : Graph.cpp.o
 
 Graph.i: Graph.cpp.i
@@ -447,7 +447,7 @@ Graph.i: Graph.cpp.i
 
 # target to preprocess a source file
 Graph.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Graph.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Graph.cpp.i
 .PHONY : Graph.cpp.i
 
 Graph.s: Graph.cpp.s
@@ -455,7 +455,7 @@ Graph.s: Graph.cpp.s
 
 # target to generate assembly for a file
 Graph.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Graph.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
 GraphCut.o: GraphCut.cpp.o
@@ -463,7 +463,7 @@ GraphCut.o: GraphCut.cpp.o
 
 # target to build an object file
 GraphCut.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/GraphCut.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/GraphCut.cpp.o
 .PHONY : GraphCut.cpp.o
 
 GraphCut.i: GraphCut.cpp.i
@@ -471,7 +471,7 @@ GraphCut.i: GraphCut.cpp.i
 
 # target to preprocess a source file
 GraphCut.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/GraphCut.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/GraphCut.cpp.i
 .PHONY : GraphCut.cpp.i
 
 GraphCut.s: GraphCut.cpp.s
@@ -479,7 +479,7 @@ GraphCut.s: GraphCut.cpp.s
 
 # target to generate assembly for a file
 GraphCut.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/GraphCut.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/GraphCut.cpp.s
 .PHONY : GraphCut.cpp.s
 
 Kinect.o: Kinect.cpp.o
@@ -487,7 +487,7 @@ Kinect.o: Kinect.cpp.o
 
 # target to build an object file
 Kinect.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.o
 .PHONY : Kinect.cpp.o
 
 Kinect.i: Kinect.cpp.i
@@ -495,7 +495,7 @@ Kinect.i: Kinect.cpp.i
 
 # target to preprocess a source file
 Kinect.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.i
 .PHONY : Kinect.cpp.i
 
 Kinect.s: Kinect.cpp.s
@@ -503,7 +503,7 @@ Kinect.s: Kinect.cpp.s
 
 # target to generate assembly for a file
 Kinect.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Kinect.cpp.s
 .PHONY : Kinect.cpp.s
 
 KinectData.o: KinectData.cpp.o
@@ -511,7 +511,7 @@ KinectData.o: KinectData.cpp.o
 
 # target to build an object file
 KinectData.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.o
 .PHONY : KinectData.cpp.o
 
 KinectData.i: KinectData.cpp.i
@@ -519,7 +519,7 @@ KinectData.i: KinectData.cpp.i
 
 # target to preprocess a source file
 KinectData.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.i
 .PHONY : KinectData.cpp.i
 
 KinectData.s: KinectData.cpp.s
@@ -527,7 +527,7 @@ KinectData.s: KinectData.cpp.s
 
 # target to generate assembly for a file
 KinectData.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/KinectData.cpp.s
 .PHONY : KinectData.cpp.s
 
 SVMPredictorSingle.o: SVMPredictorSingle.cpp.o
@@ -535,7 +535,7 @@ SVMPredictorSingle.o: SVMPredictorSingle.cpp.o
 
 # target to build an object file
 SVMPredictorSingle.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.o
 .PHONY : SVMPredictorSingle.cpp.o
 
 SVMPredictorSingle.i: SVMPredictorSingle.cpp.i
@@ -543,7 +543,7 @@ SVMPredictorSingle.i: SVMPredictorSingle.cpp.i
 
 # target to preprocess a source file
 SVMPredictorSingle.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.i
 .PHONY : SVMPredictorSingle.cpp.i
 
 SVMPredictorSingle.s: SVMPredictorSingle.cpp.s
@@ -551,7 +551,7 @@ SVMPredictorSingle.s: SVMPredictorSingle.cpp.s
 
 # target to generate assembly for a file
 SVMPredictorSingle.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SVMPredictorSingle.cpp.s
 .PHONY : SVMPredictorSingle.cpp.s
 
 SegmenterLight.o: SegmenterLight.cpp.o
@@ -559,7 +559,7 @@ SegmenterLight.o: SegmenterLight.cpp.o
 
 # target to build an object file
 SegmenterLight.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.o
 .PHONY : SegmenterLight.cpp.o
 
 SegmenterLight.i: SegmenterLight.cpp.i
@@ -567,7 +567,7 @@ SegmenterLight.i: SegmenterLight.cpp.i
 
 # target to preprocess a source file
 SegmenterLight.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.i
 .PHONY : SegmenterLight.cpp.i
 
 SegmenterLight.s: SegmenterLight.cpp.s
@@ -575,7 +575,7 @@ SegmenterLight.s: SegmenterLight.cpp.s
 
 # target to generate assembly for a file
 SegmenterLight.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SegmenterLight.cpp.s
 .PHONY : SegmenterLight.cpp.s
 
 SegmenterLightTest.o: SegmenterLightTest.cpp.o
@@ -583,7 +583,7 @@ SegmenterLightTest.o: SegmenterLightTest.cpp.o
 
 # target to build an object file
 SegmenterLightTest.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.o
 .PHONY : SegmenterLightTest.cpp.o
 
 SegmenterLightTest.i: SegmenterLightTest.cpp.i
@@ -591,7 +591,7 @@ SegmenterLightTest.i: SegmenterLightTest.cpp.i
 
 # target to preprocess a source file
 SegmenterLightTest.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.i
 .PHONY : SegmenterLightTest.cpp.i
 
 SegmenterLightTest.s: SegmenterLightTest.cpp.s
@@ -599,7 +599,7 @@ SegmenterLightTest.s: SegmenterLightTest.cpp.s
 
 # target to generate assembly for a file
 SegmenterLightTest.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/SegmenterLight.dir/build.make v4r/CMakeFiles/SegmenterLight.dir/SegmenterLightTest.cpp.s
 .PHONY : SegmenterLightTest.cpp.s
 
 StructuralRelationsLight.o: StructuralRelationsLight.cpp.o
@@ -607,7 +607,7 @@ StructuralRelationsLight.o: StructuralRelationsLight.cpp.o
 
 # target to build an object file
 StructuralRelationsLight.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.o
 .PHONY : StructuralRelationsLight.cpp.o
 
 StructuralRelationsLight.i: StructuralRelationsLight.cpp.i
@@ -615,7 +615,7 @@ StructuralRelationsLight.i: StructuralRelationsLight.cpp.i
 
 # target to preprocess a source file
 StructuralRelationsLight.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.i
 .PHONY : StructuralRelationsLight.cpp.i
 
 StructuralRelationsLight.s: StructuralRelationsLight.cpp.s
@@ -623,7 +623,7 @@ StructuralRelationsLight.s: StructuralRelationsLight.cpp.s
 
 # target to generate assembly for a file
 StructuralRelationsLight.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/StructuralRelationsLight.cpp.s
 .PHONY : StructuralRelationsLight.cpp.s
 
 SurfaceModeling.o: SurfaceModeling.cc.o
@@ -631,7 +631,7 @@ SurfaceModeling.o: SurfaceModeling.cc.o
 
 # target to build an object file
 SurfaceModeling.cc.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SurfaceModeling.cc.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SurfaceModeling.cc.o
 .PHONY : SurfaceModeling.cc.o
 
 SurfaceModeling.i: SurfaceModeling.cc.i
@@ -639,7 +639,7 @@ SurfaceModeling.i: SurfaceModeling.cc.i
 
 # target to preprocess a source file
 SurfaceModeling.cc.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SurfaceModeling.cc.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SurfaceModeling.cc.i
 .PHONY : SurfaceModeling.cc.i
 
 SurfaceModeling.s: SurfaceModeling.cc.s
@@ -647,7 +647,7 @@ SurfaceModeling.s: SurfaceModeling.cc.s
 
 # target to generate assembly for a file
 SurfaceModeling.cc.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SurfaceModeling.cc.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/SurfaceModeling.cc.s
 .PHONY : SurfaceModeling.cc.s
 
 Texture.o: Texture.cpp.o
@@ -655,7 +655,7 @@ Texture.o: Texture.cpp.o
 
 # target to build an object file
 Texture.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.o
 .PHONY : Texture.cpp.o
 
 Texture.i: Texture.cpp.i
@@ -663,7 +663,7 @@ Texture.i: Texture.cpp.i
 
 # target to preprocess a source file
 Texture.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.i
 .PHONY : Texture.cpp.i
 
 Texture.s: Texture.cpp.s
@@ -671,7 +671,7 @@ Texture.s: Texture.cpp.s
 
 # target to generate assembly for a file
 Texture.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Texture.cpp.s
 .PHONY : Texture.cpp.s
 
 Utils.o: Utils.cc.o
@@ -679,7 +679,7 @@ Utils.o: Utils.cc.o
 
 # target to build an object file
 Utils.cc.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.o
 .PHONY : Utils.cc.o
 
 Utils.i: Utils.cc.i
@@ -687,7 +687,7 @@ Utils.i: Utils.cc.i
 
 # target to preprocess a source file
 Utils.cc.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.i
 .PHONY : Utils.cc.i
 
 Utils.s: Utils.cc.s
@@ -695,7 +695,7 @@ Utils.s: Utils.cc.s
 
 # target to generate assembly for a file
 Utils.cc.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/Utils.cc.s
 .PHONY : Utils.cc.s
 
 ZAdaptiveNormals.o: ZAdaptiveNormals.cc.o
@@ -703,7 +703,7 @@ ZAdaptiveNormals.o: ZAdaptiveNormals.cc.o
 
 # target to build an object file
 ZAdaptiveNormals.cc.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ZAdaptiveNormals.cc.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ZAdaptiveNormals.cc.o
 .PHONY : ZAdaptiveNormals.cc.o
 
 ZAdaptiveNormals.i: ZAdaptiveNormals.cc.i
@@ -711,7 +711,7 @@ ZAdaptiveNormals.i: ZAdaptiveNormals.cc.i
 
 # target to preprocess a source file
 ZAdaptiveNormals.cc.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ZAdaptiveNormals.cc.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ZAdaptiveNormals.cc.i
 .PHONY : ZAdaptiveNormals.cc.i
 
 ZAdaptiveNormals.s: ZAdaptiveNormals.cc.s
@@ -719,7 +719,7 @@ ZAdaptiveNormals.s: ZAdaptiveNormals.cc.s
 
 # target to generate assembly for a file
 ZAdaptiveNormals.cc.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ZAdaptiveNormals.cc.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/ZAdaptiveNormals.cc.s
 .PHONY : ZAdaptiveNormals.cc.s
 
 disjoint-set.o: disjoint-set.cpp.o
@@ -727,7 +727,7 @@ disjoint-set.o: disjoint-set.cpp.o
 
 # target to build an object file
 disjoint-set.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/disjoint-set.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/disjoint-set.cpp.o
 .PHONY : disjoint-set.cpp.o
 
 disjoint-set.i: disjoint-set.cpp.i
@@ -735,7 +735,7 @@ disjoint-set.i: disjoint-set.cpp.i
 
 # target to preprocess a source file
 disjoint-set.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/disjoint-set.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/disjoint-set.cpp.i
 .PHONY : disjoint-set.cpp.i
 
 disjoint-set.s: disjoint-set.cpp.s
@@ -743,7 +743,7 @@ disjoint-set.s: disjoint-set.cpp.s
 
 # target to generate assembly for a file
 disjoint-set.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/disjoint-set.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/disjoint-set.cpp.s
 .PHONY : disjoint-set.cpp.s
 
 svm.o: svm.cpp.o
@@ -751,7 +751,7 @@ svm.o: svm.cpp.o
 
 # target to build an object file
 svm.cpp.o:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.o
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.o
 .PHONY : svm.cpp.o
 
 svm.i: svm.cpp.i
@@ -759,7 +759,7 @@ svm.i: svm.cpp.i
 
 # target to preprocess a source file
 svm.cpp.i:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.i
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.i
 .PHONY : svm.cpp.i
 
 svm.s: svm.cpp.s
@@ -767,7 +767,7 @@ svm.s: svm.cpp.s
 
 # target to generate assembly for a file
 svm.cpp.s:
-	cd /home/arc/Documents/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.s
+	cd /home/arclab/Downloads/v4r_seg/build && $(MAKE) -f v4r/CMakeFiles/v4rSegmenterLight.dir/build.make v4r/CMakeFiles/v4rSegmenterLight.dir/svm.cpp.s
 .PHONY : svm.cpp.s
 
 # Help Target
@@ -870,6 +870,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/arc/Documents/v4r_seg/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/arclab/Downloads/v4r_seg/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

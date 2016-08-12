@@ -38,9 +38,9 @@
 #include <pcl/filters/project_inliers.h>
 #include <pcl/sample_consensus/sac_model_plane.h>
 
-#ifdef DEBUG
-  #include "v4r/TomGine/tgTomGineThread.h"
-#endif
+//#ifdef DEBUG
+//  #include "v4r/TomGine/tgTomGineThread.h"
+//#endif
 
 #include "SurfaceModel.hpp"
 

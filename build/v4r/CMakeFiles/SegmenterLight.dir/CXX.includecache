@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/arc/Documents/v4r_seg/v4r/BoundaryRelations.h
+/home/arclab/Downloads/v4r_seg/v4r/BoundaryRelations.h
 stdio.h
 -
 opencv2/opencv.hpp
@@ -16,23 +16,23 @@ pcl/filters/project_inliers.h
 pcl/io/pcd_io.h
 -
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 
-/home/arc/Documents/v4r_seg/v4r/Capture.h
+/home/arclab/Downloads/v4r_seg/v4r/Capture.h
 Device.h
-/home/arc/Documents/v4r_seg/v4r/Device.h
+/home/arclab/Downloads/v4r_seg/v4r/Device.h
 
-/home/arc/Documents/v4r_seg/v4r/Centroid.h
+/home/arclab/Downloads/v4r_seg/v4r/Centroid.h
 vector
 -
 stdio.h
 -
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 pcl/impl/point_types.hpp
 -
 
-/home/arc/Documents/v4r_seg/v4r/ClusterNormalsToPlanes.hh
+/home/arclab/Downloads/v4r_seg/v4r/ClusterNormalsToPlanes.hh
 iostream
 -
 vector
@@ -60,13 +60,13 @@ pcl/filters/project_inliers.h
 pcl/sample_consensus/sac_model_plane.h
 -
 v4r/TomGine/tgTomGineThread.h
-/home/arc/Documents/v4r_seg/v4r/v4r/TomGine/tgTomGineThread.h
+/home/arclab/Downloads/v4r_seg/v4r/v4r/TomGine/tgTomGineThread.h
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 PPlane.h
-/home/arc/Documents/v4r_seg/v4r/PPlane.h
+/home/arclab/Downloads/v4r_seg/v4r/PPlane.h
 
-/home/arc/Documents/v4r_seg/v4r/ColorHistogram3D.h
+/home/arclab/Downloads/v4r_seg/v4r/ColorHistogram3D.h
 vector
 -
 string.h
@@ -78,7 +78,7 @@ pcl/point_types.h
 pcl/filters/extract_indices.h
 -
 
-/home/arc/Documents/v4r_seg/v4r/ContourDetector.h
+/home/arclab/Downloads/v4r_seg/v4r/ContourDetector.h
 vector
 -
 stdio.h
@@ -90,9 +90,9 @@ opencv2/highgui/highgui.hpp
 opencv2/core/core.hpp
 -
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 
-/home/arc/Documents/v4r_seg/v4r/CustomRelationsLight.h
+/home/arclab/Downloads/v4r_seg/v4r/CustomRelationsLight.h
 omp.h
 -
 vector
@@ -102,39 +102,39 @@ cstdio
 opencv2/highgui/highgui.hpp
 -
 ColorHistogram3D.h
-/home/arc/Documents/v4r_seg/v4r/ColorHistogram3D.h
+/home/arclab/Downloads/v4r_seg/v4r/ColorHistogram3D.h
 Texture.h
-/home/arc/Documents/v4r_seg/v4r/Texture.h
+/home/arclab/Downloads/v4r_seg/v4r/Texture.h
 BoundaryRelations.h
-/home/arc/Documents/v4r_seg/v4r/BoundaryRelations.h
+/home/arclab/Downloads/v4r_seg/v4r/BoundaryRelations.h
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 pcl/impl/point_types.hpp
 -
 queue
 -
 FitSize.h
-/home/arc/Documents/v4r_seg/v4r/FitSize.h
+/home/arclab/Downloads/v4r_seg/v4r/FitSize.h
 Centroid.h
-/home/arc/Documents/v4r_seg/v4r/Centroid.h
+/home/arclab/Downloads/v4r_seg/v4r/Centroid.h
 
-/home/arc/Documents/v4r_seg/v4r/Device.h
+/home/arclab/Downloads/v4r_seg/v4r/Device.h
 XnCppWrapper.h
-/home/arc/Documents/v4r_seg/v4r/XnCppWrapper.h
+/home/arclab/Downloads/v4r_seg/v4r/XnCppWrapper.h
 XnTypes.h
-/home/arc/Documents/v4r_seg/v4r/XnTypes.h
+/home/arclab/Downloads/v4r_seg/v4r/XnTypes.h
 
-/home/arc/Documents/v4r_seg/v4r/Edge.h
+/home/arclab/Downloads/v4r_seg/v4r/Edge.h
 
-/home/arc/Documents/v4r_seg/v4r/FileSystem.hh
+/home/arclab/Downloads/v4r_seg/v4r/FileSystem.hh
 cstdio
 -
 stdexcept
 -
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 
-/home/arc/Documents/v4r_seg/v4r/FindPlanes.hh
+/home/arclab/Downloads/v4r_seg/v4r/FindPlanes.hh
 iostream
 -
 vector
@@ -161,22 +161,20 @@ pcl/filters/project_inliers.h
 -
 pcl/sample_consensus/sac_model_plane.h
 -
-v4r/TomGine/tgTomGineThread.h
-/home/arc/Documents/v4r_seg/v4r/v4r/TomGine/tgTomGineThread.h
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 PPlane.h
-/home/arc/Documents/v4r_seg/v4r/PPlane.h
+/home/arclab/Downloads/v4r_seg/v4r/PPlane.h
 
-/home/arc/Documents/v4r_seg/v4r/FitSize.h
+/home/arclab/Downloads/v4r_seg/v4r/FitSize.h
 vector
 -
 stdio.h
 -
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 
-/home/arc/Documents/v4r_seg/v4r/Graph.h
+/home/arclab/Downloads/v4r_seg/v4r/Graph.h
 vector
 -
 stdio.h
@@ -190,11 +188,11 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 Edge.h
-/home/arc/Documents/v4r_seg/v4r/Edge.h
+/home/arclab/Downloads/v4r_seg/v4r/Edge.h
 Relation.h
-/home/arc/Documents/v4r_seg/v4r/Relation.h
+/home/arclab/Downloads/v4r_seg/v4r/Relation.h
 
-/home/arc/Documents/v4r_seg/v4r/GraphCut.h
+/home/arclab/Downloads/v4r_seg/v4r/GraphCut.h
 set
 -
 vector
@@ -208,17 +206,17 @@ math.h
 algorithm
 -
 Graph.h
-/home/arc/Documents/v4r_seg/v4r/Graph.h
+/home/arclab/Downloads/v4r_seg/v4r/Graph.h
 Edge.h
-/home/arc/Documents/v4r_seg/v4r/Edge.h
+/home/arclab/Downloads/v4r_seg/v4r/Edge.h
 disjoint-set.h
-/home/arc/Documents/v4r_seg/v4r/disjoint-set.h
+/home/arclab/Downloads/v4r_seg/v4r/disjoint-set.h
 Relation.h
-/home/arc/Documents/v4r_seg/v4r/Relation.h
+/home/arclab/Downloads/v4r_seg/v4r/Relation.h
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 
-/home/arc/Documents/v4r_seg/v4r/Kinect.h
+/home/arclab/Downloads/v4r_seg/v4r/Kinect.h
 cstdio
 -
 iostream
@@ -228,9 +226,9 @@ opencv2/opencv.hpp
 opencv2/highgui/highgui.hpp
 -
 Capture.h
-/home/arc/Documents/v4r_seg/v4r/Capture.h
+/home/arclab/Downloads/v4r_seg/v4r/Capture.h
 
-/home/arc/Documents/v4r_seg/v4r/KinectData.h
+/home/arclab/Downloads/v4r_seg/v4r/KinectData.h
 ostream
 -
 cstdio
@@ -242,13 +240,13 @@ opencv2/opencv.hpp
 opencv2/highgui/highgui.hpp
 -
 Kinect.h
-/home/arc/Documents/v4r_seg/v4r/Kinect.h
+/home/arclab/Downloads/v4r_seg/v4r/Kinect.h
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 FileSystem.hh
-/home/arc/Documents/v4r_seg/v4r/FileSystem.hh
+/home/arclab/Downloads/v4r_seg/v4r/FileSystem.hh
 
-/home/arc/Documents/v4r_seg/v4r/PPlane.h
+/home/arclab/Downloads/v4r_seg/v4r/PPlane.h
 iostream
 -
 stdexcept
@@ -258,11 +256,11 @@ opencv2/imgproc/imgproc.hpp
 opencv2/core/core.hpp
 -
 
-/home/arc/Documents/v4r_seg/v4r/Relation.h
+/home/arclab/Downloads/v4r_seg/v4r/Relation.h
 vector
 -
 
-/home/arc/Documents/v4r_seg/v4r/SVMPredictorSingle.h
+/home/arclab/Downloads/v4r_seg/v4r/SVMPredictorSingle.h
 vector
 -
 iostream
@@ -282,41 +280,41 @@ float.h
 ostream
 -
 svm.h
-/home/arc/Documents/v4r_seg/v4r/svm.h
+/home/arclab/Downloads/v4r_seg/v4r/svm.h
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 
-/home/arc/Documents/v4r_seg/v4r/SegmenterLight.h
+/home/arclab/Downloads/v4r_seg/v4r/SegmenterLight.h
 pcl/point_types.h
 -
 pcl/features/normal_3d.h
 -
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 ContourDetector.h
-/home/arc/Documents/v4r_seg/v4r/ContourDetector.h
+/home/arclab/Downloads/v4r_seg/v4r/ContourDetector.h
 StructuralRelationsLight.h
-/home/arc/Documents/v4r_seg/v4r/StructuralRelationsLight.h
+/home/arclab/Downloads/v4r_seg/v4r/StructuralRelationsLight.h
 ZAdaptiveNormals.hh
-/home/arc/Documents/v4r_seg/v4r/ZAdaptiveNormals.hh
+/home/arclab/Downloads/v4r_seg/v4r/ZAdaptiveNormals.hh
 ClusterNormalsToPlanes.hh
-/home/arc/Documents/v4r_seg/v4r/ClusterNormalsToPlanes.hh
+/home/arclab/Downloads/v4r_seg/v4r/ClusterNormalsToPlanes.hh
 SurfaceModeling.hh
-/home/arc/Documents/v4r_seg/v4r/SurfaceModeling.hh
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModeling.hh
 SVMPredictorSingle.h
-/home/arc/Documents/v4r_seg/v4r/SVMPredictorSingle.h
+/home/arclab/Downloads/v4r_seg/v4r/SVMPredictorSingle.h
 GraphCut.h
-/home/arc/Documents/v4r_seg/v4r/GraphCut.h
+/home/arclab/Downloads/v4r_seg/v4r/GraphCut.h
 CustomRelationsLight.h
-/home/arc/Documents/v4r_seg/v4r/CustomRelationsLight.h
+/home/arclab/Downloads/v4r_seg/v4r/CustomRelationsLight.h
 FindPlanes.hh
-/home/arc/Documents/v4r_seg/v4r/FindPlanes.hh
+/home/arclab/Downloads/v4r_seg/v4r/FindPlanes.hh
 
-/home/arc/Documents/v4r_seg/v4r/SegmenterLightTest.cpp
+/home/arclab/Downloads/v4r_seg/v4r/SegmenterLightTest.cpp
 SegmenterLightTest.h
-/home/arc/Documents/v4r_seg/v4r/SegmenterLightTest.h
+/home/arclab/Downloads/v4r_seg/v4r/SegmenterLightTest.h
 
-/home/arc/Documents/v4r_seg/v4r/SegmenterLightTest.h
+/home/arclab/Downloads/v4r_seg/v4r/SegmenterLightTest.h
 cstdio
 -
 stdio.h
@@ -346,11 +344,11 @@ opencv2/core/core.hpp
 opencv2/opencv.hpp
 -
 KinectData.h
-/home/arc/Documents/v4r_seg/v4r/KinectData.h
+/home/arclab/Downloads/v4r_seg/v4r/KinectData.h
 SegmenterLight.h
-/home/arc/Documents/v4r_seg/v4r/SegmenterLight.h
+/home/arclab/Downloads/v4r_seg/v4r/SegmenterLight.h
 
-/home/arc/Documents/v4r_seg/v4r/StructuralRelationsLight.h
+/home/arclab/Downloads/v4r_seg/v4r/StructuralRelationsLight.h
 omp.h
 -
 vector
@@ -360,15 +358,15 @@ cstdio
 opencv2/highgui/highgui.hpp
 -
 ColorHistogram3D.h
-/home/arc/Documents/v4r_seg/v4r/ColorHistogram3D.h
+/home/arclab/Downloads/v4r_seg/v4r/ColorHistogram3D.h
 Texture.h
-/home/arc/Documents/v4r_seg/v4r/Texture.h
+/home/arclab/Downloads/v4r_seg/v4r/Texture.h
 BoundaryRelations.h
-/home/arc/Documents/v4r_seg/v4r/BoundaryRelations.h
+/home/arclab/Downloads/v4r_seg/v4r/BoundaryRelations.h
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 vector
 -
 opencv2/highgui/highgui.hpp
@@ -378,11 +376,11 @@ opencv2/core/core.hpp
 pcl/surface/on_nurbs/sequential_fitter.h
 -
 Relation.h
-/home/arc/Documents/v4r_seg/v4r/Relation.h
+/home/arclab/Downloads/v4r_seg/v4r/Relation.h
 v4r/TomGine/tgRenderModel.h
-/home/arc/Documents/v4r_seg/v4r/v4r/TomGine/tgRenderModel.h
+/home/arclab/Downloads/v4r_seg/v4r/v4r/TomGine/tgRenderModel.h
 
-/home/arc/Documents/v4r_seg/v4r/SurfaceModeling.hh
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModeling.hh
 iostream
 -
 opencv2/imgproc/imgproc.hpp
@@ -404,13 +402,13 @@ pcl/filters/project_inliers.h
 pcl/surface/on_nurbs/sequential_fitter.h
 -
 v4r/TomGine/tgTomGineThread.h
-/home/arc/Documents/v4r_seg/v4r/v4r/TomGine/tgTomGineThread.h
+/home/arclab/Downloads/v4r_seg/v4r/v4r/TomGine/tgTomGineThread.h
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 PPlane.h
-/home/arc/Documents/v4r_seg/v4r/PPlane.h
+/home/arclab/Downloads/v4r_seg/v4r/PPlane.h
 
-/home/arc/Documents/v4r_seg/v4r/Texture.h
+/home/arclab/Downloads/v4r_seg/v4r/Texture.h
 vector
 -
 stdio.h
@@ -422,9 +420,9 @@ opencv2/core/core.hpp
 opencv2/opencv.hpp
 -
 SurfaceModel.hpp
-/home/arc/Documents/v4r_seg/v4r/SurfaceModel.hpp
+/home/arclab/Downloads/v4r_seg/v4r/SurfaceModel.hpp
 
-/home/arc/Documents/v4r_seg/v4r/ZAdaptiveNormals.hh
+/home/arclab/Downloads/v4r_seg/v4r/ZAdaptiveNormals.hh
 iostream
 -
 stdexcept
@@ -444,11 +442,11 @@ pcl/search/kdtree.h
 boost/shared_ptr.hpp
 -
 
-/home/arc/Documents/v4r_seg/v4r/disjoint-set.h
+/home/arclab/Downloads/v4r_seg/v4r/disjoint-set.h
 cstdio
 -
 
-/home/arc/Documents/v4r_seg/v4r/svm.h
+/home/arclab/Downloads/v4r_seg/v4r/svm.h
 math.h
 -
 stdio.h
